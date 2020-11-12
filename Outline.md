@@ -29,6 +29,8 @@
 4. Hello, Django
     * Create a project and application with Django-admin
     * Navigating the structure
+    * Running Your First Project
+    * Projects vs Apps
     * Hello, world!
 5. Routing and views
     * Routing concepts
