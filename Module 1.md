@@ -21,8 +21,8 @@ Introduction
         - How to install Django
         - How to create a simple program in Django
 
-Prerequisites
-* None
+* Prerequisites
+    - None
 #
 - Unit: What is Django?
 
@@ -49,6 +49,7 @@ Prerequisites
             5. Out of the box security
             6. Numerous apps to help with your projects
             7. Suitable for development and production
+
         - Flask
             1. Lightweight web framework
             2. Great for smaller projects
@@ -222,17 +223,18 @@ Prerequisites
     
     * Running Your First App
 
-        Now that the structure is complete, views have been added, and the URLs mapped, it is time to run your app. Make sure the server is still connected and running and enter the below link into your browser.
+        Now that the structure is complete, views have been added, and the URLs mapped, it is time to run your app. Make sure the server is still connected and running, and enter the below link into your browser.
 
             http://localhost:8000/hello_world/
 
         If everything worked then you should see "Hello, world" at the top left hand of the screen.
-   
-6. Knowledge Check
+#   
+- Unit: Knowledge Check
     * Check your knowledge
       - Questions (See Module1_KQ.yaml for questions)
 
-7. Summary
+#
+- Unit: Summary
     * In this module you learned:
       - How to install Django
       - Why Django is great for rapid deployments
