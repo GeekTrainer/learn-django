@@ -132,7 +132,7 @@ Prerequisites
 
         Now that the first Django project has been created, we will continue on to create our first app but let's first define the difference between a project and an app. 
         * App - provides the instructions of how a web application should function such as our "Hello, world!" app.
-        
+
         * Project - contains all of the necessary settings or apps for a specific website.
         
         Now that we know the difference between a project and an app let's move to our next task of creating an app!
@@ -224,7 +224,7 @@ Prerequisites
     
     * Running Your First App
 
-        Now that the structure is complete, views have been added, and the routes registered, it is time to run your app by entering the below link into your browser.
+        Now that the structure is complete, views have been added, and the URLs mapped, it is time to run your app by entering the below link into your browser.
 
             http://localhost:8000/hello_world/
 
