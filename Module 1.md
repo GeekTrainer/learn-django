@@ -205,7 +205,7 @@ Prerequisites
 
     * Understanding the __Include__ Function
 
-        As you continue to learn and have more complex file structures, you will add more views and URLs for your app. This function plays a key role in your app, as it allows you to call other URLconfs.
+        As you continue to learn and have more complex file structures, you will add more views and URLs for your app. This function plays a key role as it allows the app to call other URLconfs.
 
         For example, we currently have the path __/hello_world/__ that directs us to our index view and displays "Hello, world!". Let's say we wanted to add another view to our app so we could display a simple greeting to the user. In order to add another view we would add the following to our __hello_world.views.py__ file.
 
@@ -222,7 +222,7 @@ Prerequisites
     
     * Running Your First App
 
-        Now that the structure is complete, views have been added, and the URLs mapped, it is time to run your app by entering the below link into your browser.
+        Now that the structure is complete, views have been added, and the URLs mapped, it is time to run your app. Make sure the server is still connected and running and enter the below link into your browser.
 
             http://localhost:8000/hello_world/
 
@@ -235,6 +235,8 @@ Prerequisites
 7. Summary
     * In this module you learned:
       - How to install Django
-      - The difference between a project and an app
-      - How to create and configure a simple app
+      - Why Django is great for rapid deployments
+      - The difference between Django and Flask
+      - The types of applicatons best for Django
+      - How to create a simple program
     * In the next module of this learning path, you will learn about Django's Object-Relational Mapper (ORM), how to install and manage a SQLite database, and then create and query data.
