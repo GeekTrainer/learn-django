@@ -201,7 +201,7 @@ Prerequisites
                 path('admin/', admin.site.urls),
             ]
 
-        When opening the file you will notice Django has already populated some of the code, and our task will be to add our new app path to the existing code. In addition to adding the new path, you will also need to import a function named __include__. 
+        When opening the file you will notice Django has already populated some of the code, and our task will be to add our new app path to the existing code. In addition to adding the new path, you will also need to import another function named __include__ from __django.urls__. 
 
     * Understanding the __Include__ Function
 
