@@ -44,7 +44,7 @@ Prerequisites
         - Django
             1. Full-stack framework
             2. Ideal for complex data driven applications
-            3. More of a learning curve because of its many included functions
+            3. More of a learning curve
             4. Vast amount of users for support
             5. Out of the box security
             6. Numerous apps to help with your projects
@@ -76,21 +76,21 @@ Prerequisites
 
 #
 - Unit: Hello, Django
-    * Create a project and application with Django-admin
+    * Create a project with Django-admin
 
-        Now that Django is installed we are ready to begin the process of creating an application, but before we actually start coding there are a couple of things we have to do to create a Django project. While there are a couple of options for completing the following tasks for our purposes we will be using Visual Studio Code.
+        Now that Django is installed we are ready to begin the process of creating a project, but before we actually start coding there are a couple of things we have to do to create a Django project. While there are a couple of options for completing the following tasks for our purposes we will be using Visual Studio Code.
         
-        First, go to the command line and navigate to the directory that you would like to store your Django application. Once you are in the correct directory then run the following command to create your new project.
+        First, go to the command line and navigate to the directory that you would like to store your Django project. Once you are in the correct directory then run the following command to create your new project.
 
         * If you decided to create a virtual environment for your Django framework, then make sure you are running this command from your activated virtual environment. 
             ~~~
             $ django-admin startproject myfirstproject
             ~~~ 
-        After running the above command you should now see your new project in your chosen directory. In this instance I would see a new folder called 'myfirstproject'.
+        After running the above command the new project should now be in your chosen directory. In this instance you would see a new folder called 'myfirstproject'.
 
     * Navigating the Project structure
 
-        Now that the Django project has been created let's look at the structure.
+        Now that the Django project has been created let's look at the structure to see what was included.
         ~~~
         myfirstproject/
                 manage.py
@@ -102,7 +102,7 @@ Prerequisites
                         wsgi.py
         ~~~
         1. The first or outer __myfirstproject__ in the structure is your root directory which contains the entire project.
-        2. Next you have __manage__.__py__. This is a command-line utility that is created in every Django project and actually has the same function as 'django-admin'. Below is an example of how this could be used if you were inside of the project folder and wanted to see the available subcommands. 
+        2. Next you have __manage__.__py__. This is a command-line utility that is created in every Django project and actually has the same function as 'django-admin'. Below is an example of how this could be used if you were inside the project folder and wanted to see the available subcommands. 
         
             For more information about these two command-line utilities click [here][6].
         ~~~
@@ -120,9 +120,9 @@ Prerequisites
 
     * Running Your First Project
 
-        Now that you have installed Django, created a project, and have learned about the project structure it is time to make sure everything works.
+        Now that Django is installed, a project has been created, and we have investigated the project structure it is time to make sure everything works.
 
-        Click inside the __myfirstproject__ root directory and type:
+        Navigate to the __myfirstproject__ root directory and enter the below in the command line.
         ~~~
         python manage.py runserver
         ~~~
@@ -142,9 +142,7 @@ Prerequisites
 
     * Creating Hello, world!
 
-        Now that we know the difference between a project and an app let's go ahead and create the structure.
-
-        In order to create the app, navigate to the project root folder __myfirstproject__ and input the following on the command line.
+        In order to create the app, we first start by navigating to the project root folder __myfirstproject__ and input the following on the command line.
         
             python manage.py startapp hello_world
            

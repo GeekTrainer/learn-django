@@ -27,7 +27,7 @@
     * Django vs Flask
 3. Installation
 4. Hello, Django
-    * Create a project and application with Django-admin
+    * Create a project with Django-admin
     * Navigating the project structure
     * Running Your First Project
     * Projects vs Apps
