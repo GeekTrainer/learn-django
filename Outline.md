@@ -28,15 +28,15 @@
 3. Installation
 4. Hello, Django
     * Create a project and application with Django-admin
-    * Navigating the structure
+    * Navigating the project structure
     * Running Your First Project
     * Projects vs Apps
-    * Hello, world!
-5. Routing and views
-    * Routing concepts
-    * Registering routes
-    * Introducing views
-    * Creating a view
+5. Creating Your First App
+    * Creating Hello, world!
+    * Creating a View
+    * URL Mapping
+    * Understanding the Include Function
+    * Running Your First App
 6. Knowledge Check
     * Check your knowledge
       - Questions
@@ -144,6 +144,21 @@
     * Check your knowledge
       - Questions
 6. Summary
+    * In this module you learned:
+      - .
+      - .
+    * In the next module in this Learning Path,
+
+#
+# Module 7: Uploading Your Project to Azure
+1. Introduction
+    * Learning Objectives
+      - In this module you will learn:
+2. Uploading Your Django Project to Azure
+3. Knowledge Check
+    * Check your knowledge
+      - Questions
+4. Summary
     * In this module you learned:
       - .
       - .
