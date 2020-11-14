@@ -1,41 +1,33 @@
-quiz:
+quiz: 1
  title: Check your knowledge
- questions:
+ questions: 2
 
- - content: 'Question 1'
-
- choices:
- - content: 'Answer 1'
- isCorrect: false
- explanation: 'Explanation 1'
-
- - content: 'Answer 2'
- isCorrect: false
- explanation: 'Explanation 2'
-
- - content: 'Answer 3'
- isCorrect: false
- explanation: 'Explanation 3'
-
- - content: 'Answer 4'
- isCorrect: true
- explanation: 'Explanation 4'
-
- - content: 'Question 2'
+ - content: 'What is the command-line utility automatically created in every Django project?'
 
  choices:
- - content: 'Answer 1'
+ - content: 'init.py'
  isCorrect: false
- explanation: 'Explanation 1'
+ explanation: 'This answer is not correct as this signals to Python that this directory is a package.'
 
- - content: 'Answer 2'
- isCorrect: false
- explanation: 'Explanation 2'
-
- - content: 'Answer 3'
- isCorrect: false
- explanation: 'Explanation 3'
-
- - content: 'Answer 4'
+ - content: 'manage.py'
  isCorrect: true
- explanation: 'Explanation 4'
+ explanation: 'This answer is correct.'
+
+ - content: 'urls.py'
+ isCorrect: false
+ explanation: 'This answer is not correct as this file contains all of the URLs within the project and acts as a table of contents.'
+
+ - content: 'What was referred to as a table of contents in the Django app.'
+
+ choices:
+ - content: 'URLconf'
+ isCorrect: true
+ explanation: 'This answer is correct.'
+
+ - content: 'runserver'
+ isCorrect: false
+ explanation: 'This answer is not correct as this command starts the development server.'
+
+ - content: 'project'
+ isCorrect: false
+ explanation: 'This answer is not correct as a project contains all of the necessary settings or apps for a specific website.'
