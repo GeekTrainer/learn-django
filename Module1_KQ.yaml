@@ -7,7 +7,7 @@ quiz: 1
  choices:
  - content: 'init.py'
  isCorrect: false
- explanation: 'This answer is not correct as this signals to Python that this directory is a package.'
+ explanation: 'This answer is not correct. This file signals to Python that this directory is a package.'
 
  - content: 'manage.py'
  isCorrect: true
@@ -15,7 +15,7 @@ quiz: 1
 
  - content: 'urls.py'
  isCorrect: false
- explanation: 'This answer is not correct as this file contains all of the URLs within the project and acts as a table of contents.'
+ explanation: 'This answer is not correct. This file contains all of the URLs within the project and acts as a table of contents.'
 
  - content: 'What was referred to as a table of contents in the Django app.'
 
@@ -26,8 +26,8 @@ quiz: 1
 
  - content: 'runserver'
  isCorrect: false
- explanation: 'This answer is not correct as this command starts the development server.'
+ explanation: 'This answer is not correct. This is a command used to start the development server.'
 
  - content: 'project'
  isCorrect: false
- explanation: 'This answer is not correct as a project contains all of the necessary settings or apps for a specific website.'
+ explanation: 'This answer is not correct. The project contains all of the necessary settings or apps for a specific website.'

@@ -32,7 +32,7 @@
     * Running Your First Project
     * Projects vs Apps
 5. Creating Your First App
-    * Creating Hello, world!
+    * Hello, world!
     * Creating a View
     * URL Mapping
     * Understanding the Include Function
