@@ -22,9 +22,9 @@ With this command, Django will automatically create the required folders and fil
            
 ### Creating a View
 
-Now that the app has been created, we can begin to take the necessary steps so it will perform a simple function. The first step in the process is to create a view.  
+Now that the app structure has been created, we can begin to take the necessary steps so it will perform a simple function. The first step in the process is to create a view.  
 
-Go into the __views__.__py__ file contained within the __hello_world__ directory and enter the below information:
+Navigate to the __views__.__py__ file contained within the __hello_world__ directory and enter the below information:
 
     from django.http import HttpResponse
 
@@ -32,7 +32,7 @@ Go into the __views__.__py__ file contained within the __hello_world__ directory
         return HttpResponse("Hello, world!")
 
         
-Creating a view is an essential action, as it handles what views to return when a specific URL is sent as a request. In the next section, we will now map the URL to this view. 
+Creating a view is an essential action as it handles what views to return when a specific URL is sent as a request. In the next section, we will now map the URL to this view. 
 
 ### URL Mapping
 
@@ -47,7 +47,7 @@ To begin this process create another file in the __hello_world__ directory named
         path('', views.index, name='index'),
     ]
 
-The most important part of this code is the __urlpatterns__ tuple, as this is where the views and URLs are connected or mapped. As you can see, we have imported our __views__.__py__ file so we are able to use it within the __urlpatterns__ code. 
+The most important part of this code is the __urlpatterns__ tuple, as this is where the views and URLs are connected or mapped. As you can see, we have imported our __views__.__py__ file so we are able to use it within the __urlpatterns__ line. 
 
 Now that we have created our URLconf for our app, we must now create one in our project root directory.
 
@@ -65,7 +65,7 @@ When opening the file you will notice Django has already populated some of the c
 
 ### Understanding the __Include__ Function
 
-As you continue to learn and have more complex file structures, you will add more views and URLs for your app. This function plays a key role as it allows the app to call other URLconfs.
+As you continue to learn and have more complex file structures, you will add more views and URLs for your app. Through the use of URLconfs this function plays a key role as it gives the freedom to add folders and files within a project without breaking any functionalities.
 
 For example, we currently have the path __/hello_world/__ that directs us to our index view and displays "Hello, world!". Let's say we wanted to add another view to our app so we could display a simple greeting to the user. In order to add another view we would add the following to our __hello_world.views.py__ file.
 
@@ -77,7 +77,7 @@ Next in the __hello_world/url.py__ file add the following:
 
     path('<user_id>', views.user, name='user'),
 
-If we now called this view by entering http://localhost:8000/hello_world/5 in our browser, Django would first look in __myfirstproject.urls__ and search for the urlpatterns. 
+If we now called this view by adding __/hello_world/5__ in our browser, Django would first look in __myfirstproject.urls__ and search for the urlpatterns. 
 
 After finding the first match for __hello_world/__, it would then strip that part from the URL and continue with the remaining string to the __hello_world.urls__ where it would continue looking for a match. After finding the match, it would then diplay the appropriate view. 
 
