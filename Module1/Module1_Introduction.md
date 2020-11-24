@@ -5,7 +5,7 @@ The Python language has quickly become one of the most popular programming langu
 In this module you will learn:
 - Why Django is great for quick deployment of web applications
 - The difference between Django and Flask
-- What types of applicatons are best for Django
+- What types of applications are best for Django
 - How to install Django
 - How to create a simple program in Django
 

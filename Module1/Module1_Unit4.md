@@ -21,14 +21,14 @@ Now that the Django project has been created let's look at the structure to see 
     myfirstproject/
             manage.py
             myfirstproject/
-                    __init__.py
+                    **init**.py
                     settings.py
                     urls.py
                     asgi.py
                     wsgi.py
 
-1. The first or outer __myfirstproject__ in the structure is your root directory which contains the entire project.
-2. Next you have __manage__.__py__. This is a command-line utility that is created in every Django project and actually has the same function as 'django-admin'. Below is an example of how this could be used if you were inside the project folder and wanted to see the available subcommands. 
+1. The first or outer **myfirstproject** in the structure is your root directory which contains the entire project.
+2. Next you have **manage.py**. This is a command-line utility that is created in every Django project and actually has the same function as 'django-admin'. Below is an example of how this could be used if you were inside the project folder and wanted to see the available subcommands. 
         
         django-admin help
 
@@ -36,19 +36,19 @@ Now that the Django project has been created let's look at the structure to see 
 
         python manage.py help
         
-    For more information about these two command-line utilities click [here][6].
+    For more information about the Django CLI, you can consult the [django-admin documentation][6].
 
-3. The inner __myfirstproject__ is considered the Python package for your project.
-4. Next we have __init__.__py__ and if you look at the contents of this file you will notice that it is empty. Don't worry as this should be empty and it functions to tell Python that this directory should be considered a package.
-5. Next in line we have __settings__.__py__. This file contains all of your settings or configurations.
-6. Next is __urls__.__py__. This file contains the urls within the project.
-7. Lastly we have __asgi__.__py__ and __wsgi__.__py__. These last two files serve as the entry point for your web servers depending on what type of server is deployed.
+3. The inner **myfirstproject** is considered the Python package for your project.
+4. Next we have **init.py** and if you look at the contents of this file you will notice that it is empty. Don't worry as this should be empty and it functions to tell Python that this directory should be considered a package.
+5. Next in line we have **settings.py**. This file contains all of your settings or configurations.
+6. Next is **urls.py**. This file contains the urls within the project.
+7. Lastly we have **asgi.py** and **wsgi.py**. These last two files serve as the entry point for your web servers depending on what type of server is deployed.
 
 ### Running Your First Project
 
 Now that Django is installed, a project has been created, and we have examined the project structure it is time to make sure everything works.
 
-Navigate to the __myfirstproject__ root directory and enter the below in the command line.
+Navigate to the **myfirstproject** root directory and enter the below in the command line.
         
     python manage.py runserver
         
