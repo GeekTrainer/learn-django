@@ -4,7 +4,9 @@
 [4]: https://www.djangoproject.com/start/ "Get Started with Django"
 [5]: https://docs.djangoproject.com/en/3.1/intro/install/ "Django Quick Install Guide"
  
- ## Exercise: Installing Django
+## Exercise: Installing Django
+
+<!-- Let's provide the steps for the installation -->
 
 While the Django framework may have a little bit of a learning curve, installing it is pretty simple with the steps below: 
 1. The first step is to visit the Django website at this [link][3].
