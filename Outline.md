@@ -56,12 +56,15 @@
 2. ORM Concepts
     * What is an ORM?
     * An overview of the Django ORM
-3. Django Models
-    * Creating a model
-4. Creating and managing a database
-    * Creating a database with SQLite
-    * Creating the schema
+3. Creating and managing a database
+    * Creating a SQLite database in Django
+    * Displaying the schema
+4. Django Models
+    * Creating a model 
+    * **\_\_str\_\_** method
+    * Activating the model
 5. Creating and querying data
+    * Exploring the Django ORM
     * Creating new objects
     * Retrieving objects
     * Modifying objects
@@ -72,7 +75,7 @@
     * In this module you learned:
       - The elements of an ORM
       - How to Create a SQLite database
-      - How Retrieve, and modify the database
+      - How to Retrieve data, and modify the database
     * In the next module in this Learning Path,
 
 #
