@@ -1,15 +1,16 @@
 [2]: https://docs.djangoproject.com/en/3.1/topics/db/queries/ "Django Queries"
 
-## Creating And Querying Data
-
-### Exploring The Django ORM
 After we created the models for our app Django automatically created an API. This API allows us to easily create, retrieve, update and delete objects in our database. To begin this interaction we first have to call a python shell by entering the below command in the command line.
 
-    python manage.py shell
+```bash
+python manage.py shell
+```
 
 Once the interactive console begins we then need to import the two models that were created for the **Hello, world!** app as below.
 
-    from hello_world.models import Question, Answer 
+```python
+from hello_world.models import Question, Answer
+```
 
 Before moving on to create an object, let's first test a query by asking Django to pull all questions that have been created. Since we have not created any questions a blank QuerySet should appear.
 
@@ -19,11 +20,15 @@ Before moving on to create an object, let's first test a query by asking Django 
 
 Now that we have imported our models into the python shell it is time to create an object. Since we are using **Hello, world!** and created a **Question** model let's first create a question for our database. Add the below line to the python interactive console.
 
-    q = Question(question_text='Is anyone out there?')
+```python
+q = Question(question_text='Is anyone out there?')
+```
 
 After entering the question then save it to the database by entering the command below. If we were working in SQL this would be the same command as **INSERT**.
 
-    q.save()
+```python
+q.save()
+```
 
 ### Retrieving Objects
 
@@ -35,12 +40,15 @@ Now that we have saved a question let's query the database to see if it was save
 
 Once objects are saved to a database there may be instances where you need to edit text or correct a misspelling. For instance, let's say after saving our first question we noticed that 'is' was not capitalized. 
 
-    q = Question(question_text='is anyone out there?')
+```python
+q = Question(question_text='is anyone out there?')
+```
 
 In order to change that error in the database we would use that same variable to fix the text and then save it again to the database.
 
+```python
 q.question_text = 'Is anyone out there?"
-
 q.save()
+```
 
 Through this lesson we covered the basics of communicating with our database, but Django has provided many more functionalities. Explore this information further with Django [database queries][2].
