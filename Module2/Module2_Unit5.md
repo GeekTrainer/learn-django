@@ -15,8 +15,6 @@ Before moving on to create an object, let's first test a query by asking Django 
 
 <img src="..\Module2\Module2_Images\Module2_Blank_Query.PNG" alt="Django Model Migration" style="margin-left: 30px;width:400px; height:auto" />
 
-Through this lesson we will be covering the basics of communicating with our database, but Django has provided many more functionalities. Explore this information further with Django [database queries][2].
-
 ### Creating New Objects
 
 Now that we have imported our models into the python shell it is time to create an object. Since we are using **Hello, world!** and created a **Question** model let's first create a question for our database. Add the below line to the python interactive console.
@@ -42,4 +40,7 @@ Once objects are saved to a database there may be instances where you need to ed
 In order to change that error in the database we would use that same variable to fix the text and then save it again to the database.
 
 q.question_text = 'Is anyone out there?"
+
 q.save()
+
+Through this lesson we covered the basics of communicating with our database, but Django has provided many more functionalities. Explore this information further with Django [database queries][2].

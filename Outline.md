@@ -55,7 +55,7 @@
       - In this module you will learn:
 2. ORM Concepts
     * What is an ORM?
-    * An overview of the Django ORM
+    * Overview of the Django ORM
 3. Creating and managing a database
     * Creating a SQLite database in Django
     * Displaying the schema

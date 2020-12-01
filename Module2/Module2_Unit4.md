@@ -2,7 +2,7 @@
 
 ### Exercise: Creating A Model
 
-Now that we have activated our database it is time to start creating our models. By creating a model we are able to update the database by adding any essential fields and defining the behavior of our data. In this exercise we will continue to use our "Hello, world!" app that was created in the last module and add two models: **Question** and **Choice**.
+Now that we have activated our database it is time to start creating our models. By creating a model we are able to update the database by adding any essential fields and defining the behavior of our data. In this exercise we will continue to use our "Hello, world!" app that was created in the last module and add two models: **Question** and **Answer**.
 
 1. The first step in our process is to add the models. This can be achieved by going to the **hello_world/models.py** file and adding two Python classes to contain our models as shown below.
 
@@ -12,7 +12,7 @@ Now that we have activated our database it is time to start creating our models.
 
         class Answer(models.Model):
             question = models.ForeignKey(Question, on_delete=models.CASCADE)
-            choice_text = models.CharField(max_length=200)
+            answer_text = models.CharField(max_length=200)
 
     By adding these models you are generating a field in the database and defining how that field should behave. For instance, in **question_text** the field will accept characters and have a character limit of 200. 
 
