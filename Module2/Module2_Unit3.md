@@ -1,20 +1,20 @@
 [1]: https://www.sqlite.org/download.html "Link to SQLite webpage"
 
-## Creating And Managing A Database
+## Exercise: Creating A SQLite Database In Django
 
-### Exercise: Creating A SQLite Database In Django
+Now that we have finished creating our first app, it's time to set up the database. For this example we will be using SQLite for the Django database and VSCode will be used to complete all of the required tasks. Also, remember to start up the virtual environment before beginning.
 
-Now that we have finished creating our first app, it's time to set up the database. For this example we will be using SQLite for the Django database and VSCode will be used to complete all of the required tasks. Also, remember to start up the virtual environment before beginning. 
+The first step in our exercise is to navigate to the inner **myfirstproject** folder and go to the **settings.py** file. As you look through the file you will notice Django has provided the start-up code for our database, but before we can go any further we need to first go to a command or terminal window and enter the below command.
 
-The first step in our exercise is to navigate to the inner **myfirstproject** folder and go to the **settings**.**py** file. As you look through the file you will notice Django has provided the start-up code for our database, but before we can go any further we need to first go to the command line and enter the below command.
+```bash
+python manage.py migrate
+```
 
-    python manage.py migrate
+By running this command, Django searches for the **INSTALLED_APPS** setting within the **settings.py** file and creates any necessary tables according to the default settings.
 
-By running this command, Django searches for the **INSTALLED_APPS** setting within the **settings**.**py** file and creates any necessary tables according to the default settings.
+## Displaying The Schema
 
-### Displaying The Schema
-
-Now that Django has completed the necessary setup for our SQLite database, let's uncover the two ways to check out the schema. The first will be through the SQLite command line and the second will be in VSCode. 
+Now that Django has completed the necessary setup for our SQLite database, let's uncover the two ways to check out the schema. The first will be through the SQLite command line and the second will be in VSCode.
 
 [!NOTE] This task assumes SQLite is already installed, but if not then go to the SQLite website to download the [SQLite application][1].
 

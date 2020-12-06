@@ -1,54 +1,57 @@
-## Django Models
-
-### Exercise: Creating A Model
-
 Now that we have activated our database it is time to start creating our models. By creating a model we are able to update the database by adding any essential fields and defining the behavior of our data. In this exercise we will continue to use our "Hello, world!" app that was created in the last module and add two models: **Question** and **Answer**.
 
 1. The first step in our process is to add the models. This can be achieved by going to the **hello_world/models.py** file and adding two Python classes to contain our models as shown below.
 
-        class Question(models.Model):
-            question_text = models.CharField(max_length=200)
+    ```python
+    class Question(models.Model):
+        question_text = models.CharField(max_length=200)
 
 
-        class Answer(models.Model):
-            question = models.ForeignKey(Question, on_delete=models.CASCADE)
-            answer_text = models.CharField(max_length=200)
+    class Answer(models.Model):
+        question = models.ForeignKey(Question, on_delete=models.CASCADE)
+        answer_text = models.CharField(max_length=200)
+    ```
 
-    By adding these models you are generating a field in the database and defining how that field should behave. For instance, in **question_text** the field will accept characters and have a character limit of 200. 
+    By adding these models you are generating a field in the database and defining how that field should behave. For instance, in **question_text** the field will accept characters and have a character limit of 200.
 
     Also take notice of the term **ForeignKey** that was added in the **Answer** class. This keyword tells Django there is a relationship between an **Answer** and a **Question**. By defining this relationship we are telling Django that every answer is related to a single **Question**.
 
-### The **\_\_str__** Method
+### The \_\_str\_\_ method
 
-Now that we have created the **Question** and **Answer** models for our app there is one important addition that needs to be addressed when defining classes.
-Let's start by creating a class named **House** and defining the characteristics of the house by its color and square footage.
+Now that we have created the **Question** and **Answer** models for our app there is one important addition that needs to be addressed when defining classes. Let's start by creating a class named **House** and defining the characteristics of the house by its color and square footage.
 
-    class House:
-        def __init__(self, color, square_footage):
-            self.color = color
-            self.square_footage = square_footage
+```python
+class House:
+    def __init__(self, color, square_footage):
+        self.color = color
+        self.square_footage = square_footage
+```
 
 After creating the class, we now create an instance by entering the color and square footage.
 
-    my_house = House('brown', 4500)
+```python
+my_house = House('brown', 4500)
+```
 
 Now print the information to the console to see what appears.
 
 <img src="..\Module2\Module2_Images\Module2_VSC_NoStr.PNG" alt="SQLite Database Folder" style="width:550px; height:auto" />
 
-When looking at the output of the **my_house** variable it doesn't give us any details. While it does give the class name, it only returns the id or memory address of the object instance. To solve this issue we need to add the **\_\_str__** method to our class.
+When looking at the output of the **my_house** variable it doesn't give us any details. While it does give the class name, it only returns the id or memory address of the object instance. To solve this issue we need to add the `__str__` method to our class.
 
-Now let's take the same code, but add the **\_\_str__** method to our class as below.
-    
-    class House:
-        def __init__(self, color, square_footage):
-            self.color = color
-            self.square_footage = square_footage
+Now let's take the same code, but add the `__str__` method to our class as below.
 
-        def __str__(self):
-            return f'I would like a {self.square_footage} square foot {self.color} house'
+```python
+class House:
+    def __init__(self, color, square_footage):
+        self.color = color
+        self.square_footage = square_footage
 
-Since we have now defined the **\_\_str__** method let's again create an instance by entering the below line of code.
+    def __str__(self):
+        return f'I would like a {self.square_footage} square foot {self.color} house'
+```
+
+Since we have now defined the `__str__` method let's again create an instance by entering the below line of code.
 
     my_house = House('brown', 4500)
 
@@ -56,7 +59,7 @@ Now print again to the console.
 
 <img src="..\Module2\Module2_Images\Module2_VSC_WithStr.PNG" alt="SQLite Database Folder" style="width:350px; height:auto" />
 
-As you can see this now returns the information of the object, and we have even added more detail to make it more helpful. With that said, lets now make our models more informative by adding a **\_\_str__** method.
+As you can see this now returns the information of the object, and we have even added more detail to make it more helpful. With that said, lets now make our models more informative by adding a `__str__` method.
 
     class Question(models.Model):
         question_text = models.CharField(max_length=200)
