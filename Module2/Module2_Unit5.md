@@ -47,7 +47,6 @@ In order to change that error in the database we would use that same variable to
 
 ~~~
 q.question_text = 'Is anyone out there?"
-
 q.save()
 ~~~
 

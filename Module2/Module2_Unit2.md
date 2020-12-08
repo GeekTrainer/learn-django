@@ -4,4 +4,4 @@ An ORM or Object Relational Mapper allows a choice in the programming language t
 
 ## Overview of the Django ORM
 
-Django was created for data driven apps and it's only natural that it would also have an integrated ORM. Django has developed an easy to understand solution for database communication through the use of a free API feature, but before we go any further let's set up the database. 
+Django was created for data driven apps and it's only natural that it would also have an integrated ORM. Django has developed an easy to understand solution for database communication through the use of a free API feature, but before we go any further let's set up the database.

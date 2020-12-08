@@ -1,4 +1,5 @@
 In this module you learned:
+
 - The concepts of an ORM
 - How to create a SQLite database in Django
 - How to create and activate Django models

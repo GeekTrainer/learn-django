@@ -14,7 +14,7 @@ Now that we have activated our database it is time to start creating our models.
         answer_text = models.CharField(max_length=200)
     ~~~
 
-    By adding these models you are generating a field in the database and defining how that field should behave. For instance, in **question_text** the field will accept characters and have a character limit of 200. 
+    By adding these models you are generating a field in the database and defining how that field should behave. For instance, in **question_text** the field will accept characters and have a character limit of 200.
 
     Also take notice of the term **ForeignKey** that was added in the **Answer** class. This keyword tells Django there is a relationship between an **Answer** and a **Question**. By defining this relationship we are telling Django that every answer is related to a single **Question**.
 
