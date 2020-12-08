@@ -25,11 +25,15 @@
     * Background
     * Application types
     * Django vs Flask
-3. Installation
+3. Installing Django
+    * Installation overview
+    * Creating a virtual environment
+    * Activating a virtual environment within VSCode
+    * Django Installation
 4. Hello, Django
     * Create a project with Django-admin
     * Navigating the project structure
-    * Running Your First Project
+    * Deploying Your First Project
     * Projects vs Apps
 5. Creating Your First App
     * Hello, world!
@@ -61,7 +65,7 @@
     * Displaying the schema
 4. Django Models
     * Creating a model 
-    * **\_\_str\_\_** method
+    * \_\_str__ method
     * Activating the model
 5. Creating and querying data
     * Exploring the Django ORM
@@ -86,9 +90,12 @@
       - In this module you will learn:
 2. Django admin site overview
 3. Enabling the admin site
-4. Creating super users
-5. Accessing data
-6. Overriding __str__
+4. Creating a superuser
+5. Logging Into The Admin Site
+6. Exploring the Django Admin Site
+    * Adding models
+    * Accessing our data
+    * Setting user permissions
 7. Knowledge Check
      * Check your knowledge
       - Questions

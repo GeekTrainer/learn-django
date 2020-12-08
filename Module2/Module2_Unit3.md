@@ -1,8 +1,6 @@
 [1]: https://www.sqlite.org/download.html "Link to SQLite webpage"
 
-## Creating And Managing A Database
-
-### Exercise: Creating A SQLite Database In Django
+## Exercise: Creating a SQLite database in Django
 
 Now that we have finished creating our first app, it's time to set up the database. For this example we will be using SQLite for the Django database and VSCode will be used to complete all of the required tasks. Also, remember to start up the virtual environment before beginning. 
 
@@ -12,7 +10,7 @@ The first step in our exercise is to navigate to the inner **myfirstproject** fo
 
 By running this command, Django searches for the **INSTALLED_APPS** setting within the **settings**.**py** file and creates any necessary tables according to the default settings.
 
-### Displaying The Schema
+## Exercise: Displaying the schema
 
 Now that Django has completed the necessary setup for our SQLite database, let's uncover the two ways to check out the schema. The first will be through the SQLite command line and the second will be in VSCode. 
 

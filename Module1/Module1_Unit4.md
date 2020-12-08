@@ -1,8 +1,6 @@
 [6]: https://docs.djangoproject.com/en/3.1/ref/django-admin/ "Command-line Utility"
 
-## Hello, Django
-
-### Exercise: Create a project with Django-admin
+## Exercise: Create a project with Django-admin
 
 Now that Django is installed we are ready to begin the process of creating a project, but before we actually start coding there are a couple of things we have to do to create a Django project. While there are a couple of options for completing the following tasks for our purposes we will be using Visual Studio Code.
         
@@ -10,18 +8,18 @@ First, go to the command line and navigate to the directory that you would like 
 
 [!Note] If you decided to create a virtual environment for your Django framework, then make sure you are running this command from your activated virtual environment. 
 
-    $ django-admin startproject myfirstproject
+    django-admin startproject myfirstproject
 
 After running the above command the new project should now be in your chosen directory. In this instance you would see a new folder called 'myfirstproject'.
 
-### Navigating the Project structure
+## Navigating the project structure
 
 Now that the Django project has been created let's look at the structure to see what was included.
 
     myfirstproject/
             manage.py
             myfirstproject/
-                    **init**.py
+                    __init__.py
                     settings.py
                     urls.py
                     asgi.py
@@ -44,7 +42,7 @@ Now that the Django project has been created let's look at the structure to see 
 6. Next is **urls.py**. This file contains the urls within the project.
 7. Lastly we have **asgi.py** and **wsgi.py**. These last two files serve as the entry point for your web servers depending on what type of server is deployed.
 
-### Running Your First Project
+## Exercise: Deploying your first project
 
 Now that Django is installed, a project has been created, and we have examined the project structure it is time to make sure everything works.
 
@@ -54,7 +52,7 @@ Navigate to the **myfirstproject** root directory and enter the below in the com
         
 If the project runs correctly it will start to perform system checks, and start your development server. Copy and paste the url of your development server in your preferred browser, and you should see a Django 'Congratulations' page with a rocket taking off.
 
-### Projects vs Apps
+## Projects vs apps
 
 Now that the first Django project has been created, we will continue on to create our first app but let's first define the difference between a project and an app. 
 - App - provides the instructions of how a web application should function such as our "Hello, world!" app.

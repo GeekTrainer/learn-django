@@ -1,6 +1,4 @@
-## Summary
-
-### In this module you learned:
+In this module you learned:
 - How to install Django
 - Why Django is great for rapid deployments
 - The difference between Django and Flask

@@ -1,8 +1,6 @@
-## What is Django?
-
 Django (pronounced "jango") is a free and open source framework that was first released in 2005 and was named after a famous jazz guitarist Django Reinhardt. Over the years many Python frameworks have been developed, but Django has become one of the most popular because of its flexibility and security. It is suitable for both frontend and backend web development and the integrated Python libraries make it easy for rapid development. Django has become widely accepted across industries and because of its growing popularity, providers are more readily available to support Django applications on their platforms.
 
-### Application types
+## Application types
 
 Django offers a complete framework solution, which means it provides everything you need to quickly deploy your projects. Because Django offers great out of the box security, a vast community of users, and can scale on demand, this has become a framework of choice by most developers.  By using Django you have the ability to develop complex and database driven web applications that can include:
 
@@ -11,7 +9,7 @@ Django offers a complete framework solution, which means it provides everything 
 - Data analysis
 - Content Management
 
-### Django vs Flask
+## Django vs Flask
 
 While both of these frameworks could suit your needs for your next Python application, there are specific functionalities and levels of support that each provide. Let's quickly go through the differences.
 
