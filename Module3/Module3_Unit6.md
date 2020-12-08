@@ -47,7 +47,7 @@ By clicking on the question we have accessed a feature that allows us to make ch
 
 Now that we have logged into our admin site and added the app models, let's create another user so we can add permissions.
 
-First go to **Users** and click **Add**.
+To add the first user go to **Users** and click **Add**.
 
 ![]("../Module3/Module3_Images/Module3_DjangoAdminAddUsers.PNG")
 

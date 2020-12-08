@@ -25,10 +25,10 @@ Now that the app structure has been created, we can begin to take the necessary 
 Navigate to the **views**.**py** file contained within the **hello_world** directory and enter the below information:
 
 ~~~
-    from django.http import HttpResponse
+from django.http import HttpResponse
 
-    def index(request):
-        return HttpResponse("Hello, world!")
+def index(request):
+    return HttpResponse("Hello, world!")
 ~~~
         
 Creating a view is an essential action as it handles what views to return when a specific URL is sent as a request. In the next section, we will now map the URL to this view. 
@@ -91,7 +91,7 @@ After finding the first match for **hello_world/**, it would then strip that par
 This function allows a simple way to manage and organize URLs within the application and provides greater freedom to change path roots without breaking the app.
 
     
-## Running Your first app
+## Deploying your first app
 
 Now that the structure is complete, views have been added, and the URLs mapped it is time to run your app. Make sure the server is connected and running, and enter the below link into your browser.
 

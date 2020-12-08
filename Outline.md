@@ -40,7 +40,7 @@
     * Creating a View
     * URL Mapping
     * Understanding the Include Function
-    * Running Your First App
+    * Deploying Your First App
 6. Knowledge Check
     * Check your knowledge
       - Questions
