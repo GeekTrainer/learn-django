@@ -41,7 +41,7 @@ Now print the information to the console to see what appears.
 print(my_question)
 ~~~
 
-<img src="..\Module2\Module2_Images\Module2_NoStr.PNG" alt="SQLite Database Folder" style="width:550px; height:auto" />
+ ![](../Module2/Module2_Images/Module2_NoStr.PNG)
 
 When looking at the output of the **my_question** variable it doesn't give us any details. While it does give the class name, it only returns the id or memory address of the object. To solve this issue we need to add the \_\_str__ method to our class.
 
@@ -68,7 +68,7 @@ Now print again to the console.
 print(my_question)
 ~~~
 
-<img src="..\Module2\Module2_Images\Module2_WithStr.PNG" alt="SQLite Database Folder" style="width:350px; height:auto" />
+![](../Module2/Module2_Images/Module2_WithStr.PNG)
 
 As you can see this now returns the question that was asked, and we have even added more detail to make it more helpful. With that said, lets now make our models more informative by adding a \_\_str__ method.
 
@@ -122,7 +122,7 @@ Next, we need to tell Django that new models are added and we would like for the
 
 After running the command then you should see something similar to below stating it has stored both models as a migration.
 
-<img src="..\Module2\Module2_Images\Module2_Migrations.PNG" alt="Django Model Migration" style="margin-left: 30px;width:250px; height:auto" />
+![](../Module2/Module2_Images/Module2_Migrations.PNG)
 
 The final step to actually make the changes to our database is to run the migrate command as below.
 
@@ -130,6 +130,7 @@ The final step to actually make the changes to our database is to run the migrat
 
 Once this command has completed then you should be able to see the new additions in the schema of the database. 
 
-<img src="..\Module2\Module2_Images\Module2_VSC_SQLiteDBAddModels.PNG" alt="Django Model Migration" style="margin-left: 30px;width:200px; height:auto" />
+![](../Module2/Module2_Images/Module2_VSC_SQLiteDBAddModels.PNG)
+
 
 [!NOTE] If you don't remember how to display the schema refer to the previous unit **Displaying The Schema**.

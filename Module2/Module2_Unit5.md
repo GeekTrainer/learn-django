@@ -13,7 +13,7 @@ from hello_world.models import Question, Answer
 
 Before moving on to create an object, let's first test a query by asking Django to pull all questions that have been created. Since we have not created any questions a blank QuerySet should appear.
 
-<img src="..\Module2\Module2_Images\Module2_Blank_Query.PNG" alt="Django Model Migration" style="margin-left: 30px;width:400px; height:auto" />
+![](../Module2/Module2_Images/Module2_Blank_Query.PNG)
 
 ## Creating new objects
 
@@ -33,7 +33,7 @@ q.save()
 
 Now that we have saved a question let's query the database to see if it was saved. When we queried the database earlier we asked for it to return all questions. Since we had not saved any questions it had returned a blank query. We will now perform the same query, but this time it should print out the question that was just saved.
 
-<img src="..\Module2\Module2_Images\Module2_ReturnQuestion.PNG" alt="Django Model Migration" style="margin-left: 30px;width:400px; height:auto" />
+![](../Module2/Module2_Images/Module2_ReturnQuestion.PNG)
 
 ## Modifying objects
 
