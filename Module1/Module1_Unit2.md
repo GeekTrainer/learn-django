@@ -1,24 +1,18 @@
-Django (pronounced "jango") is a free and open source framework that was first released in 2005 and was named after a famous jazz guitarist Django Reinhardt. Over the years many Python frameworks have been developed, but Django has become one of the most popular because of its flexibility and security. It is suitable for both frontend and backend web development and the integrated Python libraries make it easy for rapid development. Django has become widely accepted across industries and because of its growing popularity, providers are more readily available to support Django applications on their platforms.
+[1]: https://git-scm.com/downloads "Git website downloads"
+[2]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository "Clone GutHub repository"
 
-## Application types
+For this module in the learning path we will be going through the steps to install the Django framework, creating a Django project, and then finish by creating a **"Hello, world!"** app. We have provided both the starting files, and the solution files for the app in GitHub. You have the option to either go through all of the steps to create the app file structure, or clone the starting file structure from GitHub. If you decide to clone the app file structure from the GitHub repository then follow the below steps after reaching **unit 6 - Creating Your First App**. 
 
-Django offers a complete framework solution, which means it provides everything you need to quickly deploy your projects. Because Django offers great out of the box security, a vast community of users, and can scale on demand, this has become a framework of choice by most developers.  By using Django you have the ability to develop complex and database driven web applications that can include:
+## Installing Git
 
-- Machine learning
-- E-commerce platforms
-- Data analysis
-- Content Management
+Now that our Django project is complete we need to retrieve the starter app for this module by cloning the GitHub repository. In order to clone the repository Git needs to be installed on your computer. If Git isn’t installed on your computer then go to the [Git website][1] to install the latest version. 
 
-## Django vs Flask
+## Cloning the GitHub repository
 
-While both of these frameworks could suit your needs for your next Python application, there are specific functionalities and levels of support that each provide. Let's quickly go through the differences.
+Now that Git has been installed we can use it to [clone][2] the GitHub repository. To begin open a command prompt and navigate to the previously created directory **myfirstproject**. Once in the directory start the cloning process by entering the following in the command prompt.
 
-Django | Flask
--------|-------
-Full-stack framework | Lightweight web framework
-Ideal for data driven applications | Ideal for existing APIs and services
-Potentially more of a learning curve | Potentially less of a learning curve
-Out of the box security | Additional libraries needed for security
-Custom HTML templating engine | Jinja HTML templating engine
-
-As you can see Django and Flask each offer great benefits for your projects. When choosing the right framework, spending a little time to think about not only the type and complexity of the application but also the end product will save you time and frustration in the end.
+```bash
+# [TODO] Needs final github link
+git clone https://github.com/????
+```
+Once this has completed you should now see the **hello_world** app within the directory.

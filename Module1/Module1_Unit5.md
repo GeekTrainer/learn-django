@@ -1,100 +1,64 @@
-## Exercise: Hello, world!
+[6]: https://docs.djangoproject.com/en/3.1/ref/django-admin/ "Command-line Utility"
 
-In order to create the app, we first start by navigating to the project root folder **myfirstproject** and input the following on the command line.
+## Create a project with Django-admin
+
+Now that Django is installed we are ready to begin the process of creating a project, but before we actually start coding there is one thing left to do in order to create a Django project. Navigate to the folder in which the virtual environment is located, and type the following in the command prompt.
+
+[!NOTE] Remember to type this command in the activated virtual environment command prompt.
+
+```bash
+django-admin startproject myfirstproject
+```
+After running the above command the new project should now be in your chosen directory. In this instance you would see a new folder called 'myfirstproject'.
+
+## Navigating the project structure
+
+Now that the Django project has been created let's look at the structure to see what was included.
+
+    myfirstproject/
+            manage.py
+            myfirstproject/
+                    __init__.py
+                    settings.py
+                    urls.py
+                    asgi.py
+                    wsgi.py
+
+1. The first or outer **myfirstproject** in the structure is your root directory which contains the entire project.
+2. Next you have **manage.py**. This is a command-line utility that is created in every Django project and actually has the same function as 'django-admin'. Below is an example of how this could be used if you were inside the project folder and wanted to see the available subcommands. 
+
+    ```bash   
+    django-admin help
+    ```
+    OR
+    ```bash
+    python manage.py help
+    ``` 
+    For more information about the Django CLI, you can consult the [django-admin documentation][6].
+
+3. The inner **myfirstproject** is considered the Python package for your project.
+4. Next we have **init.py** and if you look at the contents of this file you will notice that it is empty. Don't worry as this should be empty as it functions to tell Python that this directory should be considered a package.
+5. Next in line we have **settings.py**. This file contains all of your settings or configurations.
+6. Next is **urls.py**. This file contains the urls within the project.
+7. Lastly we have **asgi.py** and **wsgi.py**. These last two files serve as the entry point for your web servers depending on what type of server is deployed.
+
+## Deploying your first project
+
+Now that Django is installed, a project has been created, and we have examined the project structure it is time to make sure our project is working correctly.
+
+Navigate to the **myfirstproject** root directory and enter the following.
+
+```bash      
+python manage.py runserver
+```
+
+If the project runs correctly it will start to perform system checks, and start your development server. Copy and paste the url of your development server in your preferred browser, and you should see a Django 'Congratulations' page with a rocket taking off.
+
+## Projects vs apps
+
+Now that the first Django project has been created, we will continue on to create our first app but let's first define the difference between a project and an app. 
+- App - provides the instructions of how a web application should function such as our "Hello, world!" app that we will be creating next.
+
+- Project - contains all of the necessary settings or apps for a specific website.
         
-    python manage.py startapp hello_world
-           
-With this command, Django will automatically create the required folders and files and the following structure should now be visible.
-
-          
-    hello_world/
-        __init__.py
-        admin.py
-        apps.py
-        migrations/
-            __init__.py
-        models.py
-        tests.py
-        views.py
-        
-           
-## Creating a view
-
-Now that the app structure has been created, we can begin to take the necessary steps so it will perform a simple function. The first step in the process is to create a view.  
-
-Navigate to the **views**.**py** file contained within the **hello_world** directory and enter the below information:
-
-~~~
-from django.http import HttpResponse
-
-def index(request):
-    return HttpResponse("Hello, world!")
-~~~
-        
-Creating a view is an essential action as it handles what views to return when a specific URL is sent as a request. In the next section, we will now map the URL to this view. 
-
-## URL mapping
-
-Now that a view has been created, the next step is to map it to the appropriate URL. In Django this is called a URLconf and it serves as a table of contents for your app.
-        
-To begin this process create another file in the **hello_world** directory named **urls**.**py** and enter the below code.
-
-~~~
-from django.urls import path
-from . import views
-
-urlpatterns = [
-    path('', views.index, name='index'),
-]
-~~~
-
-The most important part of this code is the **urlpatterns** tuple, as this is where the views and URLs are connected or mapped. As you can see, we have imported our **views**.**py** file so we are able to use it within the **urlpatterns** line. 
-
-Now that we have created our URLconf for our app, we must now create one in our project root directory.
-
-Click the second **myfirstproject** folder in your project and open the **urls**.**py** file to enter the below code.
-
-~~~
-from django.contrib import admin
-from django.urls import include, path
-
-urlpatterns = [
-    path('hello_world/', include('hello_world.urls')),
-    path('admin/', admin.site.urls),
-]
-~~~
-
-When opening the file you will notice Django has already populated some of the code, and our task will be to add our new app path to the existing code. In addition to adding the new path, you will also need to import another function named **include** from **django.urls**. 
-
-## Understanding the **include** function
-
-As you continue to learn and have more complex file structures, you will add more views and URLs for your app. Through the use of URLconfs this function plays a key role as it gives the freedom to add folders and files within a project without breaking any functionalities.
-
-For example, we currently have the path **/hello_world/** that directs us to our index view and displays "Hello, world!". Let's say we wanted to add another view to our app so we could display a simple greeting to the user. In order to add another view we would add the following to our **hello_world/views.py** file.
-
-~~~
-def user(request, user_id)
-    response = "Hello user # %s."
-    return HttpResponse(response % user_id)
-~~~
-
-Next in the **hello_world/url.py** file add the following:
-
-~~~
-    path('<user_id>', views.user, name='user'),
-~~~
-
-If we now called this view by adding **/hello_world/5** in our browser, Django would first look in **myfirstproject.urls** and search for the urlpatterns. 
-
-After finding the first match for **hello_world/**, it would then strip that part from the URL and continue with the remaining string to the **hello_world/urls.py** file where it would continue looking for a match. After finding the match, it would then diplay the appropriate view. 
-
-This function allows a simple way to manage and organize URLs within the application and provides greater freedom to change path roots without breaking the app.
-
-    
-## Deploying your first app
-
-Now that the structure is complete, views have been added, and the URLs mapped it is time to run your app. Make sure the server is connected and running, and enter the below link into your browser.
-
-    http://localhost:8000/hello_world/
-
-If the app is functioning properly then you should see "Hello, world!" at the top left hand of the screen.
+Now that we know the difference between a project and an app let's move to our next task of creating an app!

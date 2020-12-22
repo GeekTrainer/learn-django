@@ -1,62 +1,71 @@
-[6]: https://docs.djangoproject.com/en/3.1/ref/django-admin/ "Command-line Utility"
+[1]: https://docs.djangoproject.com/en/3.1/topics/install/ "Django Installation Guide"
+[2]: https://www.python.org/  "Install Python"
+[3]: https://www.djangoproject.com/ "Django Website"
+[4]: https://www.djangoproject.com/start/ "Get Started with Django"
+[5]: https://docs.djangoproject.com/en/3.1/intro/install/ "Django Quick Install Guide"
+[6]: https://docs.djangoproject.com/en/3.1/faq/install/#faq-python-version-support "Django Python Version"
 
-## Exercise: Create a project with Django-admin
+While the Django framework may have a little bit of a learning curve, they have provided everything you need to get started on their [website][3]. When browsing you will see the choice to either go through the [tutorials and documentation][4], or just downloading the framework with their [quick install guide][5].
 
-Now that Django is installed we are ready to begin the process of creating a project, but before we actually start coding there are a couple of things we have to do to create a Django project. While there are a couple of options for completing the following tasks for our purposes we will be using Visual Studio Code.
-        
-First, go to the command line and navigate to the directory that you would like to store your Django project. Once you are in the correct directory then run the following command to create your new project.
+## Installation overview
 
-[!Note] If you decided to create a virtual environment for your Django framework, then make sure you are running this command from your activated virtual environment. 
+Before installing Django we first need to make sure the correct Python version is installed for the framework. In order to check your installed version navigate to your command prompt and type the following.
 
-    django-admin startproject myfirstproject
+```bash
+# Windows or Linux
+python --version 
 
-After running the above command the new project should now be in your chosen directory. In this instance you would see a new folder called 'myfirstproject'.
+# macOS
+python -V 
+```
+By executing this command it will display what Python version is installed on your computer. For this module we are using the latest official version of Django and they recommend using Python 3 in order to have access to the latest Python features. If you do not have Python installed then proceed to the [Python website][2] to download the correct version.
 
-## Navigating the project structure
+## Creating a virtual environment
 
-Now that the Django project has been created let's look at the structure to see what was included.
+Before downloading Django it is a good idea to create a virtual environment in order to isolate it from other applications. If a virtual environment is not created and the framework is installed globally it could cause a conflict with other Python applications causing them to fail. 
 
-    myfirstproject/
-            manage.py
-            myfirstproject/
-                    __init__.py
-                    settings.py
-                    urls.py
-                    asgi.py
-                    wsgi.py
+Start by creating a folder that will contain the new project as this will also hold the folder for the virtual environment. In order to create the folder go to the command prompt, navigate to the desired directory and run the below command. For this example we will be creating a folder called **mydjangoproject**. 
 
-1. The first or outer **myfirstproject** in the structure is your root directory which contains the entire project.
-2. Next you have **manage.py**. This is a command-line utility that is created in every Django project and actually has the same function as 'django-admin'. Below is an example of how this could be used if you were inside the project folder and wanted to see the available subcommands. 
-        
-        django-admin help
+```python
+# Windows
+md mydjangoproject
+# Command to change directory
+cd mydjangoproject
 
-        OR
+# macOS or Linux
+mkdir mydjangoproject
+# Command to change directory
+cd mydjangoproject
+```
+After the folder is created then change the directory and enter the below code in the command line.
 
-        python manage.py help
-        
-    For more information about the Django CLI, you can consult the [django-admin documentation][6].
+```bash
+# Windows
+py -3 -m venv venv
 
-3. The inner **myfirstproject** is considered the Python package for your project.
-4. Next we have **init.py** and if you look at the contents of this file you will notice that it is empty. Don't worry as this should be empty and it functions to tell Python that this directory should be considered a package.
-5. Next in line we have **settings.py**. This file contains all of your settings or configurations.
-6. Next is **urls.py**. This file contains the urls within the project.
-7. Lastly we have **asgi.py** and **wsgi.py**. These last two files serve as the entry point for your web servers depending on what type of server is deployed.
+# macOS or Linux
+python3 -m venv venv
+```
+After executing the command there should now be a new virtual environment named **venv** contained within the directory. 
 
-## Exercise: Deploying your first project
+## Activating a virtual environment
 
-Now that Django is installed, a project has been created, and we have examined the project structure it is time to make sure everything works.
+Now that the virtual environment has been created we have to activate it before installing Django. Using the command prompt go to the directory where the virtual environment folder is located and type the below command.
 
-Navigate to the **myfirstproject** root directory and enter the below in the command line.
-        
-    python manage.py runserver
-        
-If the project runs correctly it will start to perform system checks, and start your development server. Copy and paste the url of your development server in your preferred browser, and you should see a Django 'Congratulations' page with a rocket taking off.
+```bash
+venv\Scripts\activate
+```
+By executing this command the virtual environment will start, and the command prompt should now look similiar to below.
 
-## Projects vs apps
+![Activated venv](../Module2/Module2_Images/venvcommandprompt.PNG)
 
-Now that the first Django project has been created, we will continue on to create our first app but let's first define the difference between a project and an app. 
-- App - provides the instructions of how a web application should function such as our "Hello, world!" app.
+The name of the virtual environment will be in parentheses followed by the path that you are in currently. This command prompt is where you will begin installing the Django framework.
 
-- Project - contains all of the necessary settings or apps for a specific website.
-        
-Now that we know the difference between a project and an app let's move to our next task of creating an app!
+## Django installation
+
+Now that the virtual environment has been activated it is time to download Django. Using the same command line type the below command.
+
+```bash
+pip install Django
+```
+With this command the Django framework will begin to download, and once completed we can start developing our app!
