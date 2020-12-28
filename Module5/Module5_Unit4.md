@@ -1,6 +1,8 @@
+When creating HTML forms developers can not only spend hours creating different data fields, but also designing the layout for the best user experience. Django speeds up that process by automatically creating HTML forms, preparing the data for rendering, and processing the submitted forms. Before we start looking at the Django forms let's first look at an HTML form.
+
 ## HTML forms
 
-Before we start looking at the Django forms let's first look at an HTML form. We start by creating a template with the required HTML so we are able to insert the form element **\<form>...\</form>** within the **\<body>**. By inserting this **form** element we are then able to start defining the required fields.
+We start by creating a template with the required HTML so we are able to insert the form element **\<form>...\</form>** within the **\<body>**. By inserting this **form** element we are then able to start defining the required fields.
 
 ```html
 <!DOCTYPE html>
@@ -30,9 +32,7 @@ As you can see this form has declared the type of request as a **POST** in order
 
 ## Understanding Django forms
 
-Now that we have covered HTML forms let discuss how Django contributes to the process of creating and processing forms. When creating HTML forms developers can not only spend hours creating different data fields, but also designing the layout for the best user experience. Django speeds up that process by automatically creating HTML forms, preparing the data for rendering and processing the submitted forms.
-
-The first thing that Django developed was a **forms** class. This class controls the form and dictates not only the behavior, but how it appears to the user. Since we have already designed our form in HTML let's convert it over to a Django form. The first thing we need to do is create a **forms.py** file in our app to contain the below code.
+Now that we have covered HTML forms let discuss how Django contributes to the process of creating and processing forms. The first thing that Django developed was a **forms** class. This class controls the form and dictates not only the behavior, but how it appears to the user. Since we have already designed our form in HTML let's convert it over to a Django form. The first thing we need to do is create a **forms.py** file in our app to contain the below code.
 
 ```python
 # [TODO] Create class for forms
@@ -44,5 +44,3 @@ class ClientForm(forms.Form):
     contact_number = forms.CharField(label='Contact Number:', max_length=100)
 ```
 For this form we have created the **ClientForm** class to hold the form elements, and also define the fields. One thing to notice is that we are not creating the **\<form>...\</form>** tags, or the **"Submit"** button that is required for the HTML template. When inserting this form those elements will have to be added to the template in order to work correctly.
-
-## CSRF Tokens

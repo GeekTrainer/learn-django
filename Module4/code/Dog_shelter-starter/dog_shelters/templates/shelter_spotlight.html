@@ -1,0 +1,23 @@
+<!-- TODO - Create the shelter_spotlight.html template -->
+
+{% extends "index.html" %}
+
+{% block title %}Shelter Spotlight{% endblock %}
+
+{% block content %}
+
+    {% for entry in get_dogs %}
+        <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
+            {% for shelter in get_shelters %}
+                {% if shelter.id == entry.shelter_id %}
+                    Location: {{ shelter.shelter_name }} in {{ shelter.shelter_location }}
+                {% endif %}
+            {% endfor %}
+            <h2>{{ entry.dog_name }}</h2>
+            <img src="{{ entry.dog_image.url }}" alt="" width="500" height="600">
+            <h4>{{ entry.dog_breed }}</h4>
+            <h4>{{ entry.dog_description }}</h4>
+        </div>
+    {% endfor %}
+    
+{% endblock %}

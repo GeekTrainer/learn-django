@@ -173,8 +173,8 @@
     - Using the **block.super** variable
 6. Creating Template Views
     - Generic Views
-      * Creating list pages using generic views
-      * Creating detail pages using generic views
+      * Creating a list view
+      * Creating a detail view
 7. Knowledge Check
     * Check your knowledge
       - Questions
@@ -212,10 +212,9 @@
 4. Working with Django forms
       - HTML forms
       - Understanding Django forms
-      - CSRF Tokens
 5. Form Views
       - Generic views 
-      - Creating objects for Create, Edit and Delete
+      - Creating objects for Create, Update and Delete
 6. Using Crispy forms for better display
       - Using Bootstrap3 with Crispy
 7. Knowledge Check
