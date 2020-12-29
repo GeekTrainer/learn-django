@@ -1,7 +1,7 @@
 [1]: https://www.sqlite.org/download.html "Link to SQLite webpage"
 [2]: https://docs.djangoproject.com/en/3.1/topics/db/queries/ "Django Queries"
 
-If you are following the modules of this learning path in order then the below tasks have alrady been completed. If not, then follow the steps below to activate the app starter files that were cloned from GitHub, and create the SQLite database.
+If you are following the modules of this learning path in order then the below tasks have alrady been completed. If not, you have the option to use the SQLite database provided in the project starter files or following the below steps to create your own. Also don't forget the other steps in checking out the database schema if you don't have SQLite installed and adding data using Django ORM.
 
 ## Create the SQLite database
 
@@ -35,57 +35,10 @@ Now that we completed the necessary setup for our SQLite database, let's uncover
 
     ![SQLite Explorer](../Module2/Module2_Images/Module2_VSC_SQLiteDBOpen.PNG)
 
-## Activate the model
-
-Next we need to add our app models to the project by finding the configuration class name within the **dog_shelters** app. To find this class name go to the **dog_shelters/apps**.**py** file to find the below code and to see that the class name is **DogSheltersConfig**.
-
-```python
-class DogSheltersConfig(AppConfig):
-    name = 'dog_shelters'
-```
-
-Now that you have the class name, return to the inner **mydjangoproject** folder and **settings**.**py** file to add the app config line to the list of **INSTALLED_APPS** as below.
-
-```python
-INSTALLED_APPS = [
-    'dog_shelters.apps.DogSheltersConfig',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-]
-```
-
-By adding this line to the list of **INSTALLED_APPS** it tells Django that this app needs to be included when running the project.
-
-Next, we need to tell Django that new models have been added and we would like for the changes to be stored as a migration. In order to do this run the below code in the command line.
-
-```bash
-python manage.py makemigrations dog_shelters
-```
-
-After running the command then you should see something similar to below stating it has stored both models as a migration.
-
-![Database Migration](../Module2/Module2_Images/Module2_ModelMigration.PNG)
-
-Now in order to make our changes permenant to the database the final step is to run the migrate command in the command line.
-
-```bash
-python manage.py migrate
-```
-
-This command will apply all of our migrations and once complete you should be able to see the new additions in the schema of the database. 
-
-![New Database Models](../Module2/Module2_Images/Module2_AddModels.PNG)
-
-
-[!NOTE] If you don't remember how to display the schema refer to the previous unit **Displaying The Schema**.
 
 ## Add data using Django ORM
 
-After we created the models for our app Django automatically created an API. This API allows us to easily create, retrieve, update and delete objects in our database. To begin this interaction we first have to call a python shell by entering the below command in the command line.
+After creating models for an app Django automatically creates an API. This API allows us to easily create, retrieve, update and delete objects in our database. To begin this interaction we first have to call a python shell by entering the below command in the command line.
 
 ```bash
 python manage.py shell

@@ -26,7 +26,7 @@ With this command, Django will automatically create the required folders and fil
 
 Now that the app structure has been created, we can begin to take the necessary steps so it will perform a simple function. The first step in the process is to create a view.  
 
-Navigate to the **views**.**py** file contained within the **hello_world** directory and enter the below information:
+Navigate to the **views**.**py** file contained within the **hello_world** directory and add the below code under the comment that reads `# [TODO]: Add code below to create view`.
 
 ```python
 # [TODO]: Add code below to create view
@@ -42,7 +42,7 @@ Creating a view is an essential action as it handles what views to return when a
 
 Now that a view has been created, the next step is to map it to the appropriate URL. In Django this is called a URLconf and it serves as a table of contents for your app.
         
-To begin this process create another file in the **hello_world** directory named **urls**.**py** and enter the below code.
+To begin this process create another file in the **hello_world** directory named **urls**.**py** and add the below code under the comment that reads `# [TODO]: Add the code below in the newly created file urls.py`.
 
 ```python
 # [TODO]: Add the code below in the newly created file urls.py
@@ -58,15 +58,14 @@ The most important part of this code is the **urlpatterns** tuple, as this is wh
 
 Now that we have created our URLconf for our app, we must now create one in our project root directory.
 
-Click the second **myfirstproject** folder in your project and open the **urls**.**py** file to enter the below code.
+Click the second **myfirstproject** folder in your project and open the **urls**.**py** file to enter the code under the comments `# [TODO]: Add the include function to the list of imports from django.urls` and `# [TODO]: Add the code to create the URLconf for the project`.
 
 ```python
-from django.contrib import admin
 # [TODO]: Add the include function to the list of imports from django.urls
 from django.urls import include, path
 
 urlpatterns = [
-    # [TODO]: Add the below line to create the URLconf for the project
+    # [TODO]: Add the code to create the URLconf for the app
     path('hello_world/', include('hello_world.urls')),
     path('admin/', admin.site.urls),
 ]

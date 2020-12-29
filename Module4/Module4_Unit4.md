@@ -10,7 +10,9 @@ Variables are placed within a template so the engine is able to evaluate and pla
 
 In this example of a variable the template engine would look for the **dog** object and replace it with the **breed** as below.
 
-    Great Dane
+```Output
+Great Dane
+```
 
 ## Filters
 
@@ -22,7 +24,7 @@ For example, let's say we have to print out the names of the dog breeds and we w
 {{ dog.breed|capfirst}}
 ```
 
-When creating filters the variable is to the left of the pipe symbol **|** and the filter is on the right.
+When creating filters the variable is to the left of the pipe symbol `|` and the filter is on the right.
 
 ## Tags
 
@@ -37,9 +39,9 @@ For instance if we wanted to print out a list of dog breeds that were in each sh
     {% endfor %}
 <ul>
 ```
-In this code we are using a **for** statement tag to loop through the **shelter_list** and print out all of the dog breeds, and then we close the tag by using **endfor**.
+In this code we are using a `for` statement tag to loop through the **shelter_list** and print out all of the dog breeds, and then we close the tag by using `endfor`.
 
-We can even go a little further and use if, elif, and else if needed. For example say we wanted to count how many dogs are waiting for adoption or have have been adopted for the month of Dec. We first begin by providing a little more detail about this section of code by using the commenting **{# #}** tags, and then continue with the statements.
+We can even go a little further and use if, elif, and else if needed. For example say we wanted to count how many dogs are waiting for adoption or have have been adopted for the month of Dec. We first begin by providing a little more detail about this section of code by using the commenting `{# #}` tags, and then continue with the statements.
 
 ```html
 {# Counts number of dogs waiting for adoption or adopted for December #}
@@ -54,4 +56,4 @@ We can even go a little further and use if, elif, and else if needed. For exampl
 
 {% endif %}
 ```
-By running this code if a **shelter_list** exists it returns the number of dogs on the list. If not, it skips over to the **adopted_list** to see if any dogs have been adopted. If these two lists do not exist then it skips to the else statement to execute. As you can see these statements work as expected but need to be between a curly bracket and percentage sign **{% if shelter_list %}** for the template engine to understand and process.
+By running this code if a **shelter_list** exists it returns the number of dogs on the list. If not, it skips over to the **adopted_list** to see if any dogs have been adopted. If these two lists do not exist then it skips to the else statement to execute. As you can see these statements work as expected but need to be between a curly bracket and percentage sign `{% if shelter_list %}` for the template engine to understand and process.

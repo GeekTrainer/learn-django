@@ -21,7 +21,8 @@
 1. Introduction
     * Learning Objectives
       - In this module you will learn:
-2. Retrieving the starter app
+2. Retrieving the project starter files
+    * Creating a new directory
     * Installing Git
     * Cloning the GitHub repository
 3. What is Django?
@@ -64,13 +65,10 @@
     * Creating a new directory
     * Creating a virtual environment
     * Activating a virtual environment
-    * Django installation
-    * Create a project with Django-admin
-    * Navigating the project structure
-    * Deploying the project
-    * Retrieving the starter app
+    * Retrieving the project starter files
       - Installing Git
       - Cloning the GitHub repository
+    * Django installation
 3. ORM Concepts
     * What is an ORM?
     * Overview of the Django ORM
@@ -106,17 +104,13 @@
     * Creating a new directory
     * Creating a virtual environment
     * Activating a virtual environment
-    * Django installation
-    * Create a project with Django-admin
-    * Navigating the project structure
-    * Deploying the project
-    * Retrieving the starter app
+    * Retrieving the project starter files
       - Installing Git
       - Cloning the GitHub repository
-3. Activating the app
+    * Django installation
+3. SQLite database
     * Create the SQLite database
     * Display the schema
-    * Activate the model
     * Add data using Django ORM
       - Creating new objects
       - Retrieving objects
@@ -145,25 +139,17 @@
 1. Introduction
     * Learning Objectives
       - In this module you will learn:
-2. Installing the starter app
+2. Installing Django
     * Creating a new directory
     * Creating a virtual environment
     * Activating a virtual environment
-    * Django installation
-    * Create a project with Django-admin
-    * Navigating the project structure
-    * Deploying the project
-    * Retrieving the starter app
+    * Retrieving the project starter files
       - Installing Git
       - Cloning the GitHub repository
-3. Activating the app
+    * Django installation
+3. SQLite database
     * Create the SQLite database
     * Display the schema
-    * Activate the model
-    * Add data using Django ORM
-      - Creating new objects
-      - Retrieving objects
-      - Modifying objects
 4. Creating dynamic HTML pages with Django templates
     - Variables
     - Filters
@@ -190,31 +176,24 @@
 1. Introduction
     * Learning Objectives
       - In this module you will learn:
-2. Installing the starter app
+2. Installing Django
     * Creating a new directory
     * Creating a virtual environment
     * Activating a virtual environment
-    * Django installation
-    * Create a project with Django-admin
-    * Navigating the project structure
-    * Deploying the project
-    * Retrieving the starter app
+    * Retrieving the project starter files
       - Installing Git
       - Cloning the GitHub repository
-3. Activating the app
+    * Django installation
+3. SQLite database
     * Create the SQLite database
     * Display the schema
-    * Activate the model
-    * Add data using Django ORM
-      - Creating new objects
-      - Retrieving objects
-      - Modifying objects
 4. Working with Django forms
       - HTML forms
       - Understanding Django forms
 5. Form Views
-      - Generic views 
-      - Creating objects for Create, Update and Delete
+      - Generic views for Create, Update and Delete
+        - Developing objects for Create
+        - Creating objects for Update and Delete
 6. Using Crispy forms for better display
       - Using Bootstrap3 with Crispy
 7. Knowledge Check

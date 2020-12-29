@@ -4,9 +4,9 @@ Now that you have seen the newly created user go back to the home screen of the 
 
 ![Django Admin](../Module3/Module3_Images/Module3_DjangoAdmin.PNG)
 
-As you can see the only categories listed are **Groups** and **Users** but nothing about the app we added. Since the Django admin feature sets permissions based off of models we now have to add the **Shelter** and **Dog** models of our **dog_shelters** app to the admin site.
+As you can see the only categories listed are **Groups** and **Users** but nothing about the app we added. Since the Django admin feature sets permissions based off of models we now have to add the **Shelter** and **Dog** models of our app to the admin site.
 
-In order to add the models go to our project **dog_shelters/admin.py** file and enter the code below.
+In order to add the models go to our project **dog_shelters/admin.py** file and enter the code under the comment `# [TODO] Register models`.
 
 ```python
 # [TODO] Register models.
@@ -26,7 +26,7 @@ Now that we have added our models, a great feature of the admin site is the abil
 
 ![Django Admin Shelter Model](../Module3/Module3_Images/Module3_DjangoAdminNewShelter.PNG)
 
-As you can see the shelter that was entered previously through the Django API appears in the table. Now go ahead and click on the shelter name.
+As you can see the shelter that was entered previously through the Django ORM appears in the table. Now go ahead and click on the shelter name.
 
 ![Shelter Information](../Module3/Module3_Images/Module3_DjangoAdminShelterInfoMistake.PNG)
 
@@ -98,7 +98,7 @@ The new password could then be entered and saved for the user.
 
 ![New User Password](../Module3/Module3_Images/Module3_DjangoAdminChangeUserPassword.PNG)
 
-If the user has access to the admin site then the other option would be to have the them change their own password. By logging into the admin site they would then be able to change the password as required.
+If the user has access to the admin site then the other option would be to have them change their own password. By logging into the admin site they would then be able to change the password as required.
 
 ![User Password](../Module3/Module3_Images/Module3_DjangoAdminUserPassword.PNG)
 

@@ -3,7 +3,7 @@
 [6]: https://docs.djangoproject.com/en/3.1/ref/django-admin/ "Command-line Utility"
 
 
-For this module in the learning path we are in the beginning stages of creating a new app named **dog_shelters**. Follow the below steps to create the new project and retrieve the app starting files. 
+For this module in the learning path we are in the beginning stages of creating a new app named **dog_shelters**. Follow the below steps to install Django and retrieve the project starting files. 
 
 ## Creating a new directory
 
@@ -42,79 +42,27 @@ By executing this command the virtual environment will start, and the command pr
 
 The name of the virtual environment will be in parentheses followed by the path that you are in currently. This command prompt is where you will begin installing the Django framework.
 
-## Django installation
-
-Now that the virtual environment has been activated it is time to download Django. Using the same command line type the below command.
-
-```bash
-pip install Django
-```
-By executing this command the Django framework will begin to download and once completed we can create our first project.
-
-## Create a project with Django-admin
-
-Now that Django is installed we are ready to begin the process of creating a project, but before we actually start coding there is one thing we have to do to create a Django project. In the same command prompt type the following:
-
-```bash
-django-admin startproject mydjangoproject
-```
-After running the above command the new project should appear in your chosen directory. In this instance you would see a new folder called 'mydjangoproject'.
-
-## Navigating the project structure
-
-Now that the Django project has been created let's look at the structure to see what was included.
-
-    mydjangoproject/
-            manage.py
-            mydjangoproject/
-                    __init__.py
-                    settings.py
-                    urls.py
-                    asgi.py
-                    wsgi.py
-
-1. The first or outer **mydjangoproject** in the structure is your root directory which contains the entire project.
-2. Next you have **manage.py**. This is a command-line utility that is created in every Django project and actually has the same function as 'django-admin'. Below is an example of how this could be used if you were inside the project folder and wanted to see the available subcommands. 
-
-    ```bash   
-    django-admin help
-    ```
-    OR
-    ```bash
-    python manage.py help
-    ``` 
-    For more information about the Django CLI, you can consult the [django-admin documentation][6].
-
-3. The inner **mydjangoproject** is considered the Python package for your project.
-4. Next we have **init.py** and if you look at the contents of this file you will notice that it is empty. Don't worry as this should be empty as it functions to tell Python that this directory should be considered a package.
-5. Next in line we have **settings.py**. This file contains all of your settings or configurations.
-6. Next is **urls.py**. This file contains the urls within the project.
-7. Lastly we have **asgi.py** and **wsgi.py**. These last two files serve as the entry point for your web servers depending on what type of server is deployed.
-
-## Deploying the project
-
-Now that Django is installed, a project has been created, and we have examined the project structure it is time to make sure our project is working correctly.
-
-Navigate to the **mydjangoproject** root directory and enter the following.
-
-```bash      
-python manage.py runserver
-```
-
-If the project runs correctly it will start to perform system checks, and start your development server. Copy and paste the url of your development server in your preferred browser, and you should see a Django 'Congratulations' page with a rocket taking off.
-
-## Retrieving the starter app
+## Retrieving the project starter files
 
 ### Installing Git
 
-Now that our Django project is complete we need to retrieve the starter app for this module by cloning the GitHub repository. In order to clone the repository Git needs to be installed on your computer. If Git isn’t installed on your computer then go to the [Git website][1] to install the latest version. 
+Now that Git has been installed we can use it to [clone][2] our GitHub repository. To begin open a command prompt and navigate to the previously created directory **mydjangoproject**. Once in the directory start the cloning process by entering the following in the command prompt.
 
 ### Cloning the GitHub repository
 
-Now that Git has been installed we can use it to [clone][2] our GitHub repository. To begin open a command prompt and navigate to the previously created directory **mydjangoproject**. Once in the directory start the cloning process by entering the following in the command prompt.
+Now that Git has been installed we can use it to [clone][2] our GitHub repository. To begin open a command prompt and navigate to the location you would like to keep the project. Once you are in the correct location then start the cloning process by entering the following in the command prompt.
 
 ```bash
 # [TODO] Needs final github link
 git clone https://github.com/????
 ```
-Once this has completed you should now see the **dog_shelters** app within the directory.
+Once this has completed you should now see the **myfirstproject** project folder with the **hello_world** app within the directory.
+
+## Django installation
+
+Now that the starter files have been downloaded it is time to install Django. Make sure the virtual environment has been activated, and using the same command line type the below command.
+
+```bash
+pip install -r requirements.txt
+```
+By executing this command it will read all of the programs required for the project in the **requirements.txt** file and begin the download. Once this has completed then you can continue with the rest of the module.

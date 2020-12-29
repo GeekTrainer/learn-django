@@ -2,14 +2,16 @@ Template inheritance is key in keeping specific features or layouts the same thr
 
 ## Extending templates
 
-To demonstrate the process of template inheritance we will be creating a simple HTML page that will be used for the layout of our site. Before creating this page we first have to create another folder within our app **dog_shelters** called **templates**. After creating the **templates** folder create a file within the folder and name it **basic_layout.html**. In this file is where the below code will be entered.
+To demonstrate the process of template inheritance we will be creating a simple HTML page that will be used for the layout of our site. Before creating this page we first have to create another folder within our app **dog_shelters** called **templates**. After creating the **templates** folder create a file within the folder and name it **basic_layout.html**. In this file is where the code will be entered under the comment `<!-- TODO - Create the basic_layout.html template located in the templates folder -->`.
 
 ```html
-<!-- TODO - Create the basic_layout.html template located in the templates folder -->
+<!-- TODO - Create the basic_layout.html template -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel='stylesheet' href="static/css/layout.css">
     <title>{% block title %}Adopt A Dog Today{% endblock %}</title>
 </head>
 <body>
@@ -35,19 +37,19 @@ To demonstrate the process of template inheritance we will be creating a simple 
 </html>
 ```
 
-When looking at the above HTML page take notice of the three sections that contain the word **block**.
+When looking at the above HTML page take notice of the three sections that contain the word `block`.
 
 ```html
 {% block title %}
 {% block sidebar %}
 {% block content %}
 ```
-By tagging these sections with the **block** variable it tells the template engine that the child templates are able to override this information. 
+By tagging these sections with the `block` variable it tells the template engine that the child templates are able to override this information. 
 
-Now that the layout page of our site is finished we can create the site home page. Within the **templates** folder create another file and name it **index.html** and save the below code.
+Now that the layout page of our site is finished we can create the site home page. Within the **templates** folder create another file and name it **index.html** and save the code under the comment `<!-- TODO - Create the index.html template within the templates folder -->`.
 
 ```html
-<!-- TODO - Create the index.html template within the templates folder -->
+<!-- TODO - Create the index.html template -->
 {% extends "basic_layout.html" %}
 
 {% block sidebar %}
@@ -66,9 +68,9 @@ Now that the layout page of our site is finished we can create the site home pag
   </div>
 {% endblock %}
 ```
-As you can see at the top of the template we have extended the **basic_layout.html** page. By extending this page we can keep the same formatting and modify it where needed. In this instance we want to add a new nav link in the **sidebar** block, and the page content within the **content** block. Since we did not want to override the default title from the **basic_layout** page the **title** block was not added.
+As you can see at the top of the template we have extended the **basic_layout.html** page. By extending this page we can keep the same formatting and modify it where needed. In this instance we want to add a new nav link in the `sidebar` block, and the page content within the `content` block. Since we did not want to override the default title from the **basic_layout** page the `title` block was not added.
 
-Next we need to add the second page to the website called **shelter_spotlight.html** which will also be stored in the **templates** folder. After creating the file input the below code.
+Next we need to add the second page to the website called **shelter_spotlight.html** which will also be stored in the **templates** folder. After creating the file input the below code under the comment `<!-- TODO - Create the shelter_spotlight.html template -->`.
 
 ```html
 <!-- TODO - Create the shelter_spotlight.html template -->
@@ -94,7 +96,7 @@ Next we need to add the second page to the website called **shelter_spotlight.ht
     
 {% endblock %}
 ```
-From the first line of code you can see this template will now extend the main page **index.html**. For this new page it will override the title and also the page content with the spotlighted dogs information and image. Also, since we did not need to change or add anything to the site navigation the **sidebar** block was not included.
+From the first line of code you can see this template will now extend the main page **index.html**. For this new page it will override the `title` and also the `content` block with the spotlighted dogs information and image. Also, since we did not need to change or add anything to the site navigation the `sidebar` block was not included.
 
 When working with child templates and extending content from the parent be aware of the following:
 
@@ -104,7 +106,7 @@ When working with child templates and extending content from the parent be aware
 
 ## Using the **block.super** variable
 
-While it is extremely helpful to override data from the parent template, what happens if we would like to keep some of the content from the parent page? In order to do that just add a **{{ block.super}}** variable to our child template.
+While it is extremely helpful to override data from the parent template, what happens if we would like to keep some of the content from the parent page? In order to do that just add a `{{ block.super}}` variable to our child template.
 
 ```html
 {% block sidebar %}
@@ -112,4 +114,4 @@ While it is extremely helpful to override data from the parent template, what ha
   <a href="shelter_spotlight" class="w3-bar-item w3-button">Shelter Spotlight</a>
 {% endblock %}
 ```
-The above example was taken from the **index.html** file, and as you can see it cotains a **{{ block.super }}** in the **{% block sidebar %}** section of the code. Since the website home link was supplied in the **basic_layout.html** file we want to carry that over to this new page. By adding this variable we are not only able to carry over the **home** link and also add the new **shelter_spotlight** link.
+The above example was taken from the **index.html** file, and as you can see it cotains a `{{ block.super }}` in the `{% block sidebar %}` section of the code. Since the website home link was supplied in the **basic_layout.html** file we want to carry that over to this new page. By adding this variable we are not only able to carry over the **home** link but also add the new **shelter_spotlight** link.

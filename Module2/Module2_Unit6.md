@@ -3,7 +3,9 @@
 ## Exploring the Django ORM
 After we created the models for our app Django automatically created an API. This API allows us to easily create, retrieve, update and delete objects in our database. To begin this interaction we first have to call a python shell by entering the below command in the command line.
 
+```python
     python manage.py shell
+```
 
 Once the interactive console begins we then need to import the two models that were created for the **dog_shelters** app as below.
 
