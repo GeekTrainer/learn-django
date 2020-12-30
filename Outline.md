@@ -210,6 +210,17 @@
 1. Introduction
     * Learning Objectives
       - In this module you will learn:
+2. Installing Django
+    * Creating a new directory
+    * Creating a virtual environment
+    * Activating a virtual environment
+    * Retrieving the project starter files
+      - Installing Git
+      - Cloning the GitHub repository
+    * Django installation
+3. SQLite database
+    * Create the SQLite database
+    * Display the schema
 2. Uploading Your Django Project to Azure
 3. Knowledge Check
     * Check your knowledge

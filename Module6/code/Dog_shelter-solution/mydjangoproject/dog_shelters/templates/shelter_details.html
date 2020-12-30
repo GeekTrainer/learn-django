@@ -1,0 +1,11 @@
+<!-- TODO - Add generic detailview -->
+{% extends "index.html" %}
+
+
+{% block content %}
+    <h2 style="text-align: center; margin-top: 100px;">Shelter details</h2>
+    <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
+        <h3>{{shelter.shelter_name}} is located at:</h3>
+        <p>{{shelter.shelter_location}}</p>
+    </div>
+{% endblock %}

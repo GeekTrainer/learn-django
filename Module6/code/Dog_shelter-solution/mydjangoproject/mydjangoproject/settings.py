@@ -26,7 +26,7 @@ SECRET_KEY = '7c3!5d&d#w##)s8wu_z*17-v)qc5bq_ll-im)bfz24njamvxzh'
 DEBUG = True
 
 # [TODO] Add * to Allowed Hosts to allow site
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
