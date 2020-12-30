@@ -55,7 +55,7 @@ Now that Git has been installed we can use it to [clone][2] our GitHub repositor
 # [TODO] Needs final github link
 git clone https://github.com/????
 ```
-Once this has completed you should now see the **myfirstproject** project folder with the **hello_world** app within the directory.
+Once this has completed you should now see the **mydjangoproject** project folder with the **dog_shelters** app within the directory.
 
 ## Django installation
 

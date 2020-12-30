@@ -1,0 +1,19 @@
+<!--TODO: extend page layout and add Delete form-->
+{% extends "index.html" %}
+
+{% block title %}Delete Shelter{% endblock %}
+
+{% block sidebar %}{% endblock %}
+
+{% block content %}
+    <h2 style="text-align: center; margin-top: 100px;">Delete Shelter</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <p style="text-align: center;">Are you sure you want to delete "{{ object }}" dog shelter?</p>
+        <div style="width: 800px; margin: auto; text-align: center;">
+            <input type="submit" value="Confirm">
+        </div>
+    </form>
+
+{% endblock %}
