@@ -18,7 +18,7 @@ Great Dane
 
 Template filters are a great way to control how the data appears when requested. 
 
-For example, let's say we have to print out the names of the dog breeds and we want the first letter of every name capitialized. In order to make that happen we would create the below filter.
+For example, let's say we have to print out the names of the dog breeds and we want the first letter of every name capitalized. In order to make that happen we would create the below filter.
 
 ```html
 {{ dog.breed|capfirst}}
@@ -28,7 +28,7 @@ When creating filters the variable is to the left of the pipe symbol `|` and the
 
 ## Tags
 
-Tags are a little more advanced then variables and can be used to perform loops, create text, or even load information to be used by the variables. 
+Tags are a little more advanced than variables and can be used to perform loops, create text, or even load information to be used by the variables. 
 
 For instance if we wanted to print out a list of dog breeds that were in each shelter the below code would be used.
 
@@ -41,7 +41,7 @@ For instance if we wanted to print out a list of dog breeds that were in each sh
 ```
 In this code we are using a `for` statement tag to loop through the **shelter_list** and print out all of the dog breeds, and then we close the tag by using `endfor`.
 
-We can even go a little further and use if, elif, and else if needed. For example say we wanted to count how many dogs are waiting for adoption or have have been adopted for the month of Dec. We first begin by providing a little more detail about this section of code by using the commenting `{# #}` tags, and then continue with the statements.
+We can even go a little further and use if, elif, and else if needed. For example say we wanted to count how many dogs are waiting for adoption or have been adopted for the month of Dec. We first begin by providing a little more detail about this section of code by using the commenting `{# #}` tags, and then continue with the statements.
 
 ```html
 {# Counts number of dogs waiting for adoption or adopted for December #}

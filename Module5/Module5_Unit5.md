@@ -13,7 +13,7 @@ def contactForm(request):
         form = ClientForm(request.POST)
         # check if form is valid:
         if form.is_valid():
-            # code to process data from from as appropiate
+            # code to process data as appropriate
             return HttpResponseRedirect('thank_you')
     else:
         form = ClientForm()
@@ -33,7 +33,7 @@ The other thing to notice about the form definition is what happens when the cod
 
     return render(request, 'contact.html', {'form': form})
 ```
-If the template sends a **GET** request then Python will process and render a blank form. The `return` statement sends the response with `render` defining the form. The first part of the **render** statement defines it as a **request**, the second section calls the template that will rendor our form, and the third part is defining the variable **"form"**. This variable can then be used in the template to call the form.
+If the template sends a **GET** request then Python will process and render a blank form. The `return` statement sends the response with `render` defining the form. The first part of the **render** statement defines it as a **request**, the second section calls the template that will render our form, and the third part is defining the variable **"form"**. This variable can then be used in the template to call the form.
 
 Now that we have created the form we need to add a "Contact Us" template. In the templates folder of the app create a file named **contact.html** and then enter the below code under the comment `<!--TODO: extend page layout and add form-->`.
 
@@ -58,7 +58,7 @@ Now that we have created the form we need to add a "Contact Us" template. In the
 
 {% endblock %}
 ```
-As you can see we have included the `{{ form }}` variable in the template, added the `<form>` tags and `<input>` element for the **"Submit"** button. These elements together complete our **client_request.html** template, and it is ready for user input. Now that the form is ready for user input there is one more tag that was added to guard against Cross Site Request Forgeries. [CSRF][1] is automatically enabled by Django and is ready to use for **POST** requests. The only thing we need to do is add this tag `{% csrf_token %}` to our form code. Now that we have addressed the way form views are added let's see what Django created to speed up the process even further.
+As you can see we have included the `{{ form }}` variable in the template, added the `<form>` tags and `<input>` element for the **"Submit"** button. These elements together complete our **client_request.html** template, and it is ready for user input. Now that the form is ready for user input there is one more tag that was added to guard against Cross Site Request Forgeries. [CSRF][1] is automatically enabled by Django and is ready to use for **POST** requests. The only thing we need to do is add this tag `{% csrf_token %}` to our form code. Now that we have addressed the way form views are added let's learn about the generic form views that Django created.
 
 ## Generic views for Create, Update and Delete 
 
@@ -176,7 +176,7 @@ We will now move on to create a template that will contain both the **Update** a
 ```
 For this page we have divided it into two columns. Each function will be contained in its own column with a list of current shelters. We have also added the shelter name as a URL that is associated with the shelter `id`. By adding this URL the database will then know what shelter information to return.  
 
-In addition to the template we also need to create the two other templates that will hold the forms. The first template to create is **update_shelter.html**. Afer creating the template then add the below code under the comment `<!--TODO: extend page layout and add Update form-->`.
+In addition to the template we also need to create the two other templates that will hold the forms. The first template to create is **update_shelter.html**. After creating the template then add the below code under the comment `<!--TODO: extend page layout and add Update form-->`.
 
 ```html
 <!--TODO: extend page layout and add Update form-->
@@ -218,7 +218,7 @@ The second template to create is named **delete_shelter.html**. After creating t
 
 {% endblock %}
 ```
-The next task is to now define the views. Go to the **views**.**py** file of the app and enter the below code under the comment `# [TODO] Create ListView to add shelters to update_delete_shelters template` and `# [TODO] Develop UpdateView and DeleteView for forms`.
+The next task is to now define the views. Go to the **views**.**py** file of the app and enter the below code under the comments `# [TODO] Create ListView to add shelters to update_delete_shelters template` and `# [TODO] Develop UpdateView and DeleteView for forms`.
 
 ```python
 # [TODO] Create ListView to add shelters to update_delete_shelters template
@@ -246,12 +246,12 @@ class DeleteShelter(DeleteView):
 
     success_url = '/dog_shelters/update_delete_shelters'
 ```
-In the first view addtion we created another **ListView** to feed the shelter lists to the **update_delete_shelters** template. In the next section we needed to import both **UpdateView**, and **DeleteView**. We are also defining the class for both of these functions, and what will happen when the form is considered valid.
+In the first addition we have created another **ListView** to feed the shelter lists to the **update_delete_shelters** template. In the next section we needed to import both **UpdateView**, and **DeleteView**. We are also defining the class for both of these functions, and what will happen when the form is considered valid.
 
-After creating the views we then need to define the paths for all three templates in the app **urls**.**py** file by entering the below code under the comment `# [TODO]: Add the belows for our Shelter UpdateView, DeleteView and template page to call these functions`.
+After creating the views we then need to define the paths for all three templates in the app **urls**.**py** file by entering the below code under the comment `# [TODO]: Add the below code for our Shelter UpdateView, DeleteView and update_delete_shelters template page to call these functions`.
 
 ```python
-  # [TODO]: Add the belows for our Shelter UpdateView, DeleteView and update_delete_shelters template page to call these functions
+  # [TODO]: Add the below code for our Shelter UpdateView, DeleteView and update_delete_shelters template page to call these functions
     path('<pk>/update', views.UpdateShelter.as_view(), name='UpdateShelter'),
     path('<pk>/delete', views.DeleteShelter.as_view(), name='DeleteShelter'),
     path('update_delete_shelters', views.ShelterEdits.as_view(), name='ShelterEdits'),
@@ -261,13 +261,13 @@ For the **Update** and **Delete** views we need to add the primary key `<pk>` in
 The last thing we need to do is now add the template link to the **shelter_form** file. Add the below code under the comment `<!--TODO: Carry over parent links and add new update_delete_shelters link-->`.
 
 ```html
-<!--TODO: add new link-->
+<!--TODO: Carry over parent links and add new update_delete_shelters link-->
 {% block sidebar %}
   {{ block.super }}
   <a href="update_delete_shelters" class="w3-bar-item w3-button">Update/Delete Shelters</a>
 {% endblock %}
 ```
-That's it for adding these functions. Now let's try it out! Make sure all of the additions have been saved, and go to your app in the browser. Click on the **Create Shelter** link, and there should now be a new link named **Update/Delete Shelters**. Click on that link to go to the new template that was created for these functions.
+That's it for adding these functions. Now let's try it out! Make sure all of the additions have been saved, and go to your app in the browser. Click on the **Create Shelter** link, and there should now be a new link named **Update/Delete Shelters**. Click on that link to go to the new template that was created.
 
 ![Update/Delete Page](../Module5/Module5_Images/Module5_UpdateDeleteTemplate.PNG)
 

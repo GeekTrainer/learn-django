@@ -54,7 +54,7 @@ def contactForm(request):
         form = ClientForm(request.POST)
         # check if form is valid:
         if form.is_valid():
-            # code to process data from from as appropiate
+            # code to process data as appropriate
             return HttpResponseRedirect('thank_you')
     else:
         form = ClientForm()

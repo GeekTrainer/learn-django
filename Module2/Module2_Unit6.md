@@ -3,7 +3,7 @@
 ## Exploring the Django ORM
 After we created the models for our app Django automatically created an API. This API allows us to easily create, retrieve, update and delete objects in our database. To begin this interaction we first have to call a python shell by entering the below command in the command line.
 
-```python
+```bash
     python manage.py shell
 ```
 

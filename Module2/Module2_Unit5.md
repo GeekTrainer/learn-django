@@ -168,7 +168,7 @@ After running the command then you should see something similar to below stating
 
 ![Database Migration](../Module2/Module2_Images/Module2_ModelMigration.PNG)
 
-Now in order to make our changes permenant to the database the final step is to run the migrate command in the command line.
+Now in order to make our changes permanent to the database the final step is to run the migrate command in the command line.
 
 ```python
 python manage.py migrate

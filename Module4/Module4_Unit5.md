@@ -114,4 +114,4 @@ While it is extremely helpful to override data from the parent template, what ha
   <a href="shelter_spotlight" class="w3-bar-item w3-button">Shelter Spotlight</a>
 {% endblock %}
 ```
-The above example was taken from the **index.html** file, and as you can see it cotains a `{{ block.super }}` in the `{% block sidebar %}` section of the code. Since the website home link was supplied in the **basic_layout.html** file we want to carry that over to this new page. By adding this variable we are not only able to carry over the **home** link but also add the new **shelter_spotlight** link.
+The above example was taken from the **index.html** file, and as you can see it contains a `{{ block.super }}` in the `{% block sidebar %}` section of the code. Since the website home link was supplied in the **basic_layout.html** file we want to carry that over to this new page. By adding this variable we are not only able to carry over the **home** link but also add the new **shelter_spotlight** link.

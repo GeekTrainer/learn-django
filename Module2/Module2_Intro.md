@@ -9,4 +9,7 @@ In this module you will learn:
 - How to create and query data in your SQLite database
 
 Prerequisites
-- None
+- Intermediate level knowledge of Python
+  - Package Management
+  - Inheritance and mixins
+- Understanding of HTML and CSS

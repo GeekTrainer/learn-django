@@ -1,7 +1,7 @@
 [1]: https://www.sqlite.org/download.html "Link to SQLite webpage"
 [2]: https://docs.djangoproject.com/en/3.1/topics/db/queries/ "Django Queries"
 
-If you are following the modules of this learning path in order then the below tasks have alrady been completed. If not, you have the option to use the SQLite database provided in the project starter files or following the below steps to create your own. Also don't forget the other steps in checking out the database schema if you don't have SQLite installed and adding data using Django ORM.
+If you are following the modules of this learning path in order then the below tasks have already been completed. If not, you have the option to use the SQLite database provided in the project starter files or following the below steps to create your own. Also don't forget the other steps in checking out the database schema if you don't have SQLite installed and adding data using Django ORM.
 
 ## Create the SQLite database
 

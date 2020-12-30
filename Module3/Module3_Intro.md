@@ -7,4 +7,7 @@ In this module you will learn:
 - How to set user permissions
 
 Prerequisites
-- None
+- Intermediate level knowledge of Python
+  - Package Management
+  - Inheritance and mixins
+- Understanding of HTML and CSS

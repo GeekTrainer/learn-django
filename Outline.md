@@ -195,7 +195,7 @@
         - Developing objects for Create
         - Creating objects for Update and Delete
 6. Using Crispy forms for better display
-      - Using Bootstrap3 with Crispy
+      - Using Bootstrap with Crispy
 7. Knowledge Check
     * Check your knowledge
       - Questions

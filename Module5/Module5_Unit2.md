@@ -35,7 +35,7 @@ Now that the virtual environment has been created we have to activate it before 
 ```bash
 venv\Scripts\activate
 ```
-By executing this command the virtual environment will start, and the command prompt should now look similiar to below.
+By executing this command the virtual environment will start, and the command prompt should now look similar to below.
 
 ![Activated venv](../Module2/Module2_Images/venvcommandprompt.PNG)
 

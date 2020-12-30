@@ -95,7 +95,7 @@ Now let's say we called a user number in the URL.
 
     http://localhost:8000/hello_world/5
 
-Django would first look in **myfirstproject.urls** and search for the urlpatterns. After finding the first match for **hello_world/**, it would then strip that part from the URL just leaving **5**. It would then continue with the remaining string to the **hello_world/urls.py** file where it would continue looking for a match. After finding the match, it would then diplay the appropriate view.
+Django would first look in **myfirstproject.urls** and search for the urlpatterns. After finding the first match for **hello_world/**, it would then strip that part from the URL just leaving **5**. It would then continue with the remaining string to the **hello_world/urls.py** file where it would continue looking for a match. After finding the match, it would then display the appropriate view.
 
     Hello user # 5.
 

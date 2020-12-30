@@ -22,6 +22,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     # [TODO]: Add the below line to create the URLconf for the project
-    path('dog_shelters/', include('dog_shelters.urls')),
+    
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

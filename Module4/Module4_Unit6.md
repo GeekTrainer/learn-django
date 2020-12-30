@@ -56,7 +56,7 @@ By adding the `'dog_shelters/'` path we have now connected our app to the projec
 
 http://localhost:8000/dog_shelters/
 
-If eveything is configured correctly you should see the home page of the site.
+If everything is configured correctly you should see the home page of the site.
 
 ![Home Page](../Module4/Module4_Images/Module4_AppHomePage.PNG)
 
@@ -114,17 +114,17 @@ We first start by importing `ListView`, and then add a `ShelterList` class that 
 ```
 By calling the view this way it does not give much information about what is being requested. Since this is a small app it may not seem that important, but it is a good idea to get in the habit of providing as much detail as possible. So in this case we have changed the listview name to `my_shelter_list`. The last thing we need to do is provide the `template_name` for this view so we have added the template `shelter_list.html`.
 
-Now that the view code is added we need to connect everything together by first adding the path to our new template. Make sure you are still in the app folder and go to the **urls**.**py** file to add the below path in the `urlpatterns` under comment `# [TODO]: Add the path below for our ShelterList ListView`. 
+Now that the view code is added we need to connect everything together by first adding the path to our new template. Make sure you are still in the app folder and go to the **urls**.**py** file to add the below path in the `urlpatterns` under comment `# [TODO]: Add the path for ShelterList ListView`. 
 
 ```python
 urlpatterns = [
     path('home', views.index, name='index'),
-    # [TODO]: Make sure this path is in urlpattherns and add the path for ShelterList ListView
+    # [TODO]: Add the path for ShelterList ListView
     path('shelter_list', views.ShelterList.as_view(), name='ShelterList'),
     path('shelter_spotlight', views.spotlight, name='spotlight'),
 ]
 ```
-Then add the URL to the **index.html** file under the commnet `<!-- TODO - Create the URL for the new template page shelter_list -->` to complete the process.
+Then add the URL to the **index.html** file under the comment `<!-- TODO - Create the URL for the new template page shelter_list -->` to complete the process.
 
 ```html
 {% block sidebar %}

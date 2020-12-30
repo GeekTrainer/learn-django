@@ -52,7 +52,7 @@ Navigate to the **myfirstproject** root directory and enter the following.
 python manage.py runserver
 ```
 
-If the project runs correctly it will start to perform system checks, and start your development server. Copy and paste the url of your development server in your preferred browser, and you should see a Django 'Congratulations' page with a rocket taking off.
+If the project runs correctly it will start to perform system checks, and start your development server. Copy and paste the URL of your development server in your preferred browser, and you should see a Django 'Congratulations' page with a rocket taking off.
 
 ## Projects vs apps
 

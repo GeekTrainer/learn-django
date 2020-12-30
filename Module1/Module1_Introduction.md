@@ -8,4 +8,7 @@ In this module you will learn:
 - How to create a simple program in Django
 
 Prerequisites
-- None
+- Intermediate level knowledge of Python
+  - Package Management
+  - Inheritance and mixins
+- Understanding of HTML and CSS
