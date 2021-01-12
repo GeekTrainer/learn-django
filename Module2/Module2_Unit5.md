@@ -22,15 +22,16 @@ class Dog(models.Model):
     dog_breed = models.CharField(max_length=200)
 ```
 
-By adding these models you are generating a field in the database and defining how that field should behave. For instance, in **adoption_date** we have created a field for date and time. For this to work correctly we needed to import **datetime**, and by adding **now()** to the field behavior it will now automatically populate with the current date and time. This field type is also automatically set as required so we had to let Django know it could be blank by setting **blank=True** and the database entry as null by setting **null=True**. 
+By adding these models you are generating a field in the database and defining how that field should behave. For instance, in `adoption_date` we have created a field for date and time. For this to work correctly we needed to import `datetime`, and by adding `now()` to the field behavior it will now automatically populate with the current date and time. This field type is also automatically set as required so we had to let Django know it could be blank by setting `blank=True` and the database entry as null by setting `null=True`. 
 
-Also take notice of the term **ForeignKey** that was added in the **Dog** class. This keyword tells Django there is a relationship between a **Dog** and the **Shelter**. By defining this relationship we are telling Django that every **dog** is related to a single **shelter**.
+Also take notice of the term `ForeignKey` that was added in the `Dog` class. This keyword tells Django there is a relationship between a `Dog` and the `Shelter`. By defining this relationship we are telling Django that every **dog** is related to a single **shelter**.
 
-For this app it would also be a good idea to add an image of the dog up for adoption. In order to allow an upload of an image we created the **ImageField**.
+For this app it would also be a good idea to add an image of the dog up for adoption. In order to allow an upload of an image we created the `ImageField`.
 
 ```python
 dog_image = models.ImageField(upload_to='images', blank=True)
 ```
+
 For this field we needed to state where the image would be saved by using the `upload_to='images'` statement, and that it was ok for the field to be blank by adding `blank=True`. Since we added this field we also have to add a statement in the ***urls.py** file in the **mydjangoproject** project folder. Add the code under the comments `# [TODO]: Add the needed imports for the image field` and `# [TODO]: Add the needed urlpattern for the image upload`.
 
 ```python
@@ -43,12 +44,13 @@ urlpatterns = [
     # [TODO]: Add the needed urlpattern for the image upload
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
-By importing **settings** and **static**, and also adding the above **static** line the project will now be able to recognize the image link and upload it to our site when requested.
+
+By importing `settings` and `static`, and also adding the above `static` line to `urlpatterns` the project will now be able to recognize the image link and upload it to our site when requested.
 
 ## The \_\_str__ method
 
-Now that we have created the **Shelter** and **Dog** models for our app there is one important addition that needs to be addressed when defining classes.
-For this example we start by creating another class named **Shelter**. This example will not be added to our app, but can be tested out in the Python shell.
+Now that we have created the `Shelter` and `Dog` models for our app there is one important addition that needs to be addressed when defining classes.
+For this example we start by creating another class named `Shelter`. This example will not be added to our app, but can be tested out in the Python shell.
 
 ```python
 class Shelter:
@@ -71,7 +73,7 @@ print(my_shelter)
 
  ![No __str__ Method](../Module2/Module2_Images/Module2_ObjectLocation.PNG)
 
-When looking at the output of the **my_shelter** variable it doesn't give us any details. While it does give the class name, it only returns the id or memory address of the object. To solve this issue we need to add the \_\_str__ method to our class.
+When looking at the output of the `my_shelter` variable it doesn't give us any details. While it does give the class name, it only returns the id or memory address of the object. To solve this issue we need to add the \_\_str__ method to our class.
 
 Now let's take the same code, but add the \_\_str__ method as below.
 
@@ -134,14 +136,14 @@ With this addition to our **Shelter** and **Dog** classes it will now print out 
 
 Now that we have added the model code to our file it is time for activation.
 
-First, we need to find the configuration class name within the **dog_shelters** app. To find this class name go to the **dog_shelters/apps**.**py** file to find the below code and to see that the class name is `DogSheltersConfig`.
+First, we need to find the configuration class name within the **dog_shelters** app. To find this class name go to the **dog_shelters/apps.py** file to find the below code and to see that the class name is `DogSheltersConfig`.
 
 ```python
 class DogSheltersConfig(AppConfig):
     name = 'dog_shelters'
 ```
 
-Now that you have the class name, return to the inner **mydjangoproject** folder and **settings**.**py** file to add the app config line under the comment `#[TODO] - Add the app to the list of INSTALLED_APPS`.
+Now that you have the class name, return to the inner **mydjangoproject** folder and **settings.py** file to add the app config line under the comment `#[TODO] - Add the app to the list of INSTALLED_APPS`.
 
 ```python
 INSTALLED_APPS = [
@@ -156,7 +158,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-By adding this line to the list of **INSTALLED_APPS** it tells Django that this app needs to be included when running the project.
+By adding this line to the list of `INSTALLED_APPS` it tells Django that this app needs to be included when running the project.
 
 Next, we need to tell Django that new models are added and we would like for the changes to be stored as a migration. In order to do this run the below code in the command line.
 

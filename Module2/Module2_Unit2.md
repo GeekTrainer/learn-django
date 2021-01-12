@@ -7,15 +7,16 @@ For this module in the learning path we are in the beginning stages of creating 
 
 ## Creating a new directory
 
-The first step in our process is to create a folder that will contain the new project. In order to create the folder go to the command prompt, navigate to the desired directory and run the below command. For this example we will be creating a new folder called **mydjangoproject**. 
+The first step in our process is to create a folder that will contain the new project and also the virtual environment that will hold the Django framework. In order to create the folder go to the command prompt, navigate to the desired directory and run the below command. For this example we will be creating a new folder called **dogsforadoptionproject**.
 
 ```bash
 # Windows
-md mydjangoproject
+md dogsforadoptionproject
 
 # macOS or Linux
-mkdir mydjangoproject
+mkdir dogsforadoptionproject
 ```
+
 ## Creating a virtual environment
 
 Now that the new directory has been created let's create a virtual environment to hold the Django framework. Make sure you are in the newly created directory, and run the following in the command prompt.
@@ -27,6 +28,7 @@ py -3 -m venv venv
 # macOS or Linux
 python3 -m venv venv
 ```
+
 After executing the command there should now be a new virtual environment named **venv** contained within the directory.
 
 ## Activating a virtual environment
@@ -34,8 +36,13 @@ After executing the command there should now be a new virtual environment named 
 Now that the virtual environment has been created we have to activate it before installing Django. Using the command prompt go to the directory where the virtual environment folder is located and type the below command.
 
 ```bash
+# Windows
 venv\Scripts\activate
+
+# macOS or Linux
+source venv/bin/activate
 ```
+
 By executing this command the virtual environment will start, and the command prompt should now look similar to below.
 
 ![Activated venv](../Module2/Module2_Images/venvcommandprompt.PNG)
@@ -50,13 +57,14 @@ Now that Git has been installed we can use it to [clone][2] our GitHub repositor
 
 ### Cloning the GitHub repository
 
-Now that Git has been installed we can use it to [clone][2] our GitHub repository. To begin open a command prompt and navigate to the location you would like to keep the project. Once you are in the correct location then start the cloning process by entering the following in the command prompt.
+Now that Git has been installed we can use it to [clone][2] our GitHub repository. To begin open a command prompt and navigate to the previously created directory **dogsforadoptionproject**. Once in the directory start the cloning process by entering the following in the command prompt.
 
 ```bash
 # [TODO] Needs final github link
 git clone https://github.com/????
 ```
-Once this has completed you should now see the **mydjangoproject** project folder with the **dog_shelters** app within the directory.
+
+Once this has completed you should now see the **adoptadog** project folder with the **dog_shelters** app within the directory.
 
 ## Django installation
 
@@ -65,4 +73,5 @@ Now that the starter files have been downloaded it is time to install Django. Ma
 ```bash
 pip install -r requirements.txt
 ```
+
 By executing this command it will read all of the programs required for the project in the **requirements.txt** file and begin the download. Once this has completed then you can continue with the rest of the module.

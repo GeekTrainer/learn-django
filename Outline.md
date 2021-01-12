@@ -147,24 +147,22 @@
       - Installing Git
       - Cloning the GitHub repository
     * Django installation
-3. SQLite database
-    * Create the SQLite database
-    * Display the schema
-4. Creating dynamic HTML pages with Django templates
+    * Install SQLite
+3. Creating dynamic HTML pages with Django templates
     - Variables
     - Filters
     - Tags
-5. Template inheritance
+4. Template inheritance
     - Extending templates
-    - Using the **block.super** variable
-6. Creating Template Views
+    - Using the block.super variable
+5. Creating Template Views
     - Generic Views
       * Creating a list view
       * Creating a detail view
-7. Knowledge Check
+6. Knowledge Check
     * Check your knowledge
       - Questions
-8. Summary
+7. Summary
     * In this module you learned:
       - .
       - .
@@ -184,22 +182,21 @@
       - Installing Git
       - Cloning the GitHub repository
     * Django installation
-3. SQLite database
-    * Create the SQLite database
-    * Display the schema
-4. Working with Django forms
+    * Deploying the Django app
+    * Install SQLite
+3. Working with Django forms
       - HTML forms
       - Understanding Django forms
-5. Form Views
+4. Form Views
       - Generic views for Create, Update and Delete
         - Developing objects for Create
         - Creating objects for Update and Delete
-6. Using Crispy forms for better display
+5. Using Crispy forms for better display
       - Using Bootstrap with Crispy
-7. Knowledge Check
+6. Knowledge Check
     * Check your knowledge
       - Questions
-8. Summary
+7. Summary
     * In this module you learned:
       - .
       - .
@@ -218,10 +215,10 @@
       - Installing Git
       - Cloning the GitHub repository
     * Django installation
-3. SQLite database
-    * Create the SQLite database
-    * Display the schema
+    * Install SQLite
+    * Deploying the Django app
 2. Uploading Your Django Project to Azure
+    * Initializing a Git Local Repository
 3. Knowledge Check
     * Check your knowledge
       - Questions

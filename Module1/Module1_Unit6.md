@@ -26,7 +26,7 @@ With this command, Django will automatically create the required folders and fil
 
 Now that the app structure has been created, we can begin to take the necessary steps so it will perform a simple function. The first step in the process is to create a view.  
 
-Navigate to the **views**.**py** file contained within the **hello_world** directory and add the below code under the comment that reads `# [TODO]: Add code below to create view`.
+Navigate to the **views.py** file contained within the **hello_world** directory and add the below code under the comment that reads `# [TODO]: Add code below to create view`.
 
 ```python
 # [TODO]: Add code below to create view
@@ -42,10 +42,9 @@ Creating a view is an essential action as it handles what views to return when a
 
 Now that a view has been created, the next step is to map it to the appropriate URL. In Django this is called a URLconf and it serves as a table of contents for your app.
         
-To begin this process create another file in the **hello_world** directory named **urls**.**py** and add the below code under the comment that reads `# [TODO]: Add the code below in the newly created file urls.py`.
+To begin this process create another file in the **hello_world** directory named **urls.py**.
 
 ```python
-# [TODO]: Add the code below in the newly created file urls.py
 from django.urls import path
 from . import views
 
@@ -54,11 +53,11 @@ urlpatterns = [
 ]
 ```
 
-The most important part of this code is the **urlpatterns** tuple, as this is where the views and URLs are connected or mapped. As you can see, we have imported our **views**.**py** file so we are able to use it within the **urlpatterns** line. 
+The most important part of this code is the `urlpatterns` tuple, as this is where the views and URLs are connected or mapped. As you can see, we have imported our **views.py** file so we are able to use it within the `urlpatterns` line. 
 
 Now that we have created our URLconf for our app, we must now create one in our project root directory.
 
-Click the second **myfirstproject** folder in your project and open the **urls**.**py** file to enter the code under the comments `# [TODO]: Add the include function to the list of imports from django.urls` and `# [TODO]: Add the code to create the URLconf for the project`.
+Click the second **myfirstproject** folder in your project and open the **urls.py** file to enter the code under the comments `# [TODO]: Add the include function to the list of imports from django.urls` and `# [TODO]: Add the code to create the URLconf for the project`.
 
 ```python
 # [TODO]: Add the include function to the list of imports from django.urls
@@ -71,9 +70,9 @@ urlpatterns = [
 ]
 ```
 
-When opening the file you will notice Django has already populated some of the code, and our task will be to add our new app path to the existing code. In addition to adding the new path, you will also need to import another function named **include** from **django.urls**. 
+When opening the file you will notice Django has already populated some of the code, and our task will be to add our new app path to the existing code. In addition to adding the new path, you will also need to import another function named `include` from `django.urls`. 
 
-## Understanding the **include** function
+## Understanding the include function
 
 As you continue to learn and have more complex file structures, you will add more views and URLs for your app. Through the use of URLconfs this function plays a key role as it gives the freedom to add folders and files within a project without breaking any functionalities.
 
@@ -97,7 +96,9 @@ Now let's say we called a user number in the URL.
 
 Django would first look in **myfirstproject.urls** and search for the urlpatterns. After finding the first match for **hello_world/**, it would then strip that part from the URL just leaving **5**. It would then continue with the remaining string to the **hello_world/urls.py** file where it would continue looking for a match. After finding the match, it would then display the appropriate view.
 
+```output
     Hello user # 5.
+```
 
 By using this function it allows for a simple way to manage and organize URLs within the application and provides greater freedom to change path roots without breaking the app.
 
@@ -109,6 +110,7 @@ Now that the structure is complete, views have been added, and the URLs mapped i
 ```bash      
 python manage.py runserver
 ```
+
 After starting the server enter the below link into your preferred browser.
 
     http://localhost:8000/hello_world/

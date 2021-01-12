@@ -20,7 +20,7 @@ Now that we completed the necessary setup for our SQLite database, let's uncover
 
     ![SQLite Database file](../Module2/Module2_Images/Module2_DBImage.PNG)
 
-    By clicking on the file it will open a new window. Once the new window is open and you are able to see the SQLite command line, enter **.schema** to display the schema of the database.
+    By clicking on the file it will open a new window. Once the new window is open and you are able to see the SQLite command line, enter `.schema` to display the schema of the database.
 
     ![SQLite Command Line](../Module2/Module2_Images/Module2_SQLiteCommandLine.PNG)
 

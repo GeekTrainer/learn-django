@@ -9,6 +9,7 @@ Now that Django is installed we are ready to begin the process of creating a pro
 ```bash
 django-admin startproject myfirstproject
 ```
+
 After running the above command the new project should now be in your chosen directory. In this instance you would see a new folder called 'myfirstproject'.
 
 ## Navigating the project structure
@@ -30,10 +31,13 @@ Now that the Django project has been created let's look at the structure to see 
     ```bash   
     django-admin help
     ```
+
     OR
+
     ```bash
     python manage.py help
     ``` 
+    
     For more information about the Django CLI, you can consult the [django-admin documentation][6].
 
 3. The inner **myfirstproject** is considered the Python package for your project.

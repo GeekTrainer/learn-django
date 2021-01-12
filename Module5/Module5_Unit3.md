@@ -1,38 +1,44 @@
+When creating HTML forms developers can spend hours creating different data fields and designing layouts for the best user experience. Django speeds up the process by cutting out the repetitive work in HTML and coding the fields in Python. Discover how Django can control field behavior and automatically create HTML tags, but first let's take a look at an HTML form.
 
-[1]: https://www.sqlite.org/download.html "Link to SQLite webpage"
-[2]: https://docs.djangoproject.com/en/3.1/topics/db/queries/ "Django Queries"
+## HTML forms
 
-If you are following the modules of this learning path in order then the below tasks have already been completed. If not, you have the option to use the SQLite database provided in the project starter files or following the below steps to create your own and don't forget to check out the database schema if you don't have SQLite installed.
+We start by creating a basic HTML template and then inserting the form element `<form>...</form>` tags within the `<body>`. By inserting these tags we can then begin to define the required fields for a "Contact Us" form.
 
-## Create the SQLite database
-
-Now that the files are downloaded from GitHub there are a few things we need to do to continue setting up our project. The first step is to create the SQLite database. Navigate to the inner **mydjangoproject** folder, and look inside to see the **settings.py** file. As you look through the file you will notice Django has provided the start-up code for our database. Now to activate the database go back so you are in the main **mydjangoproject** folder and enter the following command into the command prompt.
-
-```bash
-python manage.py migrate
+```html
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>HTML Forms</h2>
+        <form action="request_visit" method="POST" >
+            <label for="client_name">Name:</label><br>
+            <input type="text" id="client_name" name="client_name"><br>
+            <label for="inquiry_reason">Reason for inquiry:</label><br>
+            <input type="text" id="inquiry_reason" name="inquiry_reason"><br>
+            <label for="contact_number">Contact Number:</label><br>
+            <input type="text" id="contact_number" name="contact_number"><br><br>
+            <input type="submit" value="Submit">
+        </form> 
+    </body>
+</html>
 ```
 
-By running this command, Django searches for the **INSTALLED_APPS** setting within the **settings.py** file and creates any necessary tables according to the default settings.
+From the example above you can see we have included the fields for a name, the reason for inquiry, and a contact number. We have also included an `action` and `method` attribute within the beginning `form` tag and lastly added a `submit` button.
 
-## Display the schema
+The `action` and `method` attributes are important to define as they are triggered when the user clicks "Submit". After submitting the form the `action` attribute will look for the file to return the form data for further processing while the `method` attribute declares the type of request.
 
-Now that we completed the necessary setup for our SQLite database, let's uncover the two ways to check out the schema. The first will be through the SQLite command line and the second will be in VSCode. 
+As you can see this form has declared the type of request as a `POST` in order to update the data within our database. If we had intended for this form to retrieve information from the database then we would have used `GET`.
 
-[!NOTE] This task assumes SQLite is already installed, but if not then go to the SQLite website to download the [SQLite application][1].
+## Understanding Django forms
 
-1. The first way to check out the schema of the newly created database is to use the SQLite command line. For this task, browse through the file explorer and find the newly created database file and double click on the file.
+Now that we have covered creating a form in HTML let discuss how Django can speed up the process. The first thing that Django developed was a **forms** class. This class controls the form and dictates not only the behavior, but how it appears to the user. Since we have already designed our form in HTML let's convert it over to a Django form. The first thing we need to do is create a **forms.py** file in our app then enter the below code.
 
-    ![SQLite Database file](../Module2/Module2_Images/Module2_DBImage.PNG)
+```python
+from django import forms
 
-    By clicking on the file it will open a new window. Once the new window is open and you are able to see the SQLite command line, enter **.schema** to display the schema of the database.
+class ClientForm(forms.Form):
+    client_name = forms.CharField(label='Name:', max_length=100)
+    inquiry_reason = forms.CharField(widget=forms.Textarea, label='Reason for inquiry:', max_length=100)
+    contact_number = forms.CharField(label='Contact Number:', max_length=100)
+```
 
-    ![SQLite Command Line](../Module2/Module2_Images/Module2_SQLiteCommandLine.PNG)
-
-2. The second option to check out the contents of the database is to view it in VSCode. While there are different extensions available, we choose to install the **vscode-sqlite** extension.
-
-    ![SQLite Extension](../Module2/Module2_Images/Module2_VSC_SQLiteExt.PNG)
-
-    After installing this extension, hold down **CTRL + Shift + P** to view the command palette. Enter **SQLite: Open Database**, and then choose the appropriate database from the dropdown list. This will then open up a new view in the Explorer Pane where you can now view the database structure.
-
-    ![SQLite Explorer](../Module2/Module2_Images/Module2_VSC_SQLiteDBOpen.PNG)
-
+For this form we have created the `ClientForm` class to hold the form elements, and also define the fields. One thing to notice is that we are not creating the `<form>...</form>` tags, or the "Submit" button that is required for the HTML template. When inserting this form those elements will have to be added to the template in order to work correctly.

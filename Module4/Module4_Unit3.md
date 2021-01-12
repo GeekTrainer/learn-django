@@ -1,38 +1,58 @@
-[1]: https://www.sqlite.org/download.html "Link to SQLite webpage"
-[2]: https://docs.djangoproject.com/en/3.1/topics/db/queries/ "Django Queries"
+Templates are text files that can be used to generate text-based formats such as HTML or XML. Each template will contain some static data that is shared across the site, but can also contain placeholders for dynamic data. They contain variables and tags that control the behavior and what will appear as the final page. To begin to understand templates let's first look at variables.
 
-If you are following the modules of this learning path in order then the below tasks have already been completed. If not, you have the option to use the SQLite database provided in the project starter files or following the below steps to create your own and don't forget to check out the database schema if you don't have SQLite installed.
+## Variables
 
-## Create the SQLite database
+Variables are placed within a template so the engine is able to evaluate and place the correct data per request. In order to position a variable within a template it must be between two curly brackets. It can be any combination of alphanumeric characters and can include an underscore as long as it is not placed at the beginning.
 
-Now that the files are downloaded from GitHub there are a few things we need to do to continue setting up our project. The first step is to create the SQLite database. Navigate to the inner **mydjangoproject** folder, and look inside to see the **settings.py** file. As you look through the file you will notice Django has provided the start-up code for our database. Now to activate the database go back so you are in the main **mydjangoproject** folder and enter the following command into the command prompt.
-
-```bash
-python manage.py migrate
+```html
+{{ dog.breed }}
 ```
 
-By running this command, Django searches for the **INSTALLED_APPS** setting within the **settings.py** file and creates any necessary tables according to the default settings.
+In this example of a variable the template engine would look for the `dog` object and replace it with the `breed` as below.
 
-## Display the schema
+```text
+Great Dane
+```
 
-Now that we completed the necessary setup for our SQLite database, let's uncover the two ways to check out the schema. The first will be through the SQLite command line and the second will be in VSCode.
+## Filters
 
-> [!NOTE] This task assumes SQLite is already installed, but if not then go to the SQLite website to download the [SQLite application][1].
+Filters are a great way to control how the data appears when requested in a template. Since these filters are already created they provide an easy way to format data without having to write any special code. 
 
-1. The first way to check out the schema of the newly created database is to use the SQLite command line. For this task, browse through the file explorer and find the newly created database file and double click on the file.
+For example, let's say we have to print out the names of the dog breeds and we want to make sure the first letter of every name is capitalized.
 
-    ![SQLite Database file](../Module2/Module2_Images/Module2_DBImage.PNG)
+```html
+{{ dog.breed | capfirst }}
+```
 
-    By clicking on the file it will open a new window. Once the new window is open and you are able to see the SQLite command line, enter **.schema** to display the schema of the database.
+As you can see the variable is to the left of the pipe symbol `|` and the filter is on the right. This is just one of many filters that can be used to manipulate the data when using Django template filters.
 
-    ![SQLite Command Line](../Module2/Module2_Images/Module2_SQLiteCommandLine.PNG)
+## Tags
 
-2. The second option to check out the contents of the database is to view it in VSCode. While there are different extensions available, we choose to install the **vscode-sqlite** extension.
+Tags are a little more advanced than variables and can be used to perform loops, create text, or even load information to be used by the variables.
 
-    Instructions to install needed
+For instance if we wanted to print out a list of dog breeds that were in each shelter the below code would be used.
 
-    ![SQLite Extension](../Module2/Module2_Images/Module2_VSC_SQLiteExt.PNG)
+```html
+<ul>
+    {% for dogs in shelter_list %}
+        <li>{{ dogs.breed }}</li>
+    {% endfor %}
+<ul>
+```
 
-    After installing this extension, hold down **Ctl + Shift + P** to view the command palette. Enter **SQLite: Open Database**, and then choose the appropriate database from the dropdown list. This will then open up a new view in the Explorer Pane where you can now view the database structure.
+In this code we are using a `for` statement tag to loop through the `shelter_list` and print out all of the dog breeds, and then we close the tag by using `endfor`.
 
-    ![SQLite Explorer](../Module2/Module2_Images/Module2_VSC_SQLiteDBOpen.PNG)
+We can even go a little further and use `if`, `elif`, and `else` when needed. For example say we wanted to display how many dogs are waiting for adoption or have been adopted for the month of Dec. We first begin by providing a little more detail about this section of code by using the commenting `{# #}` tags, and then continue with the statements.
+
+```html
+{# Displays number of dogs waiting for adoption or adopted for December #}
+{% if shelter_list %}
+    Number of dogs that need adopting for Dec: {{ shelter_list | length }}
+{% elif adopted_list %}
+    Number of dogs that have been adopted in Dec: {{ adopted_list | length }}
+{% else %}
+    There are no dogs in the shelter for the month of Dec.
+{% endif %}
+```
+
+By running this code if a `shelter_list` exists it returns the number of dogs on the list. If not, it skips over to the `adopted_list` to see if any dogs have been adopted. If these two lists do not exist then it skips to the else statement to execute. As you can see these statements work as expected but need to be between a curly bracket and percentage sign `{% if shelter_list %}` for the template engine to understand and process.

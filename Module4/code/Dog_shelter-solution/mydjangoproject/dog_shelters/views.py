@@ -7,12 +7,12 @@ from dog_shelters.models import Shelter, Dog
 def index(request):
 
     # Generate count of dog shelters in database
-    num_shelters = Shelter.objects.all().count()
+    shelter_count = Shelter.objects.all().count()
 
     # Generate count of dogs ready for adoption in database
-    num_dogs = Dog.objects.all().count()        
+    dog_count = Dog.objects.all().count()        
 
-    return render(request, 'index.html', {'num_shelters': num_shelters, 'num_dogs': num_dogs})
+    return render(request, 'index.html', {'shelter_count': shelter_count, 'dog_count': dog_count})
 
 # [TODO] Add Generic Listview
 from django.views.generic import ListView

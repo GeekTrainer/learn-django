@@ -18,6 +18,7 @@ python --version
 # macOS
 python -V 
 ```
+
 By executing this command it will display what Python version is installed on your computer. For this module we are using the latest official version of Django and they recommend using Python 3 in order to have access to the latest Python features. If you do not have Python installed then proceed to the [Python website][2] to download the correct version.
 
 ## Creating a virtual environment
@@ -37,6 +38,7 @@ mkdir mydjangoproject
 # Command to change directory
 cd mydjangoproject
 ```
+
 After the folder is created then change the directory and enter the below code in the command line.
 
 ```bash
@@ -46,6 +48,7 @@ py -3 -m venv venv
 # macOS or Linux
 python3 -m venv venv
 ```
+
 After executing the command there should now be a new virtual environment named **venv** contained within the directory. 
 
 ## Activating a virtual environment
@@ -53,8 +56,13 @@ After executing the command there should now be a new virtual environment named 
 Now that the virtual environment has been created we have to activate it before installing Django. Using the command prompt go to the directory where the virtual environment folder is located and type the below command.
 
 ```bash
+# Windows
 venv\Scripts\activate
+
+# macOS or Linux
+source venv/bin/activate
 ```
+
 By executing this command the virtual environment will start, and the command prompt should now look similar to below.
 
 ![Activated venv](../Module2/Module2_Images/venvcommandprompt.PNG)
@@ -68,4 +76,5 @@ Now that the virtual environment has been activated it is time to download Djang
 ```bash
 pip install Django
 ```
+
 With this command the Django framework will begin to download, and once completed we can start developing our app!

@@ -1,120 +1,221 @@
-Template inheritance is key in keeping specific features or layouts the same throughout a website. By using this technique a developer can speed up the process of creating website pages by not using the same but slightly modified template numerous times.
+Now that the templates have been completed we need to add them to our **dog_shelters** app. By creating a view we will then be able to define the template that will be returned when a link is clicked, and allow for further processing of the data.
 
-## Extending templates
+Since the **index.html** and **shelter_spotlight.html** need to be included in our app the first step is to add the below code under comment `# [TODO] Create your views` to the **views.py** file.
 
-To demonstrate the process of template inheritance we will be creating a simple HTML page that will be used for the layout of our site. Before creating this page we first have to create another folder within our app **dog_shelters** called **templates**. After creating the **templates** folder create a file within the folder and name it **basic_layout.html**. In this file is where the code will be entered under the comment `<!-- TODO - Create the basic_layout.html template located in the templates folder -->`.
+```python
+# [TODO] Create your views
+from dog_shelters.models import Shelter, Dog
 
-```html
-<!-- TODO - Create the basic_layout.html template -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel='stylesheet' href="static/css/layout.css">
-    <title>{% block title %}Adopt A Dog Today{% endblock %}</title>
-</head>
-<body>
-    <!-- Sidebar -->
-    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-    <h3 class="w3-bar-item">Menu</h3>
-        <div id="sidebar">
-            {% block sidebar %}
-                <a href="home" class="w3-bar-item w3-button">Home</a>
-            {% endblock %}
-        </div>
-    </div>
-    <!-- Page Content -->
-    <div style="margin-left:25%">
-        <div class="w3-container w3-teal">
-            <h1 style="text-align: center;">Adopt A Dog Today</h1>
-        </div>   
-        <div id="content">
-            {% block content %}{% endblock %}
-        </div>
-    </div>     
-</body>
-</html>
+def index(request):
+
+    # Generate count of dog shelters in database
+    shelter_count = Shelter.objects.all().count()
+
+    # Generate count of dogs ready for adoption in database
+    dog_count = Dog.objects.all().count()
+
+    return render(request, 'index.html', {'shelter_count': shelter_count, 'dog_count': dog_count})
+
+def spotlight(request):
+
+    # Generate count of dog shelters in database
+    get_shelters = Shelter.objects.all()
+
+    # Generate count of dogs ready for adoption in database
+    get_dogs = Dog.objects.all()
+
+    return render(request, 'shelter_spotlight.html', {'get_shelters': get_shelters, 'get_dogs': get_dogs})
 ```
 
-When looking at the above HTML page take notice of the three sections that contain the word `block`.
+Now that we have completed our template views let's move on to creating the **URLconf** for our app. By adding this code we are defining what will be returned when one of the links on the site is clicked. Making sure you are still in the **dog_shelter** app and create a file named **urls.py**. Add the below code under comment `# [TODO]: Add the code below to create the URLconf for the app`.
+
+```python
+# [TODO]: Add the code below to create the URLconf for the app
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('home', views.index, name='index'),
+    path('shelter_spotlight', views.spotlight, name='spotlight'),
+]
+```
+
+After registering the paths in the app we now have to register the app paths in the project. Go to the project **mydjangoproject** and find the **urls.py** file to enter the below code under comments `# [TODO]: add include to the list of imports` and `# [TODO]: Add the below line to create the URLconf for the project`.
+
+```python
+# [TODO]: Add include to the list of imports
+from django.urls import include, path
+
+urlpatterns = [
+    # [TODO]: Add the below line to create the URLconf for the project
+    path('dog_shelters/', include('dog_shelters.urls')),
+    path('admin/', admin.site.urls),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+```
+
+By adding the `'dog_shelters/'` path we have now connected our app to the project. Let's see what it looks like now with the new templates added. If your project isn't already running then enter `python manage.py runserver` in the command line to start the app, and enter the below URL in your preferred browser.
+
+http://localhost:8000/dog_shelters/
+
+If everything is configured correctly you should see the home page of the site.
+
+![Home Page](../Module4/Module4_Images/Module4_AppHomePage.PNG)
+
+Then clink the link in the left side navigation named **Shelter Spotlight** to see the dog that is highlighted.
+
+![Shelter Spotlight Page](../Module4/Module4_Images/Module4_AppShelterSpotlightPage.PNG)
+
+
+Now that we have confirmed the app is up and running, and we have learned how to format template views let's start adding more content.
+
+## Generic Views
+
+Because Django was created on the premise that development processes were too repetitive and time to deployment was too long it's only understandable that they would try and shorten views. While these views might not be ideal for complex tasks, Django has provided a small amount of built-in **Generic** views that are great for simple processes like generating lists or providing detailed views.
+
+### Creating a list view
+
+The first generic view that we will add to our app is the **ListView**, and this will let us display the list of dog shelters that are currently in the database. Let's begin by creating a template named **shelter_list.html** in the app template folder. After creating this template enter the below code.
 
 ```html
-{% block title %}
-{% block sidebar %}
+{% extends "index.html" %}
+
 {% block content %}
+    <h2 style="text-align: center; margin-top: 100px;">Shelter Names</h2>
+    <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
+        <ul>
+            {% for get_shelters in my_shelter_list %}
+                {{ get_shelters.shelter_name }}
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
 ```
 
-By tagging these sections with the `block` variable it tells the template engine that the child templates are able to override this information.
+As you can see we have again extended the **index.html** file to continue with the same page layout, and added a loop to list all of the shelter names contained within the database.
 
-Now that the layout page of our site is finished we can create the site home page. Within the **templates** folder create another file and name it **index.html** and save the code under the comment `<!-- TODO - Create the index.html template within the templates folder -->`.
+After completing the template code our next step is to add the view. Now go to the **views.py** file in our app and add the below code under the comment `# [TODO] Add Generic Listview`.
+
+```python
+# [TODO] Add Generic Listview
+from django.views.generic import ListView
+
+class ShelterList(ListView):
+    model = Shelter
+    context_object_name = 'my_shelter_list'
+    template_name = "shelter_list.html"
+```
+
+We first start by importing `ListView`, and then add a `ShelterList` class that will contain the details. The first step in defining the `Listview` is to name the model. In this case we are using the `Shelter` model that was already defined in the **models.py** app file. The next thing we need to add is a `context_object_name`. If this variable was not added the only way to call this view would be to use `object_list` in our template loop as seen below.
 
 ```html
-<!-- TODO - Create the index.html template -->
-{% extends "basic_layout.html" %}
+<ul>
+    {% for get_shelters in object_list %}
+        {{ get_shelters.shelter_name }}
+    {% endfor %}
+</ul>
+```
 
+By calling the view this way it does not give much information about what is being requested. Since this is a small app it may not seem that important, but it is a good idea to get in the habit of providing as much detail as possible. So in this case we have changed the listview name to `my_shelter_list`. The last thing we need to do is provide the `template_name` for this view so we have added the template `shelter_list.html`.
+
+Now that the view code is added we need to connect everything together by first adding the path to our new template. Make sure you are still in the app folder and go to the **urls.py** file to add the below path in the `urlpatterns` under comment `# [TODO]: Add the path for ShelterList ListView`. 
+
+```python
+urlpatterns = [
+    path('home', views.index, name='index'),
+    # [TODO]: Add the path for ShelterList ListView
+    path('shelter_list', views.ShelterList.as_view(), name='ShelterList'),
+    path('shelter_spotlight', views.spotlight, name='spotlight'),
+]
+```
+
+Then add the URL to the **index.html** file under the comment `<!-- TODO - Create the URL for the new template page shelter_list -->` to complete the process.
+
+```html
 {% block sidebar %}
   {{ block.super }}
   <a href="shelter_spotlight" class="w3-bar-item w3-button">Shelter Spotlight</a>
-{% endblock %}
-
-{% block content %}
-  <h2 style="text-align: center; margin-top: 100px;">Welcome to Adopt A Dog Today!</h2>
-  <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
-    <p>We created this site to collect and list all of the dog shelters that exist within the United States. By using our site you are now able to look at every dog within a shelter to find the perfect match for you.</p>
-  </div>
-  <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
-    <h3>There are a total of <span style="color: red;"> {{ num_shelters }} </span> shelter(s) that have <span  style="color: red;"> {{ num_dogs }} </span> dog(s) ready for adoption.</h3>
-  </div>
+  <!-- TODO - Create the URL within the sidebar block for the new template page shelter_list -->
+  <a href="shelter_list" class="w3-bar-item w3-button">Shelters</a>
 {% endblock %}
 ```
 
-As you can see at the top of the template we have extended the **basic_layout.html** page. By extending this page we can keep the same formatting and modify it where needed. In this instance we want to add a new nav link in the `sidebar` block, and the page content within the `content` block. Since we did not want to override the default title from the **basic_layout** page the `title` block was not added.
+Now that we have created our first **ListView** let's see what it looks like in our app. If your app is not running then start it by typing `python manage.py runserver` in the command line and typing the web link in your preferred browser. If everything is working correctly you should see the new link **Shelters** in the home page.
 
-Next we need to add the second page to the website called **shelter_spotlight.html** which will also be stored in the **templates** folder. After creating the file input the below code under the comment `<!-- TODO - Create the shelter_spotlight.html template -->`.
+![Added Shelters Link](../Module4/Module4_Images/Module4_AddedURLListViewTemplate.PNG)
+
+Then by clicking on the link see the newly created template with the listview of shelters.
+
+![ListView Template](../Module4/Module4_Images/Module4_ListViewTemplate.PNG)
+
+
+### Creating a detail view
+
+Now that the list view has been created let's create a generic **DetailView**. For this example we will be working with the information contained on the **Shelters** page and creating a detailed view when clicking on a specific shelter. We need to again create another file called **shelter_details.html** in the app templates folder. After creating the file enter the below code.
 
 ```html
-<!-- TODO - Create the shelter_spotlight.html template -->
 {% extends "index.html" %}
 
-{% block title %}Shelter Spotlight{% endblock %}
-
 {% block content %}
-
-    {% for entry in get_dogs %}
-        <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
-            {% for shelter in get_shelters %}
-                {% if shelter.id == entry.shelter_id %}
-                    Location: {{ shelter.shelter_name }} in {{ shelter.shelter_location }}
-                {% endif %}
-            {% endfor %}
-            <h2>{{ entry.dog_name }}</h2>
-            <img src="{{ entry.dog_image.url }}" alt="" width="500" height="600">
-            <h4>{{ entry.dog_breed }}</h4>
-            <h4>{{ entry.dog_description }}</h4>
-        </div>
-    {% endfor %}
-    
+    <h2 style="text-align: center; margin-top: 100px;">Shelter details</h2>
+    <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
+        <h3>{{ shelter.shelter_name }} is located at:</h3>
+        <p>{{ shelter.shelter_location }}</p>
+    </div>
 {% endblock %}
 ```
 
-From the first line of code you can see this template will now extend the main page **index.html**. For this new page it will override the `title` and also the `content` block with the spotlighted dogs information and image. Also, since we did not need to change or add anything to the site navigation the `sidebar` block was not included.
+We have again extended the **index.html** file to keep the same layout, and then added the variables needed to call the shelter information. The next action is to add the below code under the comment `# [TODO] Add Generic Detailview` to the **views.py** file.
 
-When working with child templates and extending content from the parent be aware of the following:
+```python
+# [TODO] Add Generic Detailview
+from django.views.generic import DetailView
+from django.shortcuts import get_object_or_404
 
-- When using `extends` it needs to be the first template tag in order to work correctly.
-- Child templates don't have to use all of the parent blocks.
-- If you start duplicating content across multiple templates then consider adding it to the parent as a block.
+class ShelterDetail(DetailView):
+   def get(self, request, *args, **kwargs):
+        shelter = get_object_or_404(Shelter, pk=kwargs['pk'])
+        context = {'shelter': shelter}
+        return render(request, 'shelter_details.html', context)
+```
 
-## Using the block.super variable
+As you can see we have imported `DetailView`, and then `get_object_or_404`. We use the `get_object_or_404` statement in the `shelter` variable so it will check if the object being requested actually exists, and if not then an exception would be thrown. We next go to `context` and define the variable that will be used by the template to call this view, and then lastly state what will be rendered in the template.
 
-While it is extremely helpful to override data from the parent template, what happens if we would like to keep some of the content from the parent page? In order to do that just add a `{{ block.super }}` variable to our child template.
+Now that the view has been added we need to add the path. Go to the **urls.py** file in the app and add the below under comment `# [TODO]: Add the path below for our ShelterDetail DetailView`.
+
+```python
+urlpatterns = [
+    path('home', views.index, name='index'),
+    # [TODO]: Add the path below for our ShelterList ListView
+    path('shelter_list', views.ShelterList.as_view(), name='ShelterList'),
+    # [TODO]: Add the path below for our ShelterDetail DetailView
+    path('<int:pk>', views.ShelterDetail.as_view(), name='ShelterDetail'),
+    path('shelter_spotlight', views.spotlight, name='spotlight'),
+]
+```
+
+As you can see we have added `<int:pk>` at the beginning of this path. This was added since we want the detail view to be called when the user clicks on the shelter id. In order for this path to work correctly we now need to modify the code a little in the **shelter_list.html** page. Add the code under comment `<!-- TODO - Add URL for shelter id to request correct path for DetailView  -->` to create the URL.
 
 ```html
-{% block sidebar %}
-  {{ block.super}}
-  <a href="shelter_spotlight" class="w3-bar-item w3-button">Shelter Spotlight</a>
+{% block content %}
+    <h2 style="text-align: center; margin-top: 100px;">Shelter Names</h2>
+    <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
+        <ul>
+            {% for get_shelters in my_shelter_list %}
+                <!-- TODO - Add URL for shelter id to request correct path for DetailView  -->
+                <a href="{{ get_shelters.get_absolute_url}}{{ get_shelters.id }}" >{{ get_shelters.shelter_name }}</a>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
 ```
 
-The above example was taken from the **index.html** file, and as you can see it contains a `{{ block.super }}` in the `{% block sidebar %}` section of the code. Since the website home link was supplied in the **basic_layout.html** file we want to carry that over to this new page. By adding this variable we are not only able to carry over the **home** link but also add the new **shelter_spotlight** link.
+With the addition of this line we have created a URL that shows the shelter name but is requesting the database information by the shelter **id**. By making this change it will allow the detail view to be called when a user clicks on the shelter name.
+
+Now that we have created the **DetailView** let's see how it has changed the app. Again If your app is not running then start it by typing `python manage.py runserver` in the command line and typing the web link in your preferred browser. Click on the **Shelters** link to see the list of shelters that are currently in the database. When looking at the list you should see the shelter name that is now clickable.
+
+![Added Shelters Link](../Module4/Module4_Images/Module4_AddedURLDetailViews.PNG)
+
+Click on the shelter name, and you should see the newly created template with the **DetailView** of the shelter.
+
+![ListView Template](../Module4/Module4_Images/Module4_DetailViewTemplate.PNG)

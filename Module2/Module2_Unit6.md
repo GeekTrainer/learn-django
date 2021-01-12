@@ -18,6 +18,7 @@ Before moving on to create an object, let's first test a query by asking Django 
 ```python
 Shelter.objects.all()
 ```
+
 Since we have not created any shelters a blank QuerySet should appear.
 
 ![No Entries](../Module2/Module2_Images/Module2_NoObjects.PNG)
@@ -30,7 +31,7 @@ Now that we have imported our models into the python shell it is time to create 
 s = Shelter(shelter_name='Dogs 4 U', shelter_location='Bremerton, WA')
 ```
 
-After entering the question then save it to the database by entering the command below. If we were working in SQL this would be the same command as **INSERT**.
+After entering the question then save it to the database by entering the command below. If we were working in SQL this would be the same command as `INSERT`.
 
 ```python
 s.save()
@@ -43,6 +44,7 @@ Now that we have saved a shelter let's query the database to see if it was saved
 ```python
 Shelter.objects.all()
 ```
+
 In this instance it should now print out the shelter name that was just saved.
 
 ![Return Shelter Name](../Module2/Module2_Images/Module2_ReturnShelter.PNG)
