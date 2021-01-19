@@ -3,7 +3,7 @@
 [6]: https://docs.djangoproject.com/en/3.1/ref/django-admin/ "Command-line Utility"
 
 
-For this module in the learning path we are in the beginning stages of creating a new app named **dog_shelters**. This project focuses on collecting information of all existing dog shelters, and the dogs they are hoping to adopt, across the United States. The hope for this app is dogs would be able to find suitable homes faster because they would have individuals looking to adopt them from around the U.S. and not just their local area. Django was the perfect framework for this project as it provided a route for quickly developing a customer facing app while providing an established database that could easily be accessed by employees for quick updating. Begin creating this project by following the below steps to install Django and retrieve the project starting files. 
+For this module in the learning path we are in the beginning stages of creating a new app named **dog_shelters**. This project focuses on collecting information of all existing dog shelters and the dogs they are hoping to adopt across the United States. The hope for this app is dogs would be able to find suitable homes faster because they would have individuals looking to adopt them from around the U.S. and not just their local area. Django is the perfect framework for this project, as it provided a route for quickly developing a customer facing app while providing an established database that could easily be accessed by employees for quick updating. Begin creating this project by following the below steps to install Django and retrieve the project starting files. 
 
 ## Creating a new directory
 
@@ -19,7 +19,7 @@ mkdir dogsforadoptionproject
 
 ## Creating a virtual environment
 
-Now that the new directory has been created let's create a virtual environment to hold the Django framework. Make sure you are in the newly created directory, and run the following in the command prompt.
+Now that the new directory has been created let's create a virtual environment to hold the Django framework. Make sure you are in the newly created directory and run the following in the command prompt.
 
 ```bash
 # Windows

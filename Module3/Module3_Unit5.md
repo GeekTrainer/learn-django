@@ -42,7 +42,7 @@ To add the first user go to **Users** and click **Add**.
 
 ![Users](../Module3/Module3_Images/Module3_DjangoAdminNewUser.PNG)
 
-You will then be taken to the page to add another user, and assign a password.
+You will then be taken to the page to add another user and assign a password.
 
 ![Add User](../Module3/Module3_Images/Module3_DjangoAdminSaveUsers.PNG)
 

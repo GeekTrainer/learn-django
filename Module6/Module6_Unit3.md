@@ -30,7 +30,7 @@ After selecting **Create Resource** you should now be able to see the option to 
     
     * Runtime Stack: Python 3.7
 
-Once the form is completed and submitted, you should see Azure processing the request and a notification will appear when the deployment is complete.
+Once the form is completed and submitted you should see Azure processing the request and a notification will appear when the deployment is complete.
 
 ![Deployment Complete](./Module6_Images/Module6_WebAppComplete.PNG)
 

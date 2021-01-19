@@ -129,4 +129,4 @@ class CrispyClientForm(forms.Form):
         self.helper.add_input(Submit('submit', 'Submit'))
 ```
 
-With the above example we have laid out the three fields with the help of Bootstrap, and defined the direction at which the fields will be displayed. As you can see including `crispy_forms` allows form layout and behavior in a few simple steps.
+With the above example we have laid out the three fields with the help of Bootstrap and defined the direction at which the fields will be displayed. As you can see including `crispy_forms` allows form layout and behavior in a few simple steps.

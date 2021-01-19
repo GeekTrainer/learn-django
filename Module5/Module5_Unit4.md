@@ -1,6 +1,6 @@
 [1]: https://docs.djangoproject.com/en/3.1/ref/csrf/ "CSRF Details"
 
-When learning Django we found out that **views** are an essential component to the framework as they handle what to return when a request is sent. So it's only logical that our form would be sent back to our **views.py** file for processing. In order to complete our form we now have the option to use an existing view, or create another one to handle this type of request. 
+When learning Django we found out that **views** are an essential component to the framework as they handle what to return when a request is sent. So it's only logical that our form would be sent back to our **views.py** file for processing. In order to complete our form we now have the option to use an existing view or create another one to handle this type of request. 
 
 1. Go to the **views.py** file and enter the below code under the comment `# [TODO] Create view for ClientForm`.
 
@@ -23,7 +23,7 @@ def contactForm(request):
     return render(request, 'contact.html', {'form': form})
 ```
 
-Since this is a new type of request we are creating another view for processing the form. As you can see above we are importing the name of the class that was created for the form, and we have created the definition that will be called when the template is sending a request.
+Since this is a new type of request we are creating another view for processing the form. As you can see above we are importing the name of the class that was created for the form and we have created the definition that will be called when the template is sending a request.
 
 If the request happens to be `GET` then it will simply return a blank form that is ready for user input, but if the request is a `POST` it will automatically check if the data submitted is valid by executing the statement `if form.is_valid()`. If the data is valid it will continue to execute that block of code and bind the data to the form. If the data is not valid it will simply return the form to the template with the data that was previously entered by the user for correction.
 
@@ -63,13 +63,13 @@ Now that we have created the form we need to add a **Contact Us** template.
 {% endblock %}
 ```
 
-As you can see we have included the `{{ form }}` variable in the template, added the `<form>` tags and `<input>` element for the "Submit" button. These elements together complete our **contact.html** template, and it is ready for user input. Now that the form is ready for user input there is one more tag that was added to guard against Cross Site Request Forgeries. 
+As you can see we have included the `{{ form }}` variable in the template, added the `<form>` tags and `<input>` element for the "Submit" button. These elements together complete our **contact.html** template and it is ready for user input. Now that the form is ready for user input there is one more tag that is added to guard against Cross Site Request Forgeries. 
 
 Cross Site Request Forgeries (CSRF) are attacks used by hackers to try and gain access to sensitive information by trying to force authenticated users to submit a request. These attempts are stopped by issuing a random and unique CSRF token to each user. When a user submits a request the program will check to see if the CSRF token originally assigned to the user is the same when the user submits a `POST` request. [CSRF][1] is automatically enabled by Django and by using this token it will prevent hackers from submitting unauthorized requests. The only thing we need to do is add this tag `{% csrf_token %}` to our form code. Now that we have addressed the way form views are added let's learn about the generic form views that Django created.
 
 ## Generic views for Create, Update and Delete
 
-Django has again tried to speed up the process of coding form views by providing Generic views. Generic views give us the ability to accomplish a basic task with less code, and easily check if a submitted form is valid before processing the information. We will now cover these views by creating forms that can interact with the database.
+Django has again tried to speed up the process of coding form views by providing Generic views. Generic views give us the ability to accomplish a basic task with less code and easily check if a submitted form is valid before processing the information. We will now cover these views by creating forms that can interact with the database.
 
 ### Developing objects for Create
 
@@ -123,7 +123,7 @@ As you can see we have extended the **index.html** template to keep the same lay
 
 ![HTML Tags](../Module5/Module5_Images/Module5_GenericFormHTMLView.PNG)
 
-The last two steps in the process is to add the link to the template, and then define the path. 
+The last two steps in the process is to add the link to the template and then define the path. 
 
 3. Find the **index.html** file and add the below code under the comment `<!-- TODO - Create the URL for the new template page shelter_form -->`.
 

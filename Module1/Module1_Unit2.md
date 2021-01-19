@@ -1,7 +1,7 @@
 [1]: https://git-scm.com/downloads "Git website downloads"
 [2]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository "Clone GutHub repository"
 
-For this module in the learning path we will be going through the steps to install the Django framework, creating a Django project, and then finish by creating a **"Hello, world!"** app. This module does cover all of the steps to create the project and app, but you do have the option to download the solution files from GitHub. 
+For this module in the learning path we will be going through the steps to install the Django framework, creating a Django project, and then finish by creating a **"Hello, world!"** app. This module covers all of the steps to create the project and app, but you do have the option to download the solution files from GitHub. 
 
 ## Installing Git
 

@@ -22,7 +22,7 @@ We start by creating a basic HTML template and then inserting the form element `
 </html>
 ```
 
-From the example above you can see we have included the fields for a name, the reason for inquiry, and a contact number. We have also included an `action` and `method` attribute within the beginning `form` tag and lastly added a `submit` button.
+From the example above you can see we have included the fields for a name, the reason for the inquiry, and a contact number. We have also included an `action` and `method` attribute within the beginning `form` tag and lastly added a `submit` button.
 
 The `action` and `method` attributes are important to define as they are triggered when the user clicks "Submit". After submitting the form the `action` attribute will look for the file to return the form data for further processing while the `method` attribute declares the type of request.
 
@@ -53,4 +53,4 @@ class ClientForm(forms.Form):
        
 ```
 
-For this form we have created the `ClientForm` class to hold the form elements, and also define the fields. One thing to notice is that we are not creating the `<form>...</form>` tags, or the "Submit" button that is required for the HTML template. When inserting this form those elements will have to be added to the template in order to work correctly.
+For this form we have created the `ClientForm` class to hold the form elements, and also define the fields. One thing to notice is that we are not creating the `<form>...</form>` tags or the "Submit" button that is required for the HTML template. When inserting this form those elements will have to be added to the template in order to work correctly.

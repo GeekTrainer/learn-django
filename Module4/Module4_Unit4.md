@@ -67,7 +67,7 @@ Now that the layout page of our site is finished we can create the site home pag
 {% endblock %}
 ```
 
-As you can see at the top of the template we have extended the **basic_layout.html** page. By extending this page we can keep the same formatting and modify it where needed. In this instance we want to add a new nav link in the `sidebar` block, and the page content within the `content` block. Since we did not want to override the default title from the **basic_layout** page the `title` block was not added.
+As you can see at the top of the template we have extended the **basic_layout.html** page. By extending this page we can keep the same formatting and modify it where needed. In this instance we want to add a new nav link in the `sidebar` block and the page content within the `content` block. Since we did not want to override the default title from the **basic_layout** page the `title` block was not added.
 
 Next we need to add the second page to the website called **shelter_spotlight.html** which will also be stored in the **templates** folder. After creating the file input the below code.
 

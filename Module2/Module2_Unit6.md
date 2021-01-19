@@ -2,7 +2,7 @@
 
 ## Creating a SQLite database in Django
 
-The first step in creating the SQLite database is to navigate to the inner **adoptadog** folder, and look inside to see the **settings.py** file. As you look through the file you will notice Django has provided the start-up code for our database. Now to activate the database go back to the main **adoptadog** folder and enter the following command into the command prompt.
+The first step in creating the SQLite database is to navigate to the inner **adoptadog** folder and look inside to see the **settings.py** file. As you look through the file you will notice Django has provided the start-up code for our database. Now to activate the database go back to the main **adoptadog** folder and enter the following command into the command prompt.
 
 ```bash
 python manage.py migrate

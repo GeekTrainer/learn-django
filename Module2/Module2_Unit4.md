@@ -53,11 +53,11 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 
-By importing `settings` and `static`, and also adding the above `static` line the project will now be able to recognize the image link and upload it to our site when requested.
+By importing `settings` and `static` and also adding the above `static` line, the project will now be able to recognize the image link and upload it to our site when requested.
 
 ## Activating the model
 
-All applications must be registered with the project in Django. It may seem a little counter-intuitive, but just because an application folder exists inside a project it doesn't automatically get loaded. We need to activate it by adding it to the list of `INSTALLED_APPS`.
+All applications must be registered with the project in Django. It may seem a little counter-intuitive, but just because an application folder exists inside a project doesn't mean it automatically gets loaded. We need to activate it by adding it to the list of `INSTALLED_APPS`.
 
 1. Find the configuration class name within the **dog_shelters** app. To find this class name go to the **dog_shelters/apps.py** file to find the below code and to see that the class name is `DogSheltersConfig`.
 
@@ -91,7 +91,7 @@ Now that our app has been added to the list of `INSTALLED APPS` we need to tell 
 python manage.py makemigrations dog_shelters
 ```
 
-After running the command then you should see something similar to below stating it has stored both models as a migration.
+After running the command you should see something similar to below stating it has stored both models as a migration.
 
 ![Database Migration](../Module2/Module2_Images/Module2_ModelMigration.PNG)
 

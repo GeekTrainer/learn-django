@@ -34,7 +34,7 @@ def index(request):
     return HttpResponse("Hello, world!")
 ```
         
-Creating a view is an essential action as it handles what views to return when a specific URL is sent as a request. In the next section, we will now map the URL to this view. 
+Creating a view is an essential action as it handles what views to return when a specific URL is sent as a request. In the next section we will now map the URL to this view. 
 
 ## URL mapping
 

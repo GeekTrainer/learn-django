@@ -1,7 +1,7 @@
 [1]: https://www.python.org/  "Install Python"
 
 
-While Django may have a little bit of a learning curve, they have provided everything you need to get started quickly in their framework. We start this unit by checking for the correct Python version, installing a virtual environment and then finish by installing the Django framework.
+While Django may have a little bit of a learning curve, they have provided everything you need to get started quickly in their framework. We start this unit by checking for the correct Python version, installing a virtual environment, and then finish by installing the Django framework.
 
 ## Installation overview
 

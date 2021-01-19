@@ -22,7 +22,7 @@ These data files live inside each app as a migrations directory and are designed
 
 ## Reversing migrations
 
-In some cases data is migrated as a mistake, and Django has provided a way to reverse it. For example, say the data had been migrated and the resulting output looks like below.
+In some cases data is migrated as a mistake and Django has provided a way to reverse it. For example, say the data had been migrated and the resulting output looks like below.
 
 ```output
 python manage.py migrate

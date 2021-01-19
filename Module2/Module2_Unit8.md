@@ -64,7 +64,7 @@ shelter.shelter_location='Bremerton, WA')
 shelter.save()
 ```
 
-In another example let's say the shelter closed, and we needed to delete it from the database. Since we had just saved a correction to this shelter we would use the same variable and delete it.
+In another example let's say the shelter closed and we needed to delete it from the database. Since we had just saved a correction to this shelter we would use the same variable and delete it.
 
 ```python
 shelter.delete()
