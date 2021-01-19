@@ -1,4 +1,4 @@
-Would you like to develop a data driven application but the timeline for completion doesn't allow enough time to learn SQL? If so, this module is for you. Understand the relationship between databases and ORMs, uncover the simple steps to setup and activate the Django SQLite database, and learn how to communicate with your database using ORM or Object Relational Mapping with Django. 
+Would you like to develop a data driven application with a framework that provides the necessary tools to create and manipulate a database? If so, this module is for you. Understand the relationship between databases and ORMs, uncover the simple steps to setup and activate the Django SQLite database, and learn how to communicate with your database using ORM or Object Relational Mapping with Django. 
 
 In this module you will learn:
 

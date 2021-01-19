@@ -2,8 +2,6 @@
 
 In order to create the app, we first start by navigating to the inside of the project root folder **myfirstproject** and input the following on the command line.
 
-[!NOTE] If you have decided to clone the app starting folder structure from the GitHub repository you can skip to the next step of **Creating a View**.
-
 ```bash    
 python manage.py startapp hello_world
 ```
@@ -26,7 +24,7 @@ With this command, Django will automatically create the required folders and fil
 
 Now that the app structure has been created, we can begin to take the necessary steps so it will perform a simple function. The first step in the process is to create a view.  
 
-Navigate to the **views.py** file contained within the **hello_world** directory and add the below code under the comment that reads `# [TODO]: Add code below to create view`.
+1. Navigate to the **views.py** file contained within the **hello_world** directory and add the below code under the comment that reads `# [TODO]: Add code below to create view`.
 
 ```python
 # [TODO]: Add code below to create view
@@ -57,7 +55,9 @@ The most important part of this code is the `urlpatterns` tuple, as this is wher
 
 Now that we have created our URLconf for our app, we must now create one in our project root directory.
 
-Click the second **myfirstproject** folder in your project and open the **urls.py** file to enter the code under the comments `# [TODO]: Add the include function to the list of imports from django.urls` and `# [TODO]: Add the code to create the URLconf for the project`.
+1. Click the second **myfirstproject** folder in your project 
+
+2. Open the **urls.py** file to enter the code under the comments `# [TODO]: Add the include function to the list of imports from django.urls` and `# [TODO]: Add the code to create the URLconf for the project`.
 
 ```python
 # [TODO]: Add the include function to the list of imports from django.urls
@@ -76,7 +76,7 @@ When opening the file you will notice Django has already populated some of the c
 
 As you continue to learn and have more complex file structures, you will add more views and URLs for your app. Through the use of URLconfs this function plays a key role as it gives the freedom to add folders and files within a project without breaking any functionalities.
 
-For example, we currently have the path **/hello_world/** that directs us to our index view and displays "Hello, world!" on the screen. Let's say we wanted to add another view to our app so we could display a simple greeting to the user. In order to add another view we would add the following to our **hello_world/views.py** file.
+For example, we currently have the path **hello_world/** that directs us to our index view and displays "Hello, world!" on the screen. Let's say we wanted to add another view to our app so we could display a simple greeting to the user. In order to add another view we would add the following to our **hello_world/views.py** file.
 
 ```python
 def user(request, user_id)

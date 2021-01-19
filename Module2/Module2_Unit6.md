@@ -1,73 +1,34 @@
-[2]: https://docs.djangoproject.com/en/3.1/topics/db/queries/ "Django Queries"
+[1]: https://www.sqlite.org/download.html "Link to SQLite webpage"
 
-## Exploring the Django ORM
-After we created the models for our app Django automatically created an API. This API allows us to easily create, retrieve, update and delete objects in our database. To begin this interaction we first have to call a python shell by entering the below command in the command line.
+## Creating a SQLite database in Django
+
+The first step in creating the SQLite database is to navigate to the inner **adoptadog** folder, and look inside to see the **settings.py** file. As you look through the file you will notice Django has provided the start-up code for our database. Now to activate the database go back to the main **adoptadog** folder and enter the following command into the command prompt.
 
 ```bash
-    python manage.py shell
+python manage.py migrate
 ```
 
-Once the interactive console begins we then need to import the two models that were created for the **dog_shelters** app as below.
+By running this command, Django searches for the **INSTALLED_APPS** setting within the **settings.py** file and creates any necessary tables according to the default settings.
 
-```python
-from dog_shelters.models import Shelter, Dog 
-```
+## Displaying the schema
 
-Before moving on to create an object, let's first test a query by asking Django to pull all shelters that have been created. 
+Now that we completed the necessary setup for our SQLite database, let's uncover the two ways to check out the schema. The first will be through the SQLite command line and the second will be in VSCode. 
 
-```python
-Shelter.objects.all()
-```
+[!NOTE] This task assumes SQLite is already installed, but if not then go to the SQLite website to download the [SQLite application][1].
 
-Since we have not created any shelters a blank QuerySet should appear.
+1. The first way to check out the schema of the newly created database is to use the SQLite command line. For this task, browse through the file explorer and find the newly created database file and double click on the file.
 
-![No Entries](../Module2/Module2_Images/Module2_NoObjects.PNG)
+    ![SQLite Database file](../Module2/Module2_Images/Module2_DBImage.PNG)
 
-## Creating new objects
+    By clicking on the file it will open a new window. Once the new window is open and you are able to see the SQLite command line, enter `.schema` to display the schema of the database.
 
-Now that we have imported our models into the python shell it is time to create an object. With the **dog_shelters** app we need to create the first shelter name and location. Add the below line to the python interactive console.
+    ![SQLite Command Line](../Module2/Module2_Images/Module2_SQLiteCommandLine.PNG)
 
-```python
-s = Shelter(shelter_name='Dogs 4 U', shelter_location='Bremerton, WA')
-```
+2. The second option to check out the contents of the database is to view it in VSCode. While there are different extensions available, we choose to install the **vscode-sqlite** extension.
 
-After entering the question then save it to the database by entering the command below. If we were working in SQL this would be the same command as `INSERT`.
+    ![SQLite Extension](../Module2/Module2_Images/Module2_VSC_SQLiteExt.PNG)
 
-```python
-s.save()
-```
+    After installing this extension, hold down **CTRL + Shift + P** to view the command palette. Enter **SQLite: Open Database**, and then choose the appropriate database from the dropdown list. This will then open up a new view in the Explorer Pane where you can now view the database structure.
 
-## Retrieving objects
+    ![SQLite Explorer](../Module2/Module2_Images/Module2_VSC_SQLiteDBOpen.PNG)
 
-Now that we have saved a shelter let's query the database to see if it was saved. When we queried the database earlier we asked for it to return all shelters, and since we had not saved any shelters it had returned a blank query. We will now perform the same query to pull all of the shelters saved to the database.
-
-```python
-Shelter.objects.all()
-```
-
-In this instance it should now print out the shelter name that was just saved.
-
-![Return Shelter Name](../Module2/Module2_Images/Module2_ReturnShelter.PNG)
-
-## Modifying objects
-
-Once objects are saved to a database there may be instances where you need to edit text or correct a misspelling. For instance, let's say after saving our first shelter we noticed the location state **'wa'** was not capitalized. 
-
-```python
-s = Shelter(shelter_name='Dogs 4 U', shelter_location='Bremerton, wa')
-```
-
-In order to change that error in the database we would use that same variable to fix the text and then save it again to the database.
-
-```python
-s = Shelter(shelter_name='Dogs 4 U', shelter_location='Bremerton, WA')
-s.save()
-```
-
-In another example let's say the shelter closed, and we needed to delete it from the database. Since we had just saved a correction to this shelter we would use the same variable and delete it.
-
-```python
-s.delete()
-```
-
-Through this lesson we covered the basics of communicating with our database, but Django has provided many more functionalities. Explore this information further with Django [database queries][2].

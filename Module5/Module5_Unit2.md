@@ -78,7 +78,7 @@ By executing this command it will read all of the programs required for the proj
 
 ## Install SQLite
 
-For this project we will be using the SQlite database. If you already have SQLite installed then continue with the rest of the steps, but if not then go to the SQLite website to download the [SQLite application][3].
+For this project we will be using the SQlite database. If you already have SQLite installed then continue with the rest of the steps. If not then go to the SQLite website to download the [SQLite application][3].
 
 ## Deploying the Django app
 

@@ -6,7 +6,7 @@ Now that you have seen the newly created user go back to the home screen of the 
 
 As you can see the only categories listed are **Groups** and **Users** but nothing about the app we added. Since the Django admin feature sets permissions based off of models we now have to add the **Shelter** and **Dog** models of our app to the admin site.
 
-In order to add the models go to our project **dog_shelters/admin.py** file and enter the code under the comment `# [TODO] Register models`.
+1. In order to add the models to the project go to the **dog_shelters/admin.py** file and enter the code under the comment `# [TODO] Register models`.
 
 ```python
 # [TODO] Register models.
@@ -46,7 +46,7 @@ You will then be taken to the page to add another user, and assign a password.
 
 ![Add User](../Module3/Module3_Images/Module3_DjangoAdminSaveUsers.PNG)
 
-Once the information has been added click **Save** to continue entering more data about the user on another page. Once reaching the new page scroll down until you reach the heading **Permissions**.
+Once the information has been added click **Save** to be directed to a new page. Once reaching the new page scroll down until you reach the heading **Permissions**.
 
 ![User Permissions](../Module3/Module3_Images/Module3_DjangoAdminShelterPermissions.PNG)
 

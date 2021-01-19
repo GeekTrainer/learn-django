@@ -22,7 +22,6 @@
     * Learning Objectives
       - In this module you will learn:
 2. Retrieving the project starter files
-    * Creating a new directory
     * Installing Git
     * Cloning the GitHub repository
 3. What is Django?
@@ -72,22 +71,27 @@
 3. ORM Concepts
     * What is an ORM?
     * Overview of the Django ORM
-4. Creating and managing a database
+4. Django Models
+    * Creating a model 
+    * Working with images
+    * Activating the model
+    * Updating the database
+5. Concepts about migrations
+    * Reversing migrations
+    * Schema support
+6. Creating and managing a database
     * Creating a SQLite database in Django
     * Displaying the schema
-5. Django Models
-    * Creating a model 
-    * \_\_str__ method
-    * Activating the model
-6. Creating and querying data
+7. Adding \_\_str__
+8. Creating and querying data
     * Exploring the Django ORM
     * Creating new objects
     * Retrieving objects
     * Modifying objects
-7. Knowledge Check
+9. Knowledge Check
     * Check your knowledge
       - Questions
-8. Summary
+10. Summary
     * In this module you learned:
       - The elements of an ORM
       - How to Create a SQLite database
@@ -217,8 +221,12 @@
     * Django installation
     * Install SQLite
     * Deploying the Django app
-2. Uploading Your Django Project to Azure
-    * Initializing a Git Local Repository
+3. Azure Account
+    * Azure configuration
+4. Deploying the Django project
+    * Initializing Git local repository
+    * Django project edits for Azure
+    * Deploying project
 3. Knowledge Check
     * Check your knowledge
       - Questions

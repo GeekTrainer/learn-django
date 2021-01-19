@@ -1,6 +1,5 @@
 [1]: https://git-scm.com/downloads "Git website downloads"
 [2]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository "Clone GutHub repository"
-[6]: https://docs.djangoproject.com/en/3.1/ref/django-admin/ "Command-line Utility"
 
 For this module in the learning path we are continuing to build on an app named **dog_shelters**. Follow the below steps to install Django and retrieve the project starting files.
 

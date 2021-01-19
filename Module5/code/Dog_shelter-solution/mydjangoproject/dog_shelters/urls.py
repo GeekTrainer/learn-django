@@ -11,6 +11,8 @@ urlpatterns = [
     path('<int:pk>', views.ShelterDetail.as_view(), name='ShelterDetail'),
     path('shelter_spotlight', views.spotlight, name='spotlight'),
     path('contact', views.contactForm, name='contactForm'),
+    # [TODO]: Add the path below for crispy form
+    path('crispycontact', views.crispycontactForm, name='crispycontactForm'),
     path('thank_you', views.thankyou, name='thankyou'),
     # [TODO]: Add the path below for our Shelter CreateView
     path('shelter_form', views.CreateShelter.as_view(), name='CreateShelter'),

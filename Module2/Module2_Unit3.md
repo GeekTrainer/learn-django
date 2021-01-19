@@ -1,6 +1,6 @@
 ## What is an ORM?
 
-An ORM or Object Relational Mapper allows a choice in the programming language that can be used when communicating with a database. This popular method is used in many languages and each have their own preferred ORM, such as Python using SQLAlchemy and Java using Hibernate. By using this method, the ORM essentially surrounds the request in an object and creates a virtual database to store and manipulate the data. By doing this it can transform the request into an action that a relational database will understand.
+An ORM or Object Relational Mapper allows a choice in the programming language that can be used when communicating with a database. This popular method is used in many languages and each have their own preferred ORM, such as Python using SQLAlchemy and Java using Hibernate. By using this method, the ORM essentially surrounds the request in an object and creates a virtual database to store and manipulate the data. By doing this it can transform the request into an action that a relational database will understand. If we choose to look at the data inside the relational database you would see that all of the data is organized into tables made up of numerous rows and columns. Each column would be assigned a specific data type, and there would be only one value per row in each column. By keeping the data organized in this fashion any request can easily be processed as each data point has a defined relationship.
 
 ## Overview of the Django ORM
 

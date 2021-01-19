@@ -1,4 +1,4 @@
-[6]: https://docs.djangoproject.com/en/3.1/ref/django-admin/ "Command-line Utility"
+[1]: https://docs.djangoproject.com/en/3.1/ref/django-admin/ "Command-line Utility"
 
 ## Create a project with Django-admin
 
@@ -38,7 +38,7 @@ Now that the Django project has been created let's look at the structure to see 
     python manage.py help
     ``` 
     
-    For more information about the Django CLI, you can consult the [django-admin documentation][6].
+    For more information about the Django CLI, you can consult the [django-admin documentation][1].
 
 3. The inner **myfirstproject** is considered the Python package for your project.
 4. Next we have **init.py** and if you look at the contents of this file you will notice that it is empty. Don't worry as this should be empty as it functions to tell Python that this directory should be considered a package.

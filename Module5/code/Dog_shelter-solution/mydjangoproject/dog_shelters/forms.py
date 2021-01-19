@@ -1,13 +1,12 @@
-# [TODO] Create class for forms
 from django import forms
 
 # [TODO] Import FormHelper and Submit from crispy
 from crispy_forms.helper import FormHelper
 
-# [TODO] Add Layout to crispy import
+# [TODO] Add Layout to imports
 from crispy_forms.layout import Submit, Layout
 
-# [TODO] Import StrictButton from crispy forms.bootstrap
+# [TODO] Import StrictButton
 from crispy_forms.bootstrap import StrictButton
 
 class ClientForm(forms.Form):
@@ -15,7 +14,12 @@ class ClientForm(forms.Form):
     inquiry_reason = forms.CharField(widget=forms.Textarea, label='Reason for inquiry:', max_length=100)
     contact_number = forms.CharField(label='Contact Number:', max_length=100)
 
-    # [TODO] Add FormHelper() class
+# [TODO] Add crispy contact form
+class CrispyClientForm(forms.Form):
+    client_name = forms.CharField(label='Name:', max_length=100)
+    inquiry_reason = forms.CharField(widget=forms.Textarea, label='Reason for inquiry:', max_length=100)
+    contact_number = forms.CharField(label='Contact Number:', max_length=100)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()

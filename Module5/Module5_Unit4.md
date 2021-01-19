@@ -1,6 +1,8 @@
 [1]: https://docs.djangoproject.com/en/3.1/ref/csrf/ "CSRF Details"
 
-When learning Django we found out that **views** are an essential component to the framework as they handle what to return when a request is sent. So it's only logical that our form would be sent back to our **views.py** file for processing. In order to complete our form we now have the option to use an existing view, or create another one to handle this type of request. Enter the below code under the comment `# [TODO] Create view for ClientForm`.
+When learning Django we found out that **views** are an essential component to the framework as they handle what to return when a request is sent. So it's only logical that our form would be sent back to our **views.py** file for processing. In order to complete our form we now have the option to use an existing view, or create another one to handle this type of request. 
+
+1. Go to the **views.py** file and enter the below code under the comment `# [TODO] Create view for ClientForm`.
 
 ```python
 # [TODO] Create view for ClientForm
@@ -37,7 +39,9 @@ The other thing to notice about the form definition is what happens when the cod
 
 If the template sends a `GET` request then Python will process and render a blank form. The `return` statement sends the response with `render` defining the form. The first part of the `render` statement defines it as a `request`, the second section calls the template that will render our form, and the third part is defining the variable `form`. This variable can then be used in the template to call the form.
 
-Now that we have created the form we need to add a **Contact Us** template. In the templates folder of the app create a file named **contact.html** and then enter the below code.
+Now that we have created the form we need to add a **Contact Us** template. 
+
+1. In the templates folder of the app create a file named **contact.html** and then enter the below code.
 
 ```html
 {% extends "index.html" %}
@@ -69,7 +73,9 @@ Django has again tried to speed up the process of coding form views by providing
 
 ### Developing objects for Create
 
-The first generic view will be **CreateView**. Find the **views.py** file in the app folder and enter the below code under the comment `# [TODO] Develop CreateView generic view for form`.
+The first generic view will be **CreateView**. 
+
+1. Find the **views.py** file in the app folder and enter the below code under the comment `# [TODO] Develop CreateView generic view for form`.
 
 ```python
 # [TODO] Develop CreateView generic view for form
@@ -87,7 +93,9 @@ class CreateShelter(CreateView):
 
 As you can see we have imported `CreateView`, defined our class `CreateShelter` to include the necessary fields, named the template it will use to render the form, and also defined what will happen if the form is valid. In this case it will save the information to the database then redirect to the **shelter_list** page.
 
-The next step in creating our form is to add the template. Now go to the **templates** folder of the app and create a file named **shelter_form.html** to enter the below code.
+The next step in creating our form is to add the template. 
+
+2. Now go to the **templates** folder of the app and create a file named **shelter_form.html** to enter the below code.
 
 ```html
 {% extends "index.html" %}
@@ -115,7 +123,9 @@ As you can see we have extended the **index.html** template to keep the same lay
 
 ![HTML Tags](../Module5/Module5_Images/Module5_GenericFormHTMLView.PNG)
 
-The last two steps in the process is to add the link to the template, and then define the path. For the **index.html** file add the below code under the comment `<!-- TODO - Create the URL for the new template page shelter_form -->`.
+The last two steps in the process is to add the link to the template, and then define the path. 
+
+3. Find the **index.html** file and add the below code under the comment `<!-- TODO - Create the URL for the new template page shelter_form -->`.
 
 ```html
 {% block sidebar %}
@@ -129,7 +139,9 @@ The last two steps in the process is to add the link to the template, and then d
 {% endblock %}
 ```
 
-After adding the **shelter_form** link then add the path in the app **urls.py** file by copying the below code under the comment `# [TODO]: Add the path below for our Shelter CreateView`. While adding this form to the public site isn't practical you could eventually create another site just for updating the database through the use of these forms.
+4. Add the path in the app **urls.py** file by copying the below code under the comment `# [TODO]: Add the path below for our Shelter CreateView`. 
+
+While adding this form to the public site isn't practical you could eventually create another site just for updating the database through the use of these forms.
 
 ```python
 urlpatterns = [
@@ -146,13 +158,23 @@ urlpatterns = [
 ]
 ```
 
-Now that we have developed the **Create** object let's test it out by adding a new shelter. Go to the app in your web browser and you should now see a new link in the side navigation called **Create Shelter**. If you do not see the link right away you may need to refresh the browser. Click on the link and it will take you to the form that was just created. For the new shelter let's enter **Second Chance Shelter** for the shelter name, **Denver, CO** as the location and then click **Save**. If the form works correctly it will take you back to the **shelter_list** page and the new shelter should now appear in the list.
+Now that we have developed the **Create** object let's test it out by adding a new shelter. 
+
+1. Go to the app in your web browser and you should now see a new link in the side navigation called **Create Shelter**. If you do not see the link right away you may need to refresh the browser. 
+
+2. Click on the link and it will take you to the form that was just created. 
+
+3. For the new shelter let's enter **Second Chance Shelter** for the shelter name, **Denver, CO** as the location and then click **Save**. 
+
+If the form works correctly it will take you back to the **shelter_list** page and the new shelter should now appear in the list.
 
 ![Added Shelter](../Module5/Module5_Images/Module5_CreateNewShelterName.PNG)
 
 ### Creating objects for Update and Delete
 
-We will now move on to create a template that will contain both the **Update** and **Delete** functions for the database. Go to the templates folder of the app and create a new file named **update_delete_shelters.html**. After creating the template then enter the below code.
+We will now move on to create a template that will contain both the **Update** and **Delete** functions for the database. 
+
+1. Start by creating **update_delete_shelters.html** in the app templates folder. After creating the template then enter the below code.
 
 ```html
 {% extends "index.html" %}
@@ -185,7 +207,9 @@ We will now move on to create a template that will contain both the **Update** a
 
 For this page we have divided it into two columns. Each function will be contained in its own column with a list of current shelters. We have also added the shelter name as a URL that is associated with the shelter `id`. By adding this URL the database will then know what shelter information to return.  
 
-In addition to the template we also need to create the two other templates that will hold the forms. The first template to create is **update_shelter.html**. After creating the template then add the below code.
+In addition to the template we also need to create the two other templates that will hold the forms. 
+
+2. The first template to create is **update_shelter.html**. After creating the template then add the below code.
 
 ```html
 {% extends "index.html" %}
@@ -206,7 +230,7 @@ In addition to the template we also need to create the two other templates that 
 {% endblock %}
 ```
 
-The second template to create is named **delete_shelter.html**. After creating this template then also enter the below code.
+3. Then create the second template named **delete_shelter.html**. After creating this template then also enter the below code.
 
 ```html
 {% extends "index.html" %}
@@ -227,7 +251,9 @@ The second template to create is named **delete_shelter.html**. After creating t
 {% endblock %}
 ```
 
-The next task is to now define the views. Go to the **views.py** file of the app and enter the below code under the comments `# [TODO] Create ListView to add shelters to update_delete_shelters template` and `# [TODO] Develop UpdateView and DeleteView for forms`.
+The next task is to now define the views. 
+
+4. Go to the **views.py** file of the app and enter the below code under the comments `# [TODO] Create ListView to add shelters to update_delete_shelters template` and `# [TODO] Develop UpdateView and DeleteView for forms`.
 
 ```python
 # [TODO] Create ListView to add shelters to update_delete_shelters template
@@ -258,7 +284,9 @@ class DeleteShelter(DeleteView):
 
 In the first addition we have created another **ListView** to feed the shelter lists to the **update_delete_shelters** template. In the next section we needed to import both `UpdateView`, and `DeleteView`. We are also defining the class for both of these functions, and what will happen when the form is considered valid.
 
-After creating the views we then need to define the paths for all three templates in the app **urls.py** file by entering the below code under the comment `# [TODO]: Add the below code for our Shelter UpdateView, DeleteView and update_delete_shelters template page to call these functions`.
+After creating the views we then need to define the paths for all three templates.
+
+5. In the app **urls.py** file enter the below code under the comment `# [TODO]: Add the below code for our Shelter UpdateView, DeleteView and update_delete_shelters template page to call these functions`.
 
 ```python
   # [TODO]: Add the below code for our Shelter UpdateView, DeleteView and update_delete_shelters template page to call these functions
@@ -267,9 +295,11 @@ After creating the views we then need to define the paths for all three template
     path('update_delete_shelters', views.ShelterEdits.as_view(), name='ShelterEdits'),
 ```
 
-For the **Update** and **Delete** views we need to add the primary key `<pk>` in the path along with whether it will be updating or deleting the record. We are also adding the path for the **update_delete_shelters** template that will give you access to perform one of these functions.
+For the **Update** and **Delete** views we need to add the primary key `<pk>` in the path along with whether it will be updating or deleting the record. By adding this primary key it will capture the `id` of the shelter from the URL and correlate it with the database in order to know which record to delete or update. We have also added the path for the **update_delete_shelters** template that will give you access to perform one of these functions.
 
-Since we will only be able to access the update/delete functions from the **shelter_form.html** file we now need to create the `update_delete_shelters` link on this page under the comment `<!--TODO: Carry over parent links and add new update_delete_shelters link-->`. By adding the below code to the **shelter_form.html** file it will create the new link in the sidebar navigation.
+Since we will only be able to access the update/delete functions from the **shelter_form.html** file we now need to create the `update_delete_shelters` link in the sidebar navigation.
+
+6. On **shelter_form.html** page add the code under the comment `<!--TODO: Carry over parent links and add new update_delete_shelters link-->`.
 
 ```html
 <!--TODO: Carry over parent links and add new update_delete_shelters link-->
@@ -279,22 +309,24 @@ Since we will only be able to access the update/delete functions from the **shel
 {% endblock %}
 ```
 
-That's it for adding these functions. Now let's try it out! Make sure all of the additions have been saved, and go to your app in the browser. Click on the **Create Shelter** link, and there should now be a new link named **Update/Delete Shelters**. Click on that link to go to the new template that was created.
+That's it for adding these functions. Now let's try it out! Make sure all of the additions have been saved, and go to your app in the browser. Click on the **Create Shelter** link, and there should now be a new link named **Update/Delete Shelters**. If you do not see the new link refresh the page and then click on that link to go to the new template that was created.
 
 ![Update/Delete Page](../Module5/Module5_Images/Module5_UpdateDeleteTemplate.PNG)
 
-Now that we are on this page click on the first shelter name under **Update**. For this shelter we have now changed **WA** to lowercase and then clicked **Update**
+Now that we are on the **Update/Delete Shelters** page click on the shelter name **Dogs 4 U** under **Update Shelters**. 
+
+1. For this shelter change **WA** to lowercase and click **Update**.
 
 ![Update Shelter Location](../Module5/Module5_Images/Module5_UpdateShelter.PNG)
 
-After clicking the update button it should then take you back to the previous template and show the updated location for the shelter.
+After clicking the update button it should take you back to the previous template. The record should now be updated and show the location for the shelter with a lowercase **wa**.
 
 ![Shelter Location Updated](../Module5/Module5_Images/Module5_ShelterLocationUpdated.PNG)
 
-Now that we have updated a shelter name let's delete one. On the **Delete Shelters** column click on the shelter name **New Beginnings**, and it should then take you to the delete page as below.
+Now that we have updated a shelter name let's delete one. On the **Delete Shelters** column click on the shelter name **New Beginnings** and it should take you to the delete page as below.
 
 ![Confirm Delete](../Module5/Module5_Images/Module5_DeleteShelter.PNG)
 
-Click the **Confirm** button, and it should then take you back to the previous list with that name deleted.
+Click the **Confirm** button, and it should take you back to the previous page with that name now deleted from the list.
 
 ![Shelter Deleted](../Module5/Module5_Images/Module5_ShelterDeleted.PNG)

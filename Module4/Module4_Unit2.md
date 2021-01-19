@@ -1,7 +1,6 @@
 [1]: https://git-scm.com/downloads "Git website downloads"
 [2]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository "Clone GutHub repository"
 [3]: https://www.sqlite.org/download.html "Link to SQLite webpage"
-[6]: https://docs.djangoproject.com/en/3.1/ref/django-admin/ "Command-line Utility"
 
 For this module in the learning path we are continuing to build on an app named **dog_shelters**. Follow the below steps to install Django and retrieve the project starting files. 
 
@@ -78,4 +77,4 @@ By executing this command it will read all of the programs required for the proj
 
 ## Install SQLite
 
-For this project we will be using the SQlite database. If you already have SQLite installed then continue with the rest of the module, but if not then go to the SQLite website to download the [SQLite application][3].
+For this project we will be using the SQlite database. If you already have SQLite installed then continue with the rest of the module. If not then go to the SQLite website to download the [SQLite application][3].

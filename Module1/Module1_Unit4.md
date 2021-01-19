@@ -1,11 +1,7 @@
-[1]: https://docs.djangoproject.com/en/3.1/topics/install/ "Django Installation Guide"
-[2]: https://www.python.org/  "Install Python"
-[3]: https://www.djangoproject.com/ "Django Website"
-[4]: https://www.djangoproject.com/start/ "Get Started with Django"
-[5]: https://docs.djangoproject.com/en/3.1/intro/install/ "Django Quick Install Guide"
-[6]: https://docs.djangoproject.com/en/3.1/faq/install/#faq-python-version-support "Django Python Version"
+[1]: https://www.python.org/  "Install Python"
 
-While the Django framework may have a little bit of a learning curve, they have provided everything you need to get started on their [website][3]. When browsing you will see the choice to either go through the [tutorials and documentation][4], or just downloading the framework with their [quick install guide][5].
+
+While Django may have a little bit of a learning curve, they have provided everything you need to get started quickly in their framework. We start this unit by checking for the correct Python version, installing a virtual environment and then finish by installing the Django framework.
 
 ## Installation overview
 
@@ -19,27 +15,31 @@ python --version
 python -V 
 ```
 
-By executing this command it will display what Python version is installed on your computer. For this module we are using the latest official version of Django and they recommend using Python 3 in order to have access to the latest Python features. If you do not have Python installed then proceed to the [Python website][2] to download the correct version.
+By executing this command it will display what Python version is installed on your computer. For this module we are using the latest official version of Django and they recommend using Python 3 in order to have access to the latest Python features. If you do not have Python installed then proceed to the [Python website][1] to download the correct version.
 
 ## Creating a virtual environment
 
 Before downloading Django it is a good idea to create a virtual environment in order to isolate it from other applications. If a virtual environment is not created and the framework is installed globally it could cause a conflict with other Python applications causing them to fail. 
 
-Start by creating a folder that will contain the new project as this will also hold the folder for the virtual environment. In order to create the folder go to the command prompt, navigate to the desired directory and run the below command. For this example we will be creating a folder called **mydjangoproject**. 
+Start by creating a folder that will contain the new project as this will also hold the folder for the virtual environment. 
+
+1. In order to create the folder go to the command prompt.
+
+2. Navigate to the desired directory and run the below command. For this example we will be creating a folder called **myfirstdjangoproject**. 
 
 ```python
 # Windows
-md mydjangoproject
+md myfirstdjangoproject
 # Command to change directory
-cd mydjangoproject
+cd myfirstdjangoproject
 
 # macOS or Linux
-mkdir mydjangoproject
+mkdir myfirstdjangoproject
 # Command to change directory
-cd mydjangoproject
+cd myfirstdjangoproject
 ```
 
-After the folder is created then change the directory and enter the below code in the command line.
+3. After the folder is created go inside the new directory and enter the below code in the command line.
 
 ```bash
 # Windows

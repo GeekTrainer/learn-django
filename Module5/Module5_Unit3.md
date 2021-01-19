@@ -30,15 +30,27 @@ As you can see this form has declared the type of request as a `POST` in order t
 
 ## Understanding Django forms
 
-Now that we have covered creating a form in HTML let discuss how Django can speed up the process. The first thing that Django developed was a **forms** class. This class controls the form and dictates not only the behavior, but how it appears to the user. Since we have already designed our form in HTML let's convert it over to a Django form. The first thing we need to do is create a **forms.py** file in our app then enter the below code.
+Now that we have covered creating a form in HTML let discuss how Django can speed up the process. The first thing that Django developed was a **forms** class. This class controls the form and dictates not only the behavior, but how it appears to the user. Since we have already designed our form in HTML let's convert it over to a Django form. 
+
+1. Create a **forms.py** file in our app then enter the below code.
 
 ```python
 from django import forms
+
+# [TODO] Import FormHelper and Submit from crispy
+
+# [TODO] Add Layout to imports
+
+# [TODO] Import StrictButton
+
 
 class ClientForm(forms.Form):
     client_name = forms.CharField(label='Name:', max_length=100)
     inquiry_reason = forms.CharField(widget=forms.Textarea, label='Reason for inquiry:', max_length=100)
     contact_number = forms.CharField(label='Contact Number:', max_length=100)
+
+# [TODO] Add crispy contact form
+       
 ```
 
 For this form we have created the `ClientForm` class to hold the form elements, and also define the fields. One thing to notice is that we are not creating the `<form>...</form>` tags, or the "Submit" button that is required for the HTML template. When inserting this form those elements will have to be added to the template in order to work correctly.

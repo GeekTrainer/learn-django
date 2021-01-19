@@ -61,6 +61,19 @@ def contactForm(request):
 
     return render(request, 'contact.html', {'form': form})
 
+# [TODO] Process and render crispy contact form
+def crispycontactForm(request):
+    if request.method == 'POST':
+        form = CrispyClientForm(request.POST)
+        # check if form is valid:
+        if form.is_valid():
+            # code to process data as appropriate
+            return HttpResponseRedirect('thank_you')
+    else:
+        form = CrispyClientForm()
+
+    return render(request, 'crispycontact.html', {'form': form})
+
 # [TODO] Develop CreateView generic view for form
 from django.views.generic.edit import CreateView
 

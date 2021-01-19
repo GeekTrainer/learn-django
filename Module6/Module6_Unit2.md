@@ -1,9 +1,8 @@
 [1]: https://git-scm.com/downloads "Git website downloads"
 [2]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository "Clone GutHub repository"
-[6]: https://docs.djangoproject.com/en/3.1/ref/django-admin/ "Command-line Utility"
+[3]: https://www.sqlite.org/download.html "Link to SQLite webpage"
 
-
-For this module in the learning path we are in the beginning stages of creating a new app named **dog_shelters**. This project focuses on collecting information of all existing dog shelters, and the dogs they are hoping to adopt, across the United States. The hope for this app is dogs would be able to find suitable homes faster because they would have individuals looking to adopt them from around the U.S. and not just their local area. Django was the perfect framework for this project as it provided a route for quickly developing a customer facing app while providing an established database that could easily be accessed by employees for quick updating. Begin creating this project by following the below steps to install Django and retrieve the project starting files. 
+For this module in the learning path we have completed our app named **dog_shelters** and will now deploy it to Azure App Services. Follow the below steps to install Django and retrieve the project starting files.
 
 ## Creating a new directory
 
@@ -53,14 +52,7 @@ The name of the virtual environment will be in parentheses followed by the path 
 
 ### Installing Git
 
-Now that Git has been installed we can use it to [clone][2] our GitHub repository. To begin open a command prompt and navigate to the previously created directory **dogsforadoptionproject**. Once in the directory start the cloning process by entering the following in the command prompt.
-
-```bash
-# [TODO] Needs final github link
-git clone https://github.com/????
-```
-
-Once this has completed you should now see the **adoptadog** project folder with the **dog_shelters** app within the directory.
+In order to retrieve the files contained within GitHub we need to clone the repository. To begin the cloning process Git needs to first be installed on your computer. If Git isn’t installed on your computer then go to the [Git website][1] to install the latest version. 
 
 ### Cloning the GitHub repository
 
@@ -81,4 +73,24 @@ Now that the starter files have been downloaded it is time to install Django. Ma
 pip install -r requirements.txt
 ```
 
-By executing this command it will read all of the programs required for the project in the **requirements.txt** file and begin the download. Once this has completed then you can continue with the rest of the module.
+By executing this command it will read all of the programs required for the project in the **requirements.txt** file and begin the download.
+
+## Install SQLite
+
+For this project we will be using the SQLite database. If you already have SQLite installed then continue with the rest of the steps. If not then go to the SQLite website to download the [SQLite application][3].
+
+## Deploying the Django app
+
+Now that the virtual environment has been created, the Django framework is downloaded, and the starter files have been cloned let's run the app to make sure it is working correctly. If you have not connected the server then navigate to the **adoptadog** root directory and enter the below code.
+
+```bash      
+python manage.py runserver
+```
+
+After starting the server enter the below link into your preferred browser.
+
+    http://localhost:8000/adoptadog/
+
+If the app is functioning properly then you should see the app home page similar to below.
+
+![App Homepage](../Module4/Module4_Images/Module4_AppHomePage.PNG)

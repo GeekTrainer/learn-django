@@ -27,11 +27,13 @@ def spotlight(request):
     return render(request, 'shelter_spotlight.html', {'get_shelters': get_shelters, 'get_dogs': get_dogs})
 ```
 
-Now that we have completed our template views let's move on to creating the **URLconf** for our app. By adding this code we are defining what will be returned when one of the links on the site is clicked. Making sure you are still in the **dog_shelter** app and create a file named **urls.py**. Add the below code under comment `# [TODO]: Add the code below to create the URLconf for the app`.
+Now that we have completed our template views let's move on to creating the **URLconf** for our app. By adding this code we are defining what will be returned when one of the links on the site is clicked. 
+
+1. Making sure you are still in the **dog_shelter** app create a file named **urls.py**. 
+
+2. After the file is created add the below code.
 
 ```python
-# [TODO]: Add the code below to create the URLconf for the app
-
 from django.urls import path
 from . import views
 
@@ -41,7 +43,9 @@ urlpatterns = [
 ]
 ```
 
-After registering the paths in the app we now have to register the app paths in the project. Go to the project **mydjangoproject** and find the **urls.py** file to enter the below code under comments `# [TODO]: add include to the list of imports` and `# [TODO]: Add the below line to create the URLconf for the project`.
+By adding this file we have now registered the paths of the app, but in order for it to work correctly we now have to register the app paths in the project. 
+
+1. Go to the project **adoptadog** and find the **urls.py** file to enter the below code under comments `# [TODO]: add include to the list of imports` and `# [TODO]: Add the below line to create the URLconf for the project`.
 
 ```python
 # [TODO]: Add include to the list of imports
@@ -54,7 +58,7 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 ```
 
-By adding the `'dog_shelters/'` path we have now connected our app to the project. Let's see what it looks like now with the new templates added. If your project isn't already running then enter `python manage.py runserver` in the command line to start the app, and enter the below URL in your preferred browser.
+By adding the `dog_shelters/` path we have now connected our app to the project and can view the site. If your project isn't already running then enter `python manage.py runserver` in the command line to start the app, and enter the below URL in your preferred browser.
 
 http://localhost:8000/dog_shelters/
 
@@ -62,7 +66,7 @@ If everything is configured correctly you should see the home page of the site.
 
 ![Home Page](../Module4/Module4_Images/Module4_AppHomePage.PNG)
 
-Then clink the link in the left side navigation named **Shelter Spotlight** to see the dog that is highlighted.
+Clink the link in the left side navigation named **Shelter Spotlight** to see the dog that is highlighted.
 
 ![Shelter Spotlight Page](../Module4/Module4_Images/Module4_AppShelterSpotlightPage.PNG)
 
@@ -94,7 +98,9 @@ The first generic view that we will add to our app is the **ListView**, and this
 
 As you can see we have again extended the **index.html** file to continue with the same page layout, and added a loop to list all of the shelter names contained within the database.
 
-After completing the template code our next step is to add the view. Now go to the **views.py** file in our app and add the below code under the comment `# [TODO] Add Generic Listview`.
+After completing the template code our next step is to add the view. 
+
+1. Go to the **views.py** file in the app and add the below code under the comment `# [TODO] Add Generic Listview`.
 
 ```python
 # [TODO] Add Generic Listview
@@ -106,7 +112,7 @@ class ShelterList(ListView):
     template_name = "shelter_list.html"
 ```
 
-We first start by importing `ListView`, and then add a `ShelterList` class that will contain the details. The first step in defining the `Listview` is to name the model. In this case we are using the `Shelter` model that was already defined in the **models.py** app file. The next thing we need to add is a `context_object_name`. If this variable was not added the only way to call this view would be to use `object_list` in our template loop as seen below.
+We first start by importing `ListView`, and then add a `ShelterList` class that will contain the details. The first step in defining the `Listview` is to name the model. In this case we are using the `Shelter` model that was already defined in the **models.py** app file. The next thing we added was a `context_object_name`. If this variable was not added the only way to call this view would be to use `object_list` in our template loop as seen below.
 
 ```html
 <ul>
@@ -116,9 +122,11 @@ We first start by importing `ListView`, and then add a `ShelterList` class that 
 </ul>
 ```
 
-By calling the view this way it does not give much information about what is being requested. Since this is a small app it may not seem that important, but it is a good idea to get in the habit of providing as much detail as possible. So in this case we have changed the listview name to `my_shelter_list`. The last thing we need to do is provide the `template_name` for this view so we have added the template `shelter_list.html`.
+By calling the view this way it does not give much information about what is being requested. Since this is a small app it may not seem that important, but it is a good idea to get in the habit of providing as much detail as possible. So in this case we have changed the listview name to `my_shelter_list`, and the last thing we provided was the `template_name` for this view called `shelter_list.html`.
 
-Now that the view code is added we need to connect everything together by first adding the path to our new template. Make sure you are still in the app folder and go to the **urls.py** file to add the below path in the `urlpatterns` under comment `# [TODO]: Add the path for ShelterList ListView`. 
+Now that the view code is added we need to connect everything together by first adding the path to our new template. 
+
+1. Make sure you are still in the app folder and go to the **urls.py** file to add the below path under comment `# [TODO]: Add the path for ShelterList ListView`. 
 
 ```python
 urlpatterns = [
@@ -129,7 +137,7 @@ urlpatterns = [
 ]
 ```
 
-Then add the URL to the **index.html** file under the comment `<!-- TODO - Create the URL for the new template page shelter_list -->` to complete the process.
+2. Then go to the **index.html** file to add the URL under the comment `<!-- TODO - Create the URL for the new template page shelter_list -->` to complete the process.
 
 ```html
 {% block sidebar %}
@@ -144,14 +152,16 @@ Now that we have created our first **ListView** let's see what it looks like in 
 
 ![Added Shelters Link](../Module4/Module4_Images/Module4_AddedURLListViewTemplate.PNG)
 
-Then by clicking on the link see the newly created template with the listview of shelters.
+Click on the link see the newly created template with the listview of shelters.
 
 ![ListView Template](../Module4/Module4_Images/Module4_ListViewTemplate.PNG)
 
 
 ### Creating a detail view
 
-Now that the list view has been created let's create a generic **DetailView**. For this example we will be working with the information contained on the **Shelters** page and creating a detailed view when clicking on a specific shelter. We need to again create another file called **shelter_details.html** in the app templates folder. After creating the file enter the below code.
+Now that the list view has been created let's create a generic **DetailView**. For this example we will be working with the information contained on the **Shelters** page and creating a detailed view when clicking on a specific shelter. We need to again create another template.
+
+1. In the app templates folder create a file named **shelter_details.html**. After creating the file enter the below code.
 
 ```html
 {% extends "index.html" %}
@@ -165,7 +175,9 @@ Now that the list view has been created let's create a generic **DetailView**. F
 {% endblock %}
 ```
 
-We have again extended the **index.html** file to keep the same layout, and then added the variables needed to call the shelter information. The next action is to add the below code under the comment `# [TODO] Add Generic Detailview` to the **views.py** file.
+We have again extended the **index.html** file to keep the same layout, and added the variables needed to call the shelter information. 
+
+2. The next action is to go to the **views.py** file and add the below code under the comment `# [TODO] Add Generic Detailview`.
 
 ```python
 # [TODO] Add Generic Detailview
@@ -179,9 +191,11 @@ class ShelterDetail(DetailView):
         return render(request, 'shelter_details.html', context)
 ```
 
-As you can see we have imported `DetailView`, and then `get_object_or_404`. We use the `get_object_or_404` statement in the `shelter` variable so it will check if the object being requested actually exists, and if not then an exception would be thrown. We next go to `context` and define the variable that will be used by the template to call this view, and then lastly state what will be rendered in the template.
+As you can see we have imported `DetailView`, and then `get_object_or_404`. We use the `get_object_or_404` statement in the `shelter` variable so it will check if the object being requested actually exists. If the object did not exist then an exception would be thrown. We next go to `context` and define the variable that will be used by the template to call this view, and lastly state what will be rendered in the template.
 
-Now that the view has been added we need to add the path. Go to the **urls.py** file in the app and add the below under comment `# [TODO]: Add the path below for our ShelterDetail DetailView`.
+Now that the view has been added we need to add the path. 
+
+3. Go to the **urls.py** file in the app and add the below under comment `# [TODO]: Add the path below for our ShelterDetail DetailView`.
 
 ```python
 urlpatterns = [
@@ -194,7 +208,9 @@ urlpatterns = [
 ]
 ```
 
-As you can see we have added `<int:pk>` at the beginning of this path. This was added since we want the detail view to be called when the user clicks on the shelter id. In order for this path to work correctly we now need to modify the code a little in the **shelter_list.html** page. Add the code under comment `<!-- TODO - Add URL for shelter id to request correct path for DetailView  -->` to create the URL.
+As you can see we have added `<int:pk>` at the beginning of this path. This was added since we want the detail view to be called when the user clicks on the shelter id. In order for this path to work correctly we now need to modify the code a little in the **shelter_list.html** page.
+
+4. Go to the **shelter_list.html** template and add the code under comment `<!-- TODO - Add URL for shelter id to request correct path for DetailView  -->` to create the URL.
 
 ```html
 {% block content %}
@@ -210,9 +226,9 @@ As you can see we have added `<int:pk>` at the beginning of this path. This was 
 {% endblock %}
 ```
 
-With the addition of this line we have created a URL that shows the shelter name but is requesting the database information by the shelter **id**. By making this change it will allow the detail view to be called when a user clicks on the shelter name.
+With the addition of this line we have created a URL that shows the shelter name but is requesting the database information by the shelter `id`. By making this change it will allow the detail view to be called when a user clicks on the shelter name.
 
-Now that we have created the **DetailView** let's see how it has changed the app. Again If your app is not running then start it by typing `python manage.py runserver` in the command line and typing the web link in your preferred browser. Click on the **Shelters** link to see the list of shelters that are currently in the database. When looking at the list you should see the shelter name that is now clickable.
+Now that we have created the **DetailView** let's see how it has changed the app. Again If your app is not running start it by typing `python manage.py runserver` in the command line and typing the web link in your preferred browser. Click on the **Shelters** link to see the list of shelters that are currently in the database. When looking at the list you should see the shelter name that is now clickable.
 
 ![Added Shelters Link](../Module4/Module4_Images/Module4_AddedURLDetailViews.PNG)
 
