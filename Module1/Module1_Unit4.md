@@ -1,7 +1,7 @@
 [1]: https://www.python.org/  "Install Python"
 
 
-While Django may have a little bit of a learning curve, they have provided everything you need to get started quickly in their framework. We start this unit by checking for the correct Python version, installing a virtual environment, and then finish by installing the Django framework.
+Creating a Django project is similar to creating any Python application. We start by creating a folder and then installing the package by using `pip`.
 
 ## Installation overview
 
@@ -12,7 +12,7 @@ Before installing Django we first need to make sure the correct Python version i
 python --version 
 
 # macOS
-python -V 
+python -version 
 ```
 
 By executing this command it will display what Python version is installed on your computer. For this module we are using the latest official version of Django and they recommend using Python 3 in order to have access to the latest Python features. If you do not have Python installed then proceed to the [Python website][1] to download the correct version.
@@ -43,7 +43,7 @@ cd myfirstdjangoproject
 
 ```bash
 # Windows
-py -3 -m venv venv
+python -m venv venv
 
 # macOS or Linux
 python3 -m venv venv
@@ -57,10 +57,10 @@ Now that the virtual environment has been created we have to activate it before 
 
 ```bash
 # Windows
-venv\Scripts\activate
+venv\\Scripts\\activate
 
 # macOS or Linux
-source venv/bin/activate
+source ./venv/bin/activate
 ```
 
 By executing this command the virtual environment will start, and the command prompt should now look similar to below.

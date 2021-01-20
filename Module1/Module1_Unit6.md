@@ -1,6 +1,10 @@
+Now that we have learned the basics about the Django framework, and examined the folder struture of our project it is time to create our first app! While this is a simple **Hello, world!** app it will give you the starting blocks in understanding how apps are created and how they work in unison with the Django project.
+
 ## Hello, world!
 
 In order to create the app, we first start by navigating to the inside of the project root folder **myfirstproject** and input the following on the command line.
+
+[!NOTE] If you have decided to clone the app starting folder structure from the GitHub repository you can skip to the next step of Creating a View.
 
 ```bash    
 python manage.py startapp hello_world

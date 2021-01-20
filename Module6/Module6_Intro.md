@@ -11,3 +11,5 @@ In this module you will learn:
   - Package Management
   - Inheritance and mixins
 - Understanding of HTML and CSS
+- Basic understanding of Django
+- Git

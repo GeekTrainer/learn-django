@@ -16,6 +16,7 @@ After running the above command the new project should now be in your chosen dir
 
 Now that the Django project has been created let's look at the structure to see what was included.
 
+```text
     myfirstproject/
             manage.py
             myfirstproject/
@@ -24,17 +25,16 @@ Now that the Django project has been created let's look at the structure to see 
                     urls.py
                     asgi.py
                     wsgi.py
+```
 
 1. The first or outer **myfirstproject** in the structure is your root directory which contains the entire project.
 2. Next you have **manage.py**. This is a command-line utility that is created in every Django project and actually has the same function as 'django-admin'. Below is an example of how this could be used if you were inside the project folder and wanted to see the available subcommands. 
 
     ```bash   
     django-admin help
-    ```
+   
+    #OR
 
-    OR
-
-    ```bash
     python manage.py help
     ``` 
     
@@ -46,7 +46,7 @@ Now that the Django project has been created let's look at the structure to see 
 6. Next is **urls.py**. This file contains the urls within the project.
 7. Lastly we have **asgi.py** and **wsgi.py**. These last two files serve as the entry point for your web servers depending on what type of server is deployed.
 
-## Deploying your first project
+## Running the project
 
 Now that Django is installed, a project has been created, and we have examined the project structure it is time to make sure our project is working correctly.
 

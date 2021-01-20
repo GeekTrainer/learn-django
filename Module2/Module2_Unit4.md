@@ -1,8 +1,8 @@
-## Creating a model
+Now that we have activated our database it is time to start creating our models. By creating a model we are able to update the database by adding any essential fields and defining the behavior of our data. We will continue building our **dog_shelters** application.
 
-Now that we have activated our database it is time to start creating our models. By creating a model we are able to update the database by adding any essential fields and defining the behavior of our data. In this exercise we will be using our **dog_shelters** app that was downloaded from GitHub.
+## Creating Models
 
-The first step in our process is to add the models. 
+The first step in our process is to add the models. Django provides an empty file named **models.py** which you can use for your models.
 
 1. Open the **dog_shelters/models.py** file inside Visual Studio Code
 
@@ -32,13 +32,13 @@ Also take notice of the term `ForeignKey` that was added in the `Dog` class. Thi
 
 ## Working with images
 
-For this app it would also be a good idea to add an image of the dog up for adoption. In order to allow an upload of an image we created the `ImageField` within the `Dog` model.
+For this app it would also be a good idea to add an image of the dog up for adoption. In order to allow an upload of an image we added the `ImageField` within the `Dog` class when we previously created the app models.
 
 ```python
 dog_image = models.ImageField(upload_to='images', blank=True)
 ```
 
-For this field we needed to state where the image would be saved by using the `upload_to='images'` statement, and that it was ok for the field to be blank by adding `blank=True`. Since we added this field we also have to add a statement in the **urls.py** file in the **adoptadog** project folder. 
+As you can see in the above code line we needed to state where the image would be saved by using the `upload_to='images'` statement, and that it was ok for the field to be blank by adding `blank=True`. Since we added this field we also have to add a statement in the **urls.py** file in the **adoptadog** project folder. 
 
 1. Add the code under the comments `# [TODO]: Add the needed imports for the image field` and `# [TODO]: Add the needed urlpattern for the image upload`.
 
@@ -85,7 +85,11 @@ By adding this line to the list of `INSTALLED_APPS` it tells Django that this ap
 
 ## Updating the database
 
-Now that our app has been added to the list of `INSTALLED APPS` we need to tell Django that the new models are ready to be stored as a migration. In order to do this run the below code in the command line.
+Next, we need to tell Django that new models are added and we would like for the changes to be stored as a migration.
+
+1. Return to the terminal window inside Visual Studio Code
+
+2. Execute the following
 
 ```python
 python manage.py makemigrations dog_shelters

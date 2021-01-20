@@ -1,8 +1,16 @@
 [1]: https://www.sqlite.org/download.html "Link to SQLite webpage"
 
-## Creating a SQLite database in Django
+When creating a database driven application you of course need a database. For development purposes, Django natively supports SQLite. We will explore how to create the initial database, and explore the schema.
 
-The first step in creating the SQLite database is to navigate to the inner **adoptadog** folder and look inside to see the **settings.py** file. As you look through the file you will notice Django has provided the start-up code for our database. Now to activate the database go back to the main **adoptadog** folder and enter the following command into the command prompt.
+## Creating the database
+
+If you examine **settings.py** inside the **adoptadog** project, you will notice a variable called DATABASES with a property of `default`. This is the connection settings for the default database, which is SQLite out of the box.
+
+Django has a structure defined for new projects which contains tables for core features of the framework. However, the database is not created automatically. We can create the database by using migrate, which takes all staged changes for the database and applies them. In the case of SQLite, if the database is not already created Django will automatically create it.
+
+1. Inside **Visual Studio Code** open the inline terminal window by clicking **Terminal > New Terminal** (or hitting **Ctl + Shift+ `**)
+
+2. Execute the following command inside the terminal window
 
 ```bash
 python manage.py migrate
@@ -30,5 +38,15 @@ Now that we completed the necessary setup for our SQLite database, let's uncover
 
     After installing this extension, hold down **CTRL + Shift + P** to view the command palette. Enter **SQLite: Open Database**, and then choose the appropriate database from the dropdown list. This will then open up a new view in the Explorer Pane where you can now view the database structure.
 
-    ![SQLite Explorer](../Module2/Module2_Images/Module2_VSC_SQLiteDBOpen.PNG)
+    ![SQLite Explorer](../Module2/Module2_Images/Module2_AddModels.PNG)
 
+
+## Exploring the Schema
+
+Now that we have opened the database on Visual Studio Code hover over **dog_shelters_dog** and you will see an arrow appear to the right of the name. By hovering over the arrow it should say **Show Table**. 
+
+1. Now Click on the arrow and a new preview window will open with the table and the current data. While you are not able to edit any information within the table you can at least look at the data to perform any needed queries or download the table in different file formats.
+
+ ![VSC Datatable](../Module2/Module2_Images/Module2_ShowVSCDatabaseTable.PNG)
+
+[!NOTE] When clicking on the arrow to show the database table sometimes it will at first appear blank. Click on the arrow again and the data should then appear.

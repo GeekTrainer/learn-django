@@ -1,9 +1,8 @@
 [1]: https://git-scm.com/downloads "Git website downloads"
 [2]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository "Clone GutHub repository"
-[6]: https://docs.djangoproject.com/en/3.1/ref/django-admin/ "Command-line Utility"
 
 
-For this module in the learning path we are in the beginning stages of creating a new app named **dog_shelters**. This project focuses on collecting information of all existing dog shelters and the dogs they are hoping to adopt across the United States. The hope for this app is dogs would be able to find suitable homes faster because they would have individuals looking to adopt them from around the U.S. and not just their local area. Django is the perfect framework for this project, as it provided a route for quickly developing a customer facing app while providing an established database that could easily be accessed by employees for quick updating. Begin creating this project by following the below steps to install Django and retrieve the project starting files. 
+For this module in the learning path we are in the beginning stages of creating a new app named **dog_shelters**. This project focuses on collecting information of all existing dog shelters and the dogs they are hoping to adopt across the United States. The hope for this app is dogs would be able to find suitable homes faster because they would have individuals looking to adopt them from around the U.S. and not just their local area. Django is the perfect framework for this project, as it provided a route for quickly developing a customer facing app while providing an established database and admin function that could easily be accessed by employees for quick updating. Begin creating this project by following the below steps to install Django and retrieve the project starting files. 
 
 ## Creating a new directory
 
@@ -53,14 +52,7 @@ The name of the virtual environment will be in parentheses followed by the path 
 
 ### Installing Git
 
-Now that Git has been installed we can use it to [clone][2] our GitHub repository. To begin open a command prompt and navigate to the previously created directory **dogsforadoptionproject**. Once in the directory start the cloning process by entering the following in the command prompt.
-
-```bash
-# [TODO] Needs final github link
-git clone https://github.com/????
-```
-
-Once this has completed you should now see the **adoptadog** project folder with the **dog_shelters** app within the directory.
+In order to retrieve the files contained within GitHub we need to clone the repository. To begin the cloning process Git needs to first be installed on your computer. If Git isn’t installed on your computer then go to the [Git website][1] to install the latest version.
 
 ### Cloning the GitHub repository
 

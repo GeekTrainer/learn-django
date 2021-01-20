@@ -12,3 +12,5 @@ Most applications created today will involve some type of user input. In order t
   - Package Management
   - Inheritance and mixins
 - Understanding of HTML and CSS
+- Basic understanding of Django
+- Git
