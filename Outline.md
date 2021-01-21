@@ -36,7 +36,7 @@
 5. Hello, Django
     * Create a project with Django-admin
     * Navigating the project structure
-    * Deploying Your First Project
+    * Running the project
     * Projects vs Apps
 6. Creating Your First App
     * Hello, world!
@@ -72,7 +72,7 @@
     * What is an ORM?
     * Overview of the Django ORM
 4. Django Models
-    * Creating a model 
+    * Creating models 
     * Working with images
     * Activating the model
     * Updating the database
@@ -80,7 +80,7 @@
     * Reversing migrations
     * Schema support
 6. Creating and managing a database
-    * Creating a SQLite database in Django
+    * Creating the database
     * Displaying the schema
 7. Adding \_\_str__
 8. Creating and querying data
