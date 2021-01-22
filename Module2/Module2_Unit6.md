@@ -4,25 +4,26 @@ When creating a database driven application you of course need a database. For d
 
 ## Creating the database
 
-If you examine **settings.py** inside the **adoptadog** project, you will notice a variable called DATABASES with a property of `default`. This is the connection settings for the default database, which is SQLite out of the box.
+If you examine **settings.py** inside the **adoptadog** project, you will notice a variable called `DATABASES` with a property of `default`. This is the connection settings for the default database, which is SQLite out of the box.
 
-Django has a structure defined for new projects which contains tables for core features of the framework. However, the database is not created automatically. We can create the database by using migrate, which takes all staged changes for the database and applies them. In the case of SQLite, if the database is not already created Django will automatically create it.
+Django has a structure defined for new projects which contains tables for core features of the framework. However, the database is not created automatically. We can create the database by using **migrate**, which takes all staged changes for the database and applies them. In the case of SQLite, if the database is not already created Django will automatically create it.
 
-1. Inside **Visual Studio Code** open the inline terminal window by clicking **Terminal > New Terminal** (or hitting **Ctl + Shift+ `**)
+1. Inside **Visual Studio Code** open the inline terminal window by clicking **Terminal > New Terminal** (or hitting **Ctl + Shift + `**)
 
 2. Execute the following command inside the terminal window
 
-```bash
-python manage.py migrate
-```
+    ```bash
+    python manage.py migrate
+    ```
 
 By running this command, Django searches for the **INSTALLED_APPS** setting within the **settings.py** file and creates any necessary tables according to the default settings.
 
 ## Displaying the schema
 
-Now that we completed the necessary setup for our SQLite database, let's uncover the two ways to check out the schema. The first will be through the SQLite command line and the second will be in VSCode. 
+Now that we completed the necessary setup for our SQLite database, let's uncover the two ways to check out the schema. The first will be through the SQLite command line and the second will be in Visual Studio Code. 
 
-[!NOTE] This task assumes SQLite is already installed, but if not then go to the SQLite website to download the [SQLite application][1].
+[!NOTE] 
+This task assumes SQLite is already installed, but if not then go to the SQLite website to download the [SQLite application][1].
 
 1. The first way to check out the schema of the newly created database is to use the SQLite command line. For this task, browse through the file explorer and find the newly created database file and double click on the file.
 
@@ -32,7 +33,7 @@ Now that we completed the necessary setup for our SQLite database, let's uncover
 
     ![SQLite Command Line](../Module2/Module2_Images/Module2_SQLiteCommandLine.PNG)
 
-2. The second option to check out the contents of the database is to view it in VSCode. While there are different extensions available, we choose to install the **vscode-sqlite** extension.
+2. The second option to check out the contents of the database is to view it in Visual Studio Code. While there are different extensions available, we choose to install the **vscode-sqlite** extension.
 
     ![SQLite Extension](../Module2/Module2_Images/Module2_VSC_SQLiteExt.PNG)
 
@@ -49,4 +50,5 @@ Now that we have opened the database on Visual Studio Code hover over **dog_shel
 
  ![VSC Datatable](../Module2/Module2_Images/Module2_ShowVSCDatabaseTable.PNG)
 
-[!NOTE] When clicking on the arrow to show the database table sometimes it will at first appear blank. Click on the arrow again and the data should then appear.
+[!NOTE] 
+When clicking on the arrow to show the database table sometimes it will at first appear blank. Click on the arrow again and the data should then appear.

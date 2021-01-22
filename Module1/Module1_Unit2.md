@@ -14,3 +14,4 @@ Now that Git has been installed we can use it to [clone][2] the starter or solut
 ```bash
 # [TODO] Needs final github link
 git clone https://github.com/????
+```

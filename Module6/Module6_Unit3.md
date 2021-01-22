@@ -68,4 +68,4 @@ Now that we have completed the Azure setup you should be able to paste the below
 dogsforadoptionproject.azurewebsites.net
 ```
 
-While we are able to access the app page it only shows the Azure default page as we still need to upload the Django project code. 
+While we are able to access the app page it only shows the Azure default page. In order to see our app in action let's continue and upload the Django project code.

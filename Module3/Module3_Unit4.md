@@ -6,9 +6,9 @@ When creating projects the admin interface is automatically created, but it does
 
 1. By default Django requires that an admin be a superuser to login. So to create our first superuser, navigate to the inside of the first **mydjangoproject** folder and enter the below line into the command line. 
 
-```bash
-python manage.py createsuperuser
-```
+    ```bash
+    python manage.py createsuperuser
+    ```
 
 2. After running this command complete the fields for the username, an email, and then a password. For this example we have chosen **admin** for the username. 
 

@@ -4,7 +4,8 @@ Now that we have learned the basics about the Django framework, and examined the
 
 In order to create the app, we first start by navigating to the inside of the project root folder **myfirstproject** and input the following on the command line.
 
-[!NOTE] If you have decided to clone the app starting folder structure from the GitHub repository you can skip to the next step of Creating a View.
+[!NOTE] 
+If you have decided to clone the app starting folder structure from the GitHub repository you can skip to the next step of Creating a View.
 
 ```bash    
 python manage.py startapp hello_world
@@ -12,7 +13,7 @@ python manage.py startapp hello_world
 
 With this command, Django will automatically create the required folders and files and the following structure should now be visible.
 
-          
+```text         
     hello_world/
         __init__.py
         admin.py
@@ -22,7 +23,7 @@ With this command, Django will automatically create the required folders and fil
         models.py
         tests.py
         views.py
-        
+```        
            
 ## Creating a view
 
@@ -30,13 +31,13 @@ Now that the app structure has been created, we can begin to take the necessary 
 
 1. Navigate to the **views.py** file contained within the **hello_world** directory and add the below code under the comment that reads `# [TODO]: Add code below to create view`.
 
-```python
-# [TODO]: Add code below to create view
-from django.http import HttpResponse
+    ```python
+    # [TODO]: Add code below to create view
+    from django.http import HttpResponse
 
-def index(request):
-    return HttpResponse("Hello, world!")
-```
+    def index(request):
+        return HttpResponse("Hello, world!")
+    ```
         
 Creating a view is an essential action as it handles what views to return when a specific URL is sent as a request. In the next section we will now map the URL to this view. 
 
@@ -63,16 +64,16 @@ Now that we have created our URLconf for our app, we must now create one in our 
 
 2. Open the **urls.py** file to enter the code under the comments `# [TODO]: Add the include function to the list of imports from django.urls` and `# [TODO]: Add the code to create the URLconf for the project`.
 
-```python
-# [TODO]: Add the include function to the list of imports from django.urls
-from django.urls import include, path
+    ```python
+    # [TODO]: Add the include function to the list of imports from django.urls
+    from django.urls import include, path
 
-urlpatterns = [
-    # [TODO]: Add the code to create the URLconf for the app
-    path('hello_world/', include('hello_world.urls')),
-    path('admin/', admin.site.urls),
-]
-```
+    urlpatterns = [
+        # [TODO]: Add the code to create the URLconf for the app
+        path('hello_world/', include('hello_world.urls')),
+        path('admin/', admin.site.urls),
+    ]
+    ```
 
 When opening the file you will notice Django has already populated some of the code, and our task will be to add our new app path to the existing code. In addition to adding the new path, you will also need to import another function named `include` from `django.urls`. 
 
@@ -101,11 +102,10 @@ Now let's say we called a user number in the URL.
 Django would first look in **myfirstproject.urls** and search for the urlpatterns. After finding the first match for **hello_world/**, it would then strip that part from the URL just leaving **5**. It would then continue with the remaining string to the **hello_world/urls.py** file where it would continue looking for a match. After finding the match, it would then display the appropriate view.
 
 ```output
-    Hello user # 5.
+Hello user # 5.
 ```
 
 By using this function it allows for a simple way to manage and organize URLs within the application and provides greater freedom to change path roots without breaking the app.
-
     
 ## Deploying your first app
 

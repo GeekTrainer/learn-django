@@ -9,9 +9,10 @@ In this module you will learn:
 - How to create and query data in your SQLite database
 
 Prerequisites
+
 - Intermediate level knowledge of Python
   - Package Management
   - Inheritance and mixins
 - Understanding of HTML and CSS
 - Basic understanding of Django
-- Git
+- [Git](https://git-scm.com/)

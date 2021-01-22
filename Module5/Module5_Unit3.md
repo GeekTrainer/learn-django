@@ -34,23 +34,23 @@ Now that we have covered creating a form in HTML let discuss how Django can spee
 
 1. Create a **forms.py** file in our app then enter the below code.
 
-```python
-from django import forms
+    ```python
+    from django import forms
 
-# [TODO] Import FormHelper and Submit from crispy
+    # [TODO] Import FormHelper and Submit from crispy
 
-# [TODO] Add Layout to imports
+    # [TODO] Add Layout to imports
 
-# [TODO] Import StrictButton
+    # [TODO] Import StrictButton
 
 
-class ClientForm(forms.Form):
-    client_name = forms.CharField(label='Name:', max_length=100)
-    inquiry_reason = forms.CharField(widget=forms.Textarea, label='Reason for inquiry:', max_length=100)
-    contact_number = forms.CharField(label='Contact Number:', max_length=100)
+    class ClientForm(forms.Form):
+        client_name = forms.CharField(label='Name:', max_length=100)
+        inquiry_reason = forms.CharField(widget=forms.Textarea, label='Reason for inquiry:', max_length=100)
+        contact_number = forms.CharField(label='Contact Number:', max_length=100)
 
-# [TODO] Add crispy contact form
-       
-```
+    # [TODO] Add crispy contact form
+        
+    ```
 
 For this form we have created the `ClientForm` class to hold the form elements, and also define the fields. One thing to notice is that we are not creating the `<form>...</form>` tags or the "Submit" button that is required for the HTML template. When inserting this form those elements will have to be added to the template in order to work correctly.

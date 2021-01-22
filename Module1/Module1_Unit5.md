@@ -4,7 +4,8 @@
 
 Now that Django is installed we are ready to begin the process of creating a project, but before we actually start coding there is one thing left to do in order to create a Django project. Navigate to the folder in which the virtual environment is located, and type the following in the command prompt.
 
-[!NOTE] Remember to type this command in the activated virtual environment command prompt.
+[!NOTE] 
+Remember to type this command in the activated virtual environment command prompt.
 
 ```bash
 django-admin startproject myfirstproject
@@ -37,14 +38,14 @@ Now that the Django project has been created let's look at the structure to see 
 
     python manage.py help
     ``` 
-    
-    For more information about the Django CLI, you can consult the [django-admin documentation][1].
 
 3. The inner **myfirstproject** is considered the Python package for your project.
 4. Next we have **init.py** and if you look at the contents of this file you will notice that it is empty. Don't worry as this should be empty as it functions to tell Python that this directory should be considered a package.
 5. Next in line we have **settings.py**. This file contains all of your settings or configurations.
 6. Next is **urls.py**. This file contains the urls within the project.
 7. Lastly we have **asgi.py** and **wsgi.py**. These last two files serve as the entry point for your web servers depending on what type of server is deployed.
+
+For more information about the Django CLI, you can consult the [django-admin documentation][1].
 
 ## Running the project
 

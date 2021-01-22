@@ -8,11 +8,11 @@ Creating a Django project is similar to creating any Python application. We star
 Before installing Django we first need to make sure the correct Python version is installed for the framework. In order to check your installed version navigate to your command prompt and type the following.
 
 ```bash
-# Windows or Linux
+# Windows
 python --version 
 
-# macOS
-python -version 
+# macOS or Linux
+python --version 
 ```
 
 By executing this command it will display what Python version is installed on your computer. For this module we are using the latest official version of Django and they recommend using Python 3 in order to have access to the latest Python features. If you do not have Python installed then proceed to the [Python website][1] to download the correct version.
@@ -27,19 +27,25 @@ Start by creating a folder that will contain the new project as this will also h
 
 2. Navigate to the desired directory and run the below command. For this example we will be creating a folder called **myfirstdjangoproject**. 
 
-```python
+```bash
 # Windows
 md myfirstdjangoproject
-# Command to change directory
-cd myfirstdjangoproject
 
 # macOS or Linux
 mkdir myfirstdjangoproject
-# Command to change directory
+```
+
+3. After the folder is created go inside the new directory
+
+```bash
+# Windows
+cd myfirstdjangoproject
+
+# macOS or Linux
 cd myfirstdjangoproject
 ```
 
-3. After the folder is created go inside the new directory and enter the below code in the command line.
+4. Then enter the below code in the command line.
 
 ```bash
 # Windows

@@ -65,13 +65,13 @@ Since we have not created any shelters a blank QuerySet should appear.
 Now that we have imported our models into the python shell it is time to create an object. With the **dog_shelters** app we need to create the first shelter name and location. Add the below line to the python interactive console.
 
 ```python
-s = Shelter(shelter_name='Dogs 4 U', shelter_location='Bremerton, WA')
+shelter = Shelter(shelter_name='Dogs 4 U', shelter_location='Bremerton, WA')
 ```
 
 After entering the question then save it to the database by entering the command below. If we were working in SQL this would be the same command as `INSERT`.
 
 ```python
-s.save()
+shelter.save()
 ```
 
 ### Retrieving objects
@@ -91,18 +91,18 @@ In this instance it should now print out the shelter name that was just saved.
 Once objects are saved to a database there may be instances where you need to edit text or correct a misspelling. For instance, let's say after saving our first shelter we noticed the location state **'wa'** was not capitalized. 
 
 ```python
-s = Shelter(shelter_name='Dogs 4 U', shelter_location='Bremerton, wa')
+shelter = Shelter(shelter_name='Dogs 4 U', shelter_location='Bremerton, wa')
 ```
 
 In order to change that error in the database we would use that same variable to fix the text and then save it again to the database.
 
 ```python
-s = Shelter(shelter_name='Dogs 4 U', shelter_location='Bremerton, WA')
-s.save()
+shelter = Shelter(shelter_name='Dogs 4 U', shelter_location='Bremerton, WA')
+shelter.save()
 ```
 
 In another example let's say the shelter closed, and we needed to delete it from the database. Since we had just saved a correction to this shelter we would use the same variable and delete it.
 
 ```python
-s.delete()
+shelter.delete()
 ```

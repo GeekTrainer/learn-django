@@ -14,4 +14,4 @@ Prerequisites
   - Package Management
   - Inheritance and mixins
 - Understanding of HTML and CSS
-- Git
+- [Git](https://git-scm.com/)

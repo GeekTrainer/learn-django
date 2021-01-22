@@ -1,10 +1,11 @@
-[2]: https://docs.djangoproject.com/en/3.1/topics/db/queries/ "Django Queries"
+[1]: https://docs.djangoproject.com/en/3.1/topics/db/queries/ "Django Queries"
 
 ## Exploring the Django ORM
-After we created the models for our app Django automatically created an API. This API allows us to easily create, retrieve, update and delete objects in our database. To begin this interaction we first have to call a python shell by entering the below command in the command line.
+
+After we created the models for our app Django automatically created an API. This API allows us to create, retrieve, update and delete objects in our database. To begin this interaction we first have to call a python shell by entering the below command in the command line.
 
 ```bash
-    python manage.py shell
+python manage.py shell
 ```
 
 Once the interactive console begins we then need to import the two models that were created for the **dog_shelters** app as below.
@@ -70,4 +71,4 @@ In another example let's say the shelter closed and we needed to delete it from 
 shelter.delete()
 ```
 
-Through this lesson we covered the basics of communicating with our database, but Django has provided many more functionalities. Explore this information further with Django [database queries][2].
+Through this lesson we covered the basics of communicating with our database, but Django has provided many more functionalities. Explore this information further with Django [database queries][1].

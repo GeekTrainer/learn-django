@@ -1,4 +1,4 @@
-Now that we have activated our database it is time to start creating our models. By creating a model we are able to update the database by adding any essential fields and defining the behavior of our data. We will continue building our **dog_shelters** application.
+Now that we have activated our database it is time to start creating our models. By creating a model we are able to update the database by adding any essential fields and defining the behavior of our data. We will now continue building our **dog_shelters** application.
 
 ## Creating Models
 
@@ -61,27 +61,27 @@ All applications must be registered with the project in Django. It may seem a li
 
 1. Find the configuration class name within the **dog_shelters** app. To find this class name go to the **dog_shelters/apps.py** file to find the below code and to see that the class name is `DogSheltersConfig`.
 
-```python
-class DogSheltersConfig(AppConfig):
-    name = 'dog_shelters'
-```
+    ```python
+    class DogSheltersConfig(AppConfig):
+        name = 'dog_shelters'
+    ```
 
 2. Now that you have the class name, return to the inner **adoptadog** folder and **settings.py** file to add the app config line under the comment `#[TODO] - Add the app to the list of INSTALLED_APPS`.
 
-```python
-INSTALLED_APPS = [
-    #[TODO] - Add the app to the list of INSTALLED_APPS
-    'dog_shelters.apps.DogSheltersConfig',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-]
-```
+    ```python
+    INSTALLED_APPS = [
+        #[TODO] - Add the app to the list of INSTALLED_APPS
+        'dog_shelters.apps.DogSheltersConfig',
+        'django.contrib.admin',
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'django.contrib.messages',
+        'django.contrib.staticfiles',
+    ]
+    ```
 
-By adding this line to the list of `INSTALLED_APPS` it tells Django that this app needs to be included when running the project.
+    By adding this line to the list of `INSTALLED_APPS` it tells Django that this app needs to be included when running the project.
 
 ## Updating the database
 
@@ -91,7 +91,7 @@ Next, we need to tell Django that new models are added and we would like for the
 
 2. Execute the following
 
-```python
+```bash
 python manage.py makemigrations dog_shelters
 ```
 
@@ -101,7 +101,7 @@ After running the command you should see something similar to below stating it h
 
 Now in order to make our changes permanent to the database the final step is to run the migrate command in the command line.
 
-```python
+```bash
 python manage.py migrate
 ```
 
@@ -110,4 +110,5 @@ This command will apply all of our migrations and once complete you should be ab
 ![New Database Models](../Module2/Module2_Images/Module2_AddModels.PNG)
 
 
-[!NOTE] If you don't remember how to display the schema refer to the previous unit **Displaying The Schema**.
+[!NOTE]
+If you don't remember how to display the schema refer to the previous unit **Displaying The Schema**.

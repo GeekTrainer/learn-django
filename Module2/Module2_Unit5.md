@@ -1,6 +1,6 @@
 In the last module we briefly explained the process to migrate data for the newly created models to a database. We started by running the below command in order to tell Django that models had been added to the app and it needed to create a database schema. 
 
-```python
+```bash
 python manage.py makemigrations dog_shelters
 ```
 
@@ -8,13 +8,13 @@ With this example we have used it to add a new schema to the database, but it is
 
 The next step is to then take the data that was staged and make the permanent changes to the database by using the below command.
 
-```python
+```bash
 python manage.py migrate
 ```
 
 By having these two steps Django has set up a type of version control by keeping track of each migration. If we wanted to see the list of migrations that had happened within the database we could also use the below command to return a history.
 
-```python
+```bash
 python manage.py showmigrations -l
 ```
 

@@ -8,13 +8,13 @@ As you can see the only categories listed are **Groups** and **Users** but nothi
 
 1. In order to add the models to the project go to the **dog_shelters/admin.py** file and enter the code under the comment `# [TODO] Register models`.
 
-```python
-# [TODO] Register models.
-from .models import Shelter, Dog
+    ```python
+    # [TODO] Register models.
+    from .models import Shelter, Dog
 
-admin.site.register(Shelter)
-admin.site.register(Dog)
-```
+    admin.site.register(Shelter)
+    admin.site.register(Dog)
+    ```
 
 Once the new code is added and saved, refresh the admin screen and you should see the models are now added.
 

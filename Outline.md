@@ -64,9 +64,9 @@
     * Creating a new directory
     * Creating a virtual environment
     * Activating a virtual environment
-    * Retrieving the project starter files
-      - Installing Git
-      - Cloning the GitHub repository
+    * Installing Git
+    * Cloning the GitHub repository
+    * Installation overview
     * Django installation
 3. ORM Concepts
     * What is an ORM?
@@ -108,9 +108,9 @@
     * Creating a new directory
     * Creating a virtual environment
     * Activating a virtual environment
-    * Retrieving the project starter files
-      - Installing Git
-      - Cloning the GitHub repository
+    * Installing Git
+    * Cloning the GitHub repository
+    * Installation overview
     * Django installation
 3. SQLite database
     * Create the SQLite database
@@ -147,9 +147,9 @@
     * Creating a new directory
     * Creating a virtual environment
     * Activating a virtual environment
-    * Retrieving the project starter files
-      - Installing Git
-      - Cloning the GitHub repository
+    * Installing Git
+    * Cloning the GitHub repository
+    * Installation overview
     * Django installation
     * Install SQLite
 3. Creating dynamic HTML pages with Django templates
@@ -182,9 +182,9 @@
     * Creating a new directory
     * Creating a virtual environment
     * Activating a virtual environment
-    * Retrieving the project starter files
-      - Installing Git
-      - Cloning the GitHub repository
+    * Installing Git
+    * Cloning the GitHub repository
+    * Installation overview
     * Django installation
     * Deploying the Django app
     * Install SQLite
@@ -215,9 +215,9 @@
     * Creating a new directory
     * Creating a virtual environment
     * Activating a virtual environment
-    * Retrieving the project starter files
-      - Installing Git
-      - Cloning the GitHub repository
+    * Installing Git
+    * Cloning the GitHub repository
+    * Installation overview
     * Django installation
     * Install SQLite
     * Deploying the Django app
@@ -226,7 +226,7 @@
 4. Deploying the Django project
     * Initializing Git local repository
     * Django project edits for Azure
-    * Deploying project
+    * Deploying the project
 3. Knowledge Check
     * Check your knowledge
       - Questions

@@ -33,30 +33,30 @@ Now that we have completed our template views let's move on to creating the **UR
 
 2. After the file is created add the below code.
 
-```python
-from django.urls import path
-from . import views
+    ```python
+    from django.urls import path
+    from . import views
 
-urlpatterns = [
-    path('home', views.index, name='index'),
-    path('shelter_spotlight', views.spotlight, name='spotlight'),
-]
-```
+    urlpatterns = [
+        path('home', views.index, name='index'),
+        path('shelter_spotlight', views.spotlight, name='spotlight'),
+    ]
+    ```
 
 By adding this file we have now registered the paths of the app, but in order for it to work correctly we now have to register the app paths in the project. 
 
 1. Go to the project **adoptadog** and find the **urls.py** file to enter the below code under comments `# [TODO]: add include to the list of imports` and `# [TODO]: Add the below line to create the URLconf for the project`.
 
-```python
-# [TODO]: Add include to the list of imports
-from django.urls import include, path
+    ```python
+    # [TODO]: Add include to the list of imports
+    from django.urls import include, path
 
-urlpatterns = [
-    # [TODO]: Add the below line to create the URLconf for the project
-    path('dog_shelters/', include('dog_shelters.urls')),
-    path('admin/', admin.site.urls),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-```
+    urlpatterns = [
+        # [TODO]: Add the below line to create the URLconf for the project
+        path('dog_shelters/', include('dog_shelters.urls')),
+        path('admin/', admin.site.urls),
+    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    ```
 
 By adding the `dog_shelters/` path we have now connected our app to the project and can view the site. If your project isn't already running then enter `python manage.py runserver` in the command line to start the app, and enter the below URL in your preferred browser.
 
@@ -102,15 +102,15 @@ After completing the template code our next step is to add the view.
 
 1. Go to the **views.py** file in the app and add the below code under the comment `# [TODO] Add Generic Listview`.
 
-```python
-# [TODO] Add Generic Listview
-from django.views.generic import ListView
+    ```python
+    # [TODO] Add Generic Listview
+    from django.views.generic import ListView
 
-class ShelterList(ListView):
-    model = Shelter
-    context_object_name = 'my_shelter_list'
-    template_name = "shelter_list.html"
-```
+    class ShelterList(ListView):
+        model = Shelter
+        context_object_name = 'my_shelter_list'
+        template_name = "shelter_list.html"
+    ```
 
 We first start by importing `ListView`, and then add a `ShelterList` class that will contain the details. The first step in defining the `Listview` is to name the model. In this case we are using the `Shelter` model that was already defined in the **models.py** app file. The next thing we added was a `context_object_name`. If this variable was not added the only way to call this view would be to use `object_list` in our template loop as seen below.
 
@@ -128,25 +128,25 @@ Now that the view code is added we need to connect everything together by first 
 
 1. Make sure you are still in the app folder and go to the **urls.py** file to add the below path under comment `# [TODO]: Add the path for ShelterList ListView`. 
 
-```python
-urlpatterns = [
-    path('home', views.index, name='index'),
-    # [TODO]: Add the path for ShelterList ListView
-    path('shelter_list', views.ShelterList.as_view(), name='ShelterList'),
-    path('shelter_spotlight', views.spotlight, name='spotlight'),
-]
-```
+    ```python
+    urlpatterns = [
+        path('home', views.index, name='index'),
+        # [TODO]: Add the path for ShelterList ListView
+        path('shelter_list', views.ShelterList.as_view(), name='ShelterList'),
+        path('shelter_spotlight', views.spotlight, name='spotlight'),
+    ]
+    ```
 
 2. Then go to the **index.html** file to add the URL under the comment `<!-- TODO - Create the URL for the new template page shelter_list -->` to complete the process.
 
-```html
-{% block sidebar %}
-  {{ block.super }}
-  <a href="shelter_spotlight" class="w3-bar-item w3-button">Shelter Spotlight</a>
-  <!-- TODO - Create the URL within the sidebar block for the new template page shelter_list -->
-  <a href="shelter_list" class="w3-bar-item w3-button">Shelters</a>
-{% endblock %}
-```
+    ```html
+    {% block sidebar %}
+    {{ block.super }}
+    <a href="shelter_spotlight" class="w3-bar-item w3-button">Shelter Spotlight</a>
+    <!-- TODO - Create the URL within the sidebar block for the new template page shelter_list -->
+    <a href="shelter_list" class="w3-bar-item w3-button">Shelters</a>
+    {% endblock %}
+    ```
 
 Now that we have created our first **ListView** let's see what it looks like in our app. If your app is not running then start it by typing `python manage.py runserver` in the command line and typing the web link in your preferred browser. If everything is working correctly you should see the new link **Shelters** in the home page.
 
@@ -163,33 +163,33 @@ Now that the list view has been created let's create a generic **DetailView**. F
 
 1. In the app templates folder create a file named **shelter_details.html**. After creating the file enter the below code.
 
-```html
-{% extends "index.html" %}
+    ```html
+    {% extends "index.html" %}
 
-{% block content %}
-    <h2 style="text-align: center; margin-top: 100px;">Shelter details</h2>
-    <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
-        <h3>{{ shelter.shelter_name }} is located at:</h3>
-        <p>{{ shelter.shelter_location }}</p>
-    </div>
-{% endblock %}
-```
+    {% block content %}
+        <h2 style="text-align: center; margin-top: 100px;">Shelter details</h2>
+        <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
+            <h3>{{ shelter.shelter_name }} is located at:</h3>
+            <p>{{ shelter.shelter_location }}</p>
+        </div>
+    {% endblock %}
+    ```
 
 We have again extended the **index.html** file to keep the same layout, and added the variables needed to call the shelter information. 
 
 2. The next action is to go to the **views.py** file and add the below code under the comment `# [TODO] Add Generic Detailview`.
 
-```python
-# [TODO] Add Generic Detailview
-from django.views.generic import DetailView
-from django.shortcuts import get_object_or_404
+    ```python
+    # [TODO] Add Generic Detailview
+    from django.views.generic import DetailView
+    from django.shortcuts import get_object_or_404
 
-class ShelterDetail(DetailView):
-   def get(self, request, *args, **kwargs):
-        shelter = get_object_or_404(Shelter, pk=kwargs['pk'])
-        context = {'shelter': shelter}
-        return render(request, 'shelter_details.html', context)
-```
+    class ShelterDetail(DetailView):
+    def get(self, request, *args, **kwargs):
+            shelter = get_object_or_404(Shelter, pk=kwargs['pk'])
+            context = {'shelter': shelter}
+            return render(request, 'shelter_details.html', context)
+    ```
 
 As you can see we have imported `DetailView`, and then `get_object_or_404`. We use the `get_object_or_404` statement in the `shelter` variable so it will check if the object being requested actually exists. If the object did not exist then an exception would be thrown. We next go to `context` and define the variable that will be used by the template to call this view, and lastly state what will be rendered in the template.
 
@@ -197,34 +197,34 @@ Now that the view has been added we need to add the path.
 
 3. Go to the **urls.py** file in the app and add the below under comment `# [TODO]: Add the path below for our ShelterDetail DetailView`.
 
-```python
-urlpatterns = [
-    path('home', views.index, name='index'),
-    # [TODO]: Add the path below for our ShelterList ListView
-    path('shelter_list', views.ShelterList.as_view(), name='ShelterList'),
-    # [TODO]: Add the path below for our ShelterDetail DetailView
-    path('<int:pk>', views.ShelterDetail.as_view(), name='ShelterDetail'),
-    path('shelter_spotlight', views.spotlight, name='spotlight'),
-]
-```
+    ```python
+    urlpatterns = [
+        path('home', views.index, name='index'),
+        # [TODO]: Add the path below for our ShelterList ListView
+        path('shelter_list', views.ShelterList.as_view(), name='ShelterList'),
+        # [TODO]: Add the path below for our ShelterDetail DetailView
+        path('<int:pk>', views.ShelterDetail.as_view(), name='ShelterDetail'),
+        path('shelter_spotlight', views.spotlight, name='spotlight'),
+    ]
+    ```
 
 As you can see we have added `<int:pk>` at the beginning of this path. This was added since we want the detail view to be called when the user clicks on the shelter id. In order for this path to work correctly we now need to modify the code a little in the **shelter_list.html** page.
 
 4. Go to the **shelter_list.html** template and add the code under comment `<!-- TODO - Add URL for shelter id to request correct path for DetailView  -->` to create the URL.
 
-```html
-{% block content %}
-    <h2 style="text-align: center; margin-top: 100px;">Shelter Names</h2>
-    <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
-        <ul>
-            {% for get_shelters in my_shelter_list %}
-                <!-- TODO - Add URL for shelter id to request correct path for DetailView  -->
-                <a href="{{ get_shelters.get_absolute_url}}{{ get_shelters.id }}" >{{ get_shelters.shelter_name }}</a>
-            {% endfor %}
-        </ul>
-    </div>
-{% endblock %}
-```
+    ```html
+    {% block content %}
+        <h2 style="text-align: center; margin-top: 100px;">Shelter Names</h2>
+        <div style="width: 850px; margin: auto; text-align: center; margin-top: 50px;">
+            <ul>
+                {% for get_shelters in my_shelter_list %}
+                    <!-- TODO - Add URL for shelter id to request correct path for DetailView  -->
+                    <a href="{{ get_shelters.get_absolute_url}}{{ get_shelters.id }}" >{{ get_shelters.shelter_name }}</a>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endblock %}
+    ```
 
 With the addition of this line we have created a URL that shows the shelter name but is requesting the database information by the shelter `id`. By making this change it will allow the detail view to be called when a user clicks on the shelter name.
 

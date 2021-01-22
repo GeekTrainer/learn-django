@@ -1,6 +1,7 @@
 [1]: https://git-scm.com/downloads "Git website downloads"
 [2]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository "Clone GutHub repository"
 [3]: https://www.sqlite.org/download.html "Link to SQLite webpage"
+[4]: https://www.python.org/  "Install Python"
 
 For this module in the learning path we are continuing to build on an app named **dog_shelters**. Follow the below steps to install Django and retrieve the project starting files. 
 
@@ -36,10 +37,10 @@ Now that the virtual environment has been created we have to activate it before 
 
 ```bash
 # Windows
-venv\Scripts\activate
+venv\\Scripts\\activate
 
 # macOS or Linux
-source venv/bin/activate
+source ./venv/bin/activate
 ```
 
 By executing this command the virtual environment will start, and the command prompt should now look similar to below.
@@ -48,13 +49,11 @@ By executing this command the virtual environment will start, and the command pr
 
 The name of the virtual environment will be in parentheses followed by the path that you are in currently. This command prompt is where you will begin installing the Django framework.
 
-## Retrieving the project starter files
-
-### Installing Git
+## Installing Git
 
 In order to retrieve the files contained within GitHub we need to clone the repository. To begin the cloning process Git needs to first be installed on your computer. If Git isn’t installed on your computer then go to the [Git website][1] to install the latest version. 
 
-### Cloning the GitHub repository
+## Cloning the GitHub repository
 
 Now that Git has been installed we can use it to [clone][2] our GitHub repository. To begin open a command prompt and navigate to the previously created directory **dogsforadoptionproject**. Once in the directory start the cloning process by entering the following in the command prompt.
 
@@ -64,6 +63,20 @@ git clone https://github.com/????
 ```
 
 Once this has completed you should now see the **adoptadog** project folder with the **dog_shelters** app within the directory.
+
+## Installation overview
+
+Before installing Django we first need to make sure the correct Python version is installed for the framework. In order to check your installed version navigate to your command prompt and type the following.
+
+```bash
+# Windows
+python --version 
+
+# macOS or Linux
+python --version 
+```
+
+By executing this command it will display what Python version is installed on your computer. For this module we are using the latest official version of Django and they recommend using Python 3 in order to have access to the latest Python features. If you do not have Python installed then proceed to the [Python website][4] to download the correct version.
 
 ## Django installation
 

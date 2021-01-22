@@ -12,4 +12,4 @@ In this module you will learn:
   - Inheritance and mixins
 - Understanding of HTML and CSS
 - Basic understanding of Django
-- Git
+- [Git](https://git-scm.com/)
