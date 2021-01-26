@@ -8,9 +8,8 @@ If you examine **settings.py** inside the **adoptadog** project, you will notice
 
 Django has a structure defined for new projects which contains tables for core features of the framework. However, the database is not created automatically. We can create the database by using **migrate**, which takes all staged changes for the database and applies them. In the case of SQLite, if the database is not already created Django will automatically create it.
 
-1. Inside **Visual Studio Code** open the inline terminal window by clicking **Terminal > New Terminal** (or hitting **Ctl + Shift + `**)
-
-2. Execute the following command inside the terminal window
+1. Inside **Visual Studio Code** open the inline terminal window by clicking **Terminal > New Terminal** (or hitting **Ctl-Shift-\`** (or **Cmd-Shift-\`** on a Mac))
+1. Execute the following command inside the terminal window
 
     ```bash
     python manage.py migrate
@@ -22,8 +21,8 @@ By running this command, Django searches for the **INSTALLED_APPS** setting with
 
 Now that we completed the necessary setup for our SQLite database, let's uncover the two ways to check out the schema. The first will be through the SQLite command line and the second will be in Visual Studio Code. 
 
-[!NOTE] 
-This task assumes SQLite is already installed, but if not then go to the SQLite website to download the [SQLite application][1].
+> [!NOTE] 
+> This task assumes SQLite is already installed, but if not then go to the SQLite website to download the [SQLite application][1].
 
 1. The first way to check out the schema of the newly created database is to use the SQLite command line. For this task, browse through the file explorer and find the newly created database file and double click on the file.
 
@@ -33,11 +32,11 @@ This task assumes SQLite is already installed, but if not then go to the SQLite 
 
     ![SQLite Command Line](../Module2/Module2_Images/Module2_SQLiteCommandLine.PNG)
 
-2. The second option to check out the contents of the database is to view it in Visual Studio Code. While there are different extensions available, we choose to install the **vscode-sqlite** extension.
+1. The second option to check out the contents of the database is to view it in Visual Studio Code. While there are different extensions available, we choose to install the **vscode-sqlite** extension.
 
     ![SQLite Extension](../Module2/Module2_Images/Module2_VSC_SQLiteExt.PNG)
 
-    After installing this extension, hold down **CTRL + Shift + P** to view the command palette. Enter **SQLite: Open Database**, and then choose the appropriate database from the dropdown list. This will then open up a new view in the Explorer Pane where you can now view the database structure.
+    After installing this extension, hold down **Ctl-Shift-P** (or **Cmd-Shift-P** on a Mac) to view the command palette. Enter **SQLite: Open Database**, and then choose the appropriate database from the dropdown list. This will then open up a new view in the Explorer Pane where you can now view the database structure.
 
     ![SQLite Explorer](../Module2/Module2_Images/Module2_AddModels.PNG)
 
