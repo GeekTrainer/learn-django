@@ -69,11 +69,11 @@ Now that the virtual environment has been created we have to activate it before 
     source ./venv/bin/activate
     ```
 
-    By executing this command the virtual environment will start, and the command prompt should now look similar to below.
+By executing this command the virtual environment will start, and the command prompt should now look similar to below.
 
-    ![Activated venv](../Module2/Module2_Images/venvcommandprompt.PNG)
+![Activated venv](../Module2/Module2_Images/venvcommandprompt.PNG)
 
-    The name of the virtual environment will be in parentheses followed by the path that you are in currently. This command prompt is where you will begin installing the Django framework.
+The name of the virtual environment will be in parentheses followed by the path that you are in currently. This command prompt is where you will begin installing the Django framework.
 
 ## Django installation
 
