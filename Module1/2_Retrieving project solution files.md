@@ -7,7 +7,7 @@ For this module in the learning path we will be going through the steps to insta
 
 In order to retrieve the files contained within GitHub we need to clone the repository. To begin the cloning process Git needs to first be installed on your computer. If Git isn’t installed on your computer then go to the [Git website][1] to install the latest version. 
 
-### Cloning the GitHub repository
+## Cloning the GitHub repository
 
 Now that Git has been installed we can use it to [clone][2] the solution files in the GitHub repository. To begin open a command prompt and navigate to the desired directory. Once in the directory start the cloning process by entering the following in the command prompt.
 
