@@ -61,7 +61,7 @@ shelter = Shelter(shelter_name='Dogs 4 U', shelter_location='Bremerton, wa')
 In order to change that error in the database we would use that same variable to fix the text and then save it again to the database.
 
 ```python
-shelter.shelter_location='Bremerton, WA')
+shelter.shelter_location='Bremerton, WA'
 shelter.save()
 ```
 
