@@ -42,7 +42,7 @@ Our newly created `URLconf` is inside our **hello_world** application. However, 
 
 1. Open **urls.py** inside **helloproject**
 1. Note the doc comments at the beginning. This explains how you can register new `URLconf` modules
-1. Below the line which reads `from django.urls import path` add the following `import` statement to add `include` and `path`
+1. **Replace** the line which reads `from django.urls import path` with the following `import` statement to add `include` and `path`
 
     ```python
     from django.urls import include, path
@@ -62,7 +62,7 @@ The code below the doc comment should now look like the following:
 
 ```python
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
 urlpatterns = [
     path('/', include('hello_world.urls')),
@@ -74,7 +74,7 @@ urlpatterns = [
 
 Now that the structure is complete, views been added, and the URLs mapped it is time to run your app!
 
-1. Inside the **TERMINAL** in **Visual Studio Code** execute the following command to start the server again
+1. Inside the **terminal** in **Visual Studio Code** execute the following command to start the server again
 
     ```bash      
     python manage.py runserver

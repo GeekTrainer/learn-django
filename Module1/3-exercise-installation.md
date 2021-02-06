@@ -46,7 +46,7 @@ Start by creating a folder that will contain the new project as this will also h
 We will use the integrated terminal in Visual Studio Code to avoid changing windows as we execute the necessary commands to create the resources we need. We will start by creating a [virtual environment](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments) and activating it.
 
 1. Inside **Visual Studio Code**, click **Terminal > New Terminal**
-1. Inside the **TERMINAL** window at the bottom of **Visual Studio Code**, execute the following commands to create and activate your virtual environment:
+1. Inside the **terminal** window at the bottom of **Visual Studio Code**, execute the following commands to create and activate your virtual environment:
 
     ```bash
     # Windows
@@ -72,7 +72,7 @@ The most common way to manage Python packages is through the use of a [requireme
     Django
     ```
 
-1. Inside the **TERMINAL** window, execute the following command to install Django (and any other packages listed in **requirements.txt**)
+1. Inside the **terminal** window, execute the following command to install Django (and any other packages listed in **requirements.txt**)
 
     ```bash
     pip install -r requirements.txt

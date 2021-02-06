@@ -25,32 +25,6 @@ You will need the following installed on your computer to complete the exercises
     cd [FOLDER HERE]
     ```
 
-## Create the virtual environment
-
-We will follow the best practice of working with [virtual environments](https://docs.python.org/3/tutorial/venv.html) for our project.
-
-1. In the same command or terminal window, execute the following commands to create and activate a virtual environment
-
-    ```bash
-    # Windows
-    py -3 -m venv venv
-    .\\Scripts\\activate
-
-    # macOS or Linux
-    python3 -m venv venv
-    source ./bin/activate
-    ```
-
-## Installing Django
-
-The starter project uses a [requirements.txt](https://pip.pypa.io/en/latest/user_guide/#requirements-files) file to contain the list of all necessary packages. We can install them by using `pip`.
-
-1. In the same command or terminal window, execute the following command to install the required packages
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
 ## Open the project in Visual Studio Code
 
 We will be using [Visual Studio Code](https://code.visualstudio.com) as our code editor.
@@ -61,12 +35,38 @@ We will be using [Visual Studio Code](https://code.visualstudio.com) as our code
     code .
     ```
 
+## Create the virtual environment
+
+We will follow the best practice of working with [virtual environments](https://docs.python.org/3/tutorial/venv.html) for our project.
+
+1. Inside Visual Studio Code, open the terminal window by clicking **View** > **terminal**
+1. In the new **terminal** window, execute the following commands to create and activate a virtual environment
+
+    ```bash
+    # Windows
+    py -3 -m venv venv
+    .\\venv\\Scripts\\activate
+
+    # macOS or Linux
+    python3 -m venv venv
+    source ./venv/bin/activate
+    ```
+
+## Installing Django
+
+The starter project uses a [requirements.txt](https://pip.pypa.io/en/latest/user_guide/#requirements-files) file to contain the list of all necessary packages. We can install them by using `pip`.
+
+1. In the same **terminal** window, execute the following command to install the required packages
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
 ## Start the server
 
 Django has the ability to host the application locally. We will do this by using the built-in terminal window in Visual Studio Code.
 
-1. Inside Visual Studio Code, open the terminal window by clicking **View** > **Terminal**
-1. Enter the following command in the integrated terminal window
+1. Enter the following command in the same **terminal** window
 
     ```bash
     python manage.py runserver

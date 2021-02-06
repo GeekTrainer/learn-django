@@ -12,10 +12,14 @@ In this module you will learn:
 
 Prerequisites
 
-- Basic understanding of Django
-- Intermediate level knowledge of Python, including
-  - [Package Management](https://docs.python.org/3/installing/index.html)
-  - [Virtual Environments](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments)
-  - [Inheritance](https://docs.python.org/3/tutorial/classes.html#inheritance)
-- Understanding of HTML and CSS
-- [Git](https://git-scm.com/)
+- Software
+  - [Visual Studio Code](https://code.visualstudio.com)
+  - [Git](https://git-scm.com/)
+- Coding skills
+  - Understanding of HTML and CSS
+  - Basic understanding of Django
+  - Basic understanding of relational databases
+  - Intermediate level knowledge of Python, including
+    - [Package Management](https://docs.python.org/3/installing/index.html)
+    - [Virtual Environments](https://packaging.python.org/tutorials/installing-packages/#creating-virtual-environments)
+    - [Inheritance](https://docs.python.org/3/tutorial/classes.html#inheritance)

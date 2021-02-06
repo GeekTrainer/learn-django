@@ -6,7 +6,7 @@ Now that we have explored some basic concepts of Django let's begin creating the
 
 As highlighted previously, a Django project is the container for our entire project, and any applications we create. Let's create our project.
 
-1. Inside the **TERMINAL** window in **Visual Studio Code**, execute the following command
+1. Inside the **terminal** window in **Visual Studio Code**, execute the following command
 
     > ![IMPORTANT]
     > The trailing dot at the end of the command is important. It instructs `django-admin` to use the current folder. If you leave off the dot it will create an additional subdirectory.
@@ -47,7 +47,7 @@ helloproject/
 
 Now that Django is installed, a project has been created, and we have examined the project structure it is time to make sure our project is working correctly.
 
-1. Inside the **TERMINAL** window in **Visual Studio Code**, enter the following code to start the server
+1. Inside the **terminal** window in **Visual Studio Code**, enter the following code to start the server
 
     ```bash      
     python manage.py runserver
@@ -55,13 +55,13 @@ Now that Django is installed, a project has been created, and we have examined t
 
     The project will perform system checks and start your development server. Copy and paste the URL of your development server, which should be **http://localhost:8000**, into your preferred browser and you should see a Django 'Congratulations' page with a rocket taking off.
 
-1. Stop the server temporarily, as we will be reconfiguring our project. Inside the **TERMINAL** window, press **Ctl-C**.
+1. Stop the server temporarily, as we will be reconfiguring our project. Inside the **terminal** window, press **Ctl-C**.
 
 ## Create the Hello World app
 
 Now that we have learned the basics about the Django framework, and examined the folder structure of our project it is time to create our first app! While this is a starter **Hello, world!** app it will give you the starting blocks in understanding how apps are created and how they work in unison with the Django project.
 
-1. Inside the **TERMINAL** window, execute the following command to create the app
+1. Inside the **terminal** window, execute the following command to create the app
 
     ```bash
     python manage.py startapp hello_world
