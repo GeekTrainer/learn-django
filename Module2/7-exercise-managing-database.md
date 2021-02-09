@@ -64,3 +64,7 @@ Now that we completed the necessary setup for our SQLite database, let's use the
     ![SQLite explorer](Module2_Images/sqlite-explorer.png)
 
 1. You can now see the list of all the created tables. If you expand each one you will see the various columns. If you explore your **shelter** and **dog** tables you will notice the various columns you created, including the **id** column which is automatically created on each table.
+
+## Summary
+
+You have now managed a database using Django, deploying any changes you have made.

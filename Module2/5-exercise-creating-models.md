@@ -64,3 +64,7 @@ All applications must be registered with the project in Django. It may seem a li
     ```
 
     By adding this line to the list of `INSTALLED_APPS` it tells Django that this app needs to be included when running the project.
+
+## Summary
+
+You have now created two models for your Django application. Creating models is the foundation to all Django projects.

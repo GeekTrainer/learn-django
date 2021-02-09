@@ -95,3 +95,7 @@ To retrieve objects from a database, Django provides an `objects` property on al
 ## Close the shell
 
 Once you're done playing with the objects, you can exit the shell by executing the `exit()` command.
+
+## Summary
+
+You have now seen how you can programmatically work with data in Django through the Django ORM.
