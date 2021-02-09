@@ -76,6 +76,7 @@ Field options are passed into the function for the field itself. Different field
   - Default is `False`
 - `default`
   - Allows the configuration of a default value if a value for the field is not provided
+  - If you wish to set the default value to a database `null`, set `default` to `None`
 - `unique`
   - This field must contain a unique value
   - Default is `False`
