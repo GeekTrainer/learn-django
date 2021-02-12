@@ -20,7 +20,6 @@ The first step in our process is to add the models. Django provides an empty fil
         name = models.CharField(max_length=200)
         description = models.CharField(max_length=200)
         intake_date = models.DateTimeField(auto_now_add=True)
-        adoption_date = models.DateTimeField(null=True, blank=True, default=None)
         def __str__(self):
             return self.name
     ```

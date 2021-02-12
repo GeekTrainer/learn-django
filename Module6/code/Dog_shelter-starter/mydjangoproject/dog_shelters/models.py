@@ -18,7 +18,6 @@ class Dog(models.Model):
     dog_description = models.CharField(max_length=200)
     dog_image = models.ImageField(upload_to='images', blank=True)
     drop_off_date = models.DateTimeField(default=datetime.datetime.now())
-    adoption_date = models.DateTimeField(default=datetime.datetime.now(), blank=True, null=True)
     dog_breed = models.CharField(max_length=200)
 
     def __str__(self):
