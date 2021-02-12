@@ -110,7 +110,11 @@ class Category(models.Model):
 
 A standard practice in relational databases is for each row in a table to have a primary key, typically an auto-incremented integer. Django's ORM will add this automatically to every model you create, by adding a field named `id`. If you wish to override this you can do so by setting the field you wish to be your primary key. However, in most situations you should rely on Django's `id` field.
 
-Relational databases also have relationships between tables. A product would have a category, an employee a manager, and a car a manufacturer. Django's ORM supports all the relationships you may wish to create between your models. The most common is a "one-to-many" relationship, sometimes called a **foreign key relationship**. This indicates a relationship where multiple items share a single attribute. Multiple products would be grouped into a single category, for example. To model this relationship, we use the `ForeignKey` field.
+Relational databases also have relationships between tables. A product would have a category, an employee a manager, and a car a manufacturer. Django's ORM supports all the relationships you may wish to create between your models. The most common is a "one-to-many" relationship, technically known as a **foreign key relationship**. This indicates a relationship where multiple items share a single attribute. Multiple products would be grouped into a single category, for example. To model this relationship, we use the `ForeignKey` field.
+
+To create the relationship, you add the `ForeignKey` field to the child object. If our products are grouped into categories, we will add the `category` property to the `Product` class, and set the type to be `ForeignKey`. Django will automatically add a property to the parent to provide access to all children called `<child>_set`, where `<child>` is the name of the child object. In our example, `Category` will automatically have `product_set` added to provide access to all products in the category.
+
+#### on_delete
 
 `ForeignKey` has one mandatory parameter, `on_delete`. [on_delete](https://docs.djangoproject.com/en/3.1/ref/models/fields/#django.db.models.ForeignKey.on_delete) instructs Django what to do should the parent be deleted; if we delete a category what should happen to the products in that category?
 
@@ -134,4 +138,5 @@ class Product(models.Model):
 
 class Category(models.Model):
     name = models.TextField()
+    # product_set will be automatically created
 ```

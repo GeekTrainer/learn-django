@@ -56,13 +56,13 @@ Because our models are Python classes, we create new instances using the same sy
 
 To retrieve objects from a database, Django provides an `objects` property on all `Model` classes. `objects` provides multiple functions, including `all`, `filter`, and `get`.
 
-1. Retrieve all dogs by executing the following command:
+1. Retrieve all dogs in our **Demo shelter** shelter by executing the following command:
 
     ```python
-    Dog.objects.all()
+    Shelter.dog_set.all()
     ```
 
-    Django will return a QuerySet object with the two dogs we created.
+    `dog_set` stores the list of all dogs for a particular shelter. Django will return a QuerySet object with the two dogs we created.
 
     ```bash
     <QuerySet [<Dog: Sammy>, <Dog: Roscoe>]>
