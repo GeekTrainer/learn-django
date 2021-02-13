@@ -9,8 +9,6 @@ In this module you will learn
 
 Prerequisites
 
-Prerequisites
-
 - Software
   - [Visual Studio Code](https://code.visualstudio.com)
   - [Git](https://git-scm.com/)

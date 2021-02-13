@@ -15,7 +15,7 @@ class Dog(models.Model):
 
     shelter = models.ForeignKey(Shelter, on_delete=models.CASCADE)
     dog_name = models.CharField(max_length=200)
-    dog_description = models.CharField(max_length=200)
+    dog_description = models.TextField()
     dog_image = models.ImageField(upload_to='images', blank=True)
     drop_off_date = models.DateTimeField(default=datetime.datetime.now())
     adoption_date = models.DateTimeField(default=datetime.datetime.now(), blank=True, null=True)

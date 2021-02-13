@@ -18,7 +18,7 @@ The first step in our process is to add the models. Django provides an empty fil
     class Dog(models.Model):
         shelter = models.ForeignKey(Shelter, on_delete=models.PROTECT)
         name = models.CharField(max_length=200)
-        description = models.CharField(max_length=200)
+        description = models.TextField()
         intake_date = models.DateTimeField(auto_now_add=True)
         def __str__(self):
             return self.name
