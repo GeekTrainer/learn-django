@@ -40,6 +40,13 @@ Let's install those into our project.
     ```
 
 1. Open **manage.py**
+1. Import the `os` module by adding the following below the line which reads `TODO: Import os`
+
+    ```python
+    # TODO: Import os
+    import os
+    ```
+
 1. Load the settings from **.env** by adding the following code below the line which reads `# TODO: Load environmental settings`
 
     ```python
