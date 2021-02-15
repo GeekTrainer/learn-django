@@ -82,7 +82,7 @@
 6. Creating and managing a database
     * Creating the database
     * Displaying the schema
-7. Adding \_\_str__
+7. Adding `__str__`
 8. Creating and querying data
     * Exploring the Django ORM
     * Creating new objects
