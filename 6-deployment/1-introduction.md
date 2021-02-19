@@ -1,12 +1,14 @@
 As you likely already know, development and production have a different set of requirements. Preparing an application for production can take a few steps. Fortunately, the actual deployment process need not be overly complex.
 
-In this module we will walk through the steps necessary for getting a Django application ready for production, and then use Visual Studio Code to deploy the site to Azure.
+In this module we will walk through the steps necessary for getting a Django application ready for production. We will then create a database and hosting environment for our application by using Visual Studio Code. We will finish by deploying our site to Azure and seeing our application run in the cloud.
 
-In this module you will learn
+In this module you will learn how to
 
-- the necessary steps to configure an application for production
-- how to install an extension into Visual Studio Code
-- how to use the App Services extension to deploy a website to Azure
+- configure an application for production
+- install an extension into Visual Studio Code
+- use Databases extensions to create a PostgreSQL database
+- use the App Services extension to deploy a website to Azure
+- run migrations on a database hosted in Azure
 
 ## Prerequisites
 
