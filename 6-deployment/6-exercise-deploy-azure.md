@@ -144,6 +144,9 @@ The last step to our deployment is to setup the database. When doing local devel
 
     An SSH connection will now be made to your web server on Azure. This may take a few minutes. A terminal window will appear inside Visual Studio Code, which is your SSH connection into your web server.
 
+    > ![IMPORTANT]
+    > If you receive an error message stating you need to enable SSL for the database, ensure all environmental variables were created correctly.
+
 1. Inside the SSH terminal window, execute the following commands to ensure the appropriate libraries are installed and create the database:
 
     ```bash
