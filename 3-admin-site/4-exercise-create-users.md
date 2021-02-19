@@ -48,10 +48,10 @@ With the admin user has been created it is time for our first login to the Djang
 
 1. Click **ADD USER** in the upper right corner
 1. Provide a **Username** of **staffuser**
-2. Provide a **Password** and **Password confirmation** which meets the complexity requirements
-3. Click **SAVE**
-4. On the next screen, select **Staff status** to make the new user a staff user
+1. Provide a **Password** and **Password confirmation** which meets the complexity requirements
+1. Click **SAVE**
+1. On the next screen, select **Staff status** to make the new user a staff user
 
     ![User options screen](Module3_Images/staff-user.png)
 
-5. Click **SAVE**
+1. Click **SAVE**
