@@ -3,8 +3,6 @@
 import os
 import sys
 
-# TODO: Load environmental settings
-
 
 def main():
     """Run administrative tasks."""

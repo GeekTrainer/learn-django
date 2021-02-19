@@ -12,29 +12,21 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
-# TODO: Import os
-
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# TODO: Replace the secret key setting
-SECRET_KEY = 'SE^8aw4tawrgzawrtw4687q#$#qAS6Ta6#@!'
+SECRET_KEY = 'gHlcL*ZHbRf6g94x0f4lDJn$&yhKBMiP$5bZ@F&VBdueFv8Usq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-# TODO: Replace the debug setting
 DEBUG = True
 
-# TODO: Replace allowed hosts
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -53,9 +45,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-
-    # TODO: Register WhiteNoiseMiddleware
-
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -87,6 +76,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+
 
 DATABASES = {
     'default': {
@@ -133,5 +123,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# TODO: Configure STATIC_ROOT

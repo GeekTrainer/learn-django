@@ -1,4 +1,4 @@
-django
+Django
 pylint
 autopep8
 django-crispy-forms
